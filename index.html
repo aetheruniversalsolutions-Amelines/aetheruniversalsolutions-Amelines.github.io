@@ -3,118 +3,238 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ÆTHER Universal Solutions - Official Repository</title>
+    <title>ÆTHER Universal Solutions - Official Research Repository</title>
     <style>
+        /* AETHER GLOBAL BRANDING */
+        :root {
+            --bg-deep: #000000;
+            --bg-panel: #050d1a;
+            --text-main: #f1f1f1;
+            --text-sub: #b0bec5;
+            --accent-cyan: #00e5ff; /* Cyan from Logo/Cover glow */
+            --accent-gold: #f1c40f; /* Gold from Book Title */
+            --valid-green: #00e676; /* Status green */
+        }
+
         body {
-            background-color: #0d1117;
-            color: #c9d1d9;
-            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
+            background-color: var(--bg-deep);
+            color: var(--text-main);
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
             line-height: 1.6;
             margin: 0;
             padding: 0;
         }
+
         .container {
-            max-width: 800px;
+            max-width: 1000px;
             margin: 0 auto;
             padding: 40px 20px;
         }
-        h1, h2 {
-            color: #58a6ff;
-            border-bottom: 1px solid #30363d;
-            padding-bottom: 10px;
+
+        /* HEADER SECTION */
+        header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            border-bottom: 2px solid var(--accent-cyan);
+            padding-bottom: 20px;
+            margin-bottom: 40px;
         }
-        h3 {
-            color: #8b949e;
+
+        .header-brand {
+            display: flex;
+            align-items: center;
         }
-        .bilingual-section {
-            background-color: #161b22;
-            border: 1px solid #30363d;
+
+        .logo-img {
+            max-height: 60px;
+            margin-right: 20px;
+        }
+
+        .header-titles h1 {
+            color: var(--accent-cyan);
+            margin: 0;
+            font-size: 2.2em;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        .header-titles p {
+            color: var(--accent-gold);
+            margin: 5px 0 0;
+            font-size: 1.1em;
+            font-weight: bold;
+        }
+
+        /* BILINGUAL LAYOUT */
+        .bilingual-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 30px;
+            margin-bottom: 40px;
+        }
+
+        .lang-column {
+            background-color: var(--bg-panel);
+            border: 1px solid #1a237e;
             border-radius: 8px;
-            padding: 20px;
-            margin-bottom: 30px;
+            padding: 25px;
+            transition: border-color 0.3s ease;
         }
+
+        .lang-column:hover {
+            border-color: var(--accent-cyan);
+        }
+
+        h2.column-header {
+            color: var(--accent-cyan);
+            border-bottom: 1px solid #1a237e;
+            padding-bottom: 10px;
+            margin-top: 0;
+        }
+
+        /* GENERAL STYLING */
+        h3 { color: var(--accent-gold); }
+        hr { border: 0; height: 1px; background: #1a237e; margin: 40px 0; }
+        
+        strong { color: #ffffff; }
+        
+        a { color: var(--accent-cyan); text-decoration: none; }
+        a:hover { text-decoration: underline; }
+
+        /* BUTTONS */
+        .btn-container {
+            text-align: center;
+            margin-top: 40px;
+        }
+
         .btn {
             display: inline-block;
-            background-color: #238636;
-            color: white;
+            background-color: transparent;
+            color: var(--accent-gold);
             text-decoration: none;
-            padding: 10px 20px;
+            padding: 12px 24px;
+            border: 2px solid var(--accent-gold);
             border-radius: 6px;
             font-weight: bold;
-            margin-top: 10px;
-            margin-right: 10px;
+            margin: 10px;
+            font-size: 1em;
+            transition: all 0.3s ease;
         }
+
         .btn:hover {
-            background-color: #2ea043;
+            background-color: var(--accent-gold);
+            color: var(--bg-deep);
+            box-shadow: 0 0 15px rgba(241, 196, 15, 0.4);
         }
-        hr {
-            border: 0;
-            height: 1px;
-            background: #30363d;
-            margin: 40px 0;
+
+        /* ACADEMIC & DOI SECTION */
+        .academic-pnl {
+            background-color: var(--bg-panel);
+            border: 2px solid var(--valid-green);
+            border-radius: 8px;
+            padding: 25px;
+            margin-top: 40px;
+        }
+
+        .academic-pnl h2 { color: var(--valid-green); margin-top: 0; }
+        .academic-pnl h3 { color: var(--text-main); margin-top: 20px; }
+        
+        .doi-list { list-style: none; padding: 0; }
+        .doi-list li { margin-bottom: 12px; border-bottom: 1px solid #101010; padding-bottom: 8px; }
+        .doi-list li strong { color: var(--accent-cyan); }
+        .valid-status { color: var(--valid-green); font-size: 0.9em; font-weight: bold; margin-left: 10px;}
+
+        /* FOOTER */
+        footer {
+            text-align: center;
+            color: var(--text-sub);
+            font-size: 0.9em;
+            padding-top: 20px;
+            border-top: 1px solid #1a237e;
+        }
+
+        /* MOBILE OPTIMIZATION */
+        @media (max-width: 768px) {
+            header { flex-direction: column; text-align: center; }
+            .logo-img { margin: 0 0 15px 0; max-height: 50px;}
+            .header-titles h1 { font-size: 1.8em; }
+            .bilingual-grid { grid-template-columns: 1fr; }
         }
     </style>
 </head>
 <body>
 
 <div class="container">
-    <h1>ÆTHER Universal Solutions</h1>
-    <h3>Research & Open Source Data Repository</h3>
-    <p>By <strong>William Herrera Amelines</strong></p>
+    <header>
+        <div class="header-brand">
+            <img src="LOGO AETHER Final web.gif" alt="ÆTHER Universal Solutions Logo" class="logo-img">
+            <div class="header-titles">
+                <h1>ÆTHER Universal Solutions</h1>
+                <p>Advanced Research & Open Source Repository</p>
+            </div>
+        </div>
+    </header>
 
-    <div class="bilingual-section">
-        <h2>🇬🇧 English: Welcome to the Solid State Revolution</h2>
-        <p>Welcome to the official digital repository for the book <strong>"The Solid State Logic"</strong> and the <strong>Códice ÆTHER</strong>.</p>
-        <p>This space is dedicated to Open Science. Our goal is to provide researchers, engineers, and independent thinkers with the mathematical frameworks, 3D topological models, and high-resolution visual data that support the Solid State Cosmology and the Universal Geometry of the Elements.</p>
+    <div class="bilingual-grid">
         
-        <ul>
-            <li><strong>High-Resolution Graphics:</strong> Access the full-color, high-res versions of the diagrams printed in the book.</li>
-            <li><strong>OpenSCAD Models:</strong> Download the open-source 3D code to render the Chemical Vortex and the 13x21 Fibonacci Matrix on your own machine.</li>
-            <li><strong>Research Monographs:</strong> Read our extended peer-review style documents and technical annexes.</li>
-        </ul>
+        <div class="lang-column">
+            <h2 class="column-header">🇪🇸 Bienvenido a la Revolución del Estado Sólido</h2>
+            <p>Este es el repositorio digital oficial para la obra maestra <strong>"La Lógica del Estado Sólido"</strong> y el <strong>Códice ÆTHER</strong>.</p>
+            <p>Impulsados por la visión del Arquitecto <strong>William Herrera Amelines</strong>, este espacio está dedicado a la Ciencia Abierta. Nuestra misión es proveer a la comunidad científica internacional los marcos matemáticos, modelos topológicos 3D y datos visuales que respaldan la Cosmología del Estado Sólido y la verdadera Geometría Universal de los Elementos.</p>
+            <h3>Recursos Disponibles en la Bóveda:</h3>
+            <ul>
+                <li><strong>Monografía de Investigación Completa:</strong> El documento académico resumido.</li>
+                <li><strong>Gráficos Técnicos en Alta Resolución:</strong> Versiones a color de los diagramas impresos en el libro.</li>
+                <li><strong>Modelos OpenSCAD 3D:</strong> El código fuente abierto para renderizar la Matriz de Fibonacci 13x21 y el Vórtice Atómico.</li>
+            </ul>
+        </div>
+
+        <div class="lang-column">
+            <h2 class="column-header">🇬🇧 Welcome to the Solid State Revolution</h2>
+            <p>This is the official digital repository for the monograph <strong>"The Solid State Logic"</strong> and the <strong>Códice ÆTHER</strong>.</p>
+            <p>Driven by the vision of Architect <strong>William Herrera Amelines</strong>, this space is dedicated to Open Science. Our mission is to provide the international scientific community with the mathematical frameworks, 3D topological models, and visual data supporting the Solid State Cosmology and the true Universal Geometry of the Elements.</p>
+            <h3>Available Resources in the Vault:</h3>
+            <ul>
+                <li><strong>Full Research Monograph:</strong> The summary academic document.</li>
+                <li><strong>High-Resolution Technical Graphics:</strong> Full-color versions of the diagrams printed in the book.</li>
+                <li><strong>OpenSCAD 3D Models:</strong> The open-source code to render the 13x21 Fibonacci Matrix and the Atomic Vortex.</li>
+            </ul>
+        </div>
     </div>
 
-    <div class="bilingual-section">
-        <h2>🇪🇸 Español: Bienvenido a la Revolución del Estado Sólido</h2>
-        <p>Bienvenido al repositorio digital oficial del libro <strong>"La Lógica del Estado Sólido"</strong> y el <strong>Códice ÆTHER</strong>.</p>
-        <p>Este espacio está dedicado a la Ciencia Abierta. Nuestro objetivo es proveer a investigadores, ingenieros y librepensadores los marcos matemáticos, modelos topológicos 3D y datos visuales en alta resolución que respaldan la Cosmología del Estado Sólido y la Geometría Universal de los Elementos.</p>
-        
-        <ul>
-            <li><strong>Gráficos en Alta Resolución:</strong> Accede a las versiones a todo color de los diagramas técnicos impresos en el libro.</li>
-            <li><strong>Modelos OpenSCAD:</strong> Descarga el código 3D de fuente abierta para renderizar el Vórtice Químico y la Matriz de Fibonacci 13x21 en tu propia máquina.</li>
-            <li><strong>Monografías de Investigación:</strong> Lee nuestros documentos extendidos y anexos técnicos.</li>
-        </ul>
-    </div>
-
-    <h2>📂 Access the Files / Acceder a los Archivos</h2>
-    <p><em>(Note: Links will be updated shortly as the repository is populated / Nota: Los enlaces se actualizarán en breve conforme se suban los archivos).</em></p>
+    <h2>📂 Vault Access / Acceso a los Archivos</h2>
+    <p style="color: var(--text-sub);"><em>Note: Links will be activated shortly. The repository is finalizing its initial indexing phase.</em></p>
     
-    <a href="#" class="btn">📁 View Color Diagrams / Ver Diagramas a Color</a>
-    <a href="#" class="btn">💻 Download OpenSCAD Code / Descargar Código 3D</a>
-    <a href="#" class="btn">📄 Read Monograph / Leer Monografía</a>
+    <div class="btn-container">
+        <a href="#" class="btn">📁 View Monograph / Ver Monografía</a>
+        <a href="#" class="btn">💻 Download 3D Code / Descargar Código 3D</a>
+        <a href="#" class="btn">📄 Get Color Graphics / Obtener Gráficos a Color</a>
+    </div>
 
-<div class="bilingual-section" style="background-color: #0d1117; border-color: #238636; margin-top: 40px;">
-        <h2 style="color: #2ea043;">🎓 Academic Credentials & Official DOIs</h2>
-        <p>The postulates of the Solid State Cosmology are officially indexed, peer-traceable, and safeguarded under the academic rigor of CERN's Zenodo repository and the OpenAIRE European network.</p>
+    <div class="academic-pnl">
+        <h2>🎓 Academic Credentials & Official DOIs</h2>
+        <p>The postulates and research supporting the Solid State Cosmology are officially indexed, peer-traceable, and safeguarded under the academic rigor of CERN's Zenodo repository and the OpenAIRE European network.</p>
         
-        <ul style="list-style-type: none; padding-left: 0;">
-            <li style="margin-bottom: 10px;"><strong>ORCID iD:</strong> <a href="https://orcid.org/0009-0003-2206-6342" target="_blank" style="color: #58a6ff;">0009-0003-2206-6342</a></li>
-            <li style="margin-bottom: 10px;"><strong>Web of Science (ResearcherID):</strong> PWF-6028-2026</li>
+        <ul style="list-style-type: none; padding: 0; margin-bottom: 20px;">
+            <li style="margin-bottom: 10px;"><strong>ORCID iD:</strong> <a href="https://orcid.org/0009-0003-2206-6342" target="_blank">0009-0003-2206-6342</a><span class="valid-status">[Verified]</span></li>
+            <li style="margin-bottom: 10px;"><strong>Web of Science (ResearcherID):</strong> PWF-6028-2026<span class="valid-status">[Verified]</span></li>
         </ul>
 
-        <h3 style="color: #c9d1d9; margin-top: 20px;">Zenodo Indexed Postulates (OpenAIRE linked):</h3>
-        <ul>
-            <li><strong>Postulate I, II & III:</strong> The Universal Toroidal Engine, Quantum Info & Cosmic Cymatics.<br> DOI: <a href="https://doi.org/10.5281/zenodo.19521973" target="_blank" style="color: #58a6ff;">10.5281/zenodo.19521973</a></li>
-            <li><strong>Postulate IV:</strong> The Atomic Vortex Architecture.<br> DOI: <a href="https://doi.org/10.5281/zenodo.19542763" target="_blank" style="color: #58a6ff;">10.5281/zenodo.19542763</a></li>
-            <li><strong>Postulate IV (Addendum):</strong> The Universal Geometry of the Elements.<br> DOI: <a href="https://doi.org/10.5281/zenodo.19619217" target="_blank" style="color: #58a6ff;">10.5281/zenodo.19619217</a></li>
-            <li><strong>Postulate V:</strong> The Unified Field Geodesic Architecture.<br> DOI: <a href="https://doi.org/10.5281/zenodo.19637986" target="_blank" style="color: #58a6ff;">10.5281/zenodo.19637986</a></li>
+        <h3>Zenodo Indexed Postulates (CERN & OpenAIRE backed):</h3>
+        <ul class="doi-list">
+            <li><strong>Postulate I, II & III:</strong> Cosmic Cymatics, Quantum Info, Toroidal Engine.<br> DOI: <a href="https://doi.org/10.5281/zenodo.19521973" target="_blank">10.5281/zenodo.19521973</a></li>
+            <li><strong>Postulate IV:</strong> The Atomic Vortex Architecture.<br> DOI: <a href="https://doi.org/10.5281/zenodo.19542763" target="_blank">10.5281/zenodo.19542763</a></li>
+            <li><strong>Postulate IV (Addendum):</strong> The Universal Geometry of the Elements.<br> DOI: <a href="https://doi.org/10.5281/zenodo.19619217" target="_blank">10.5281/zenodo.19619217</a></li>
+            <li><strong>Postulate V:</strong> The Unified Field Geodesic Architecture.<br> DOI: <a href="https://doi.org/10.5281/zenodo.19637986" target="_blank">10.5281/zenodo.19637986</a></li>
         </ul>
     </div>
-    
+
     <hr>
-    <p style="text-align: center; color: #8b949e; font-size: 0.9em;">
-        © 2026 William Herrera Amelines. ISBN: 978-628-02-4305-4.
-    </p>
+    <footer>
+        <p>© 2026 William Herrera Amelines | ResearcherID: PWF-6028-2026 | ISBN (Spanish): 978-628-02-4305-4.</p>
+        <p style="font-size: 0.85em; color: var(--accent-gold);">Códice ÆTHER is a registered mark. All rights reserved.</p>
+    </footer>
 </div>
 
 </body>
