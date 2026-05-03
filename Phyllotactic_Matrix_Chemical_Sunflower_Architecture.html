@@ -3,30 +3,36 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Chemical Sunflower - ÆTHER Codex</title>
+    <title>Universal Geometry of the Elements - ÆTHER Codex</title>
+    
+    <!-- Inyección de Fuentes de Estado Sólido -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Rajdhani:wght@400;500;600;700&display=swap" rel="stylesheet">
+    
     <style>
         :root {
-            --bg-color: #010409;
-            --panel-bg: rgba(13, 17, 23, 0.95);
-            --border-color: #30363d;
-            --text-main: #c9d1d9;
-            --text-accent: #58a6ff;
-            --levo-color: #00ff00; /* Levorotatory Green (13) */
-            --dextro-color: #ff0040; /* Dextrorotatory Red (21) */
+            --bg-color: #020203;
+            --panel-bg: rgba(10, 12, 16, 0.95);
+            --border-color: rgba(212, 175, 55, 0.2);
+            --text-main: #E0E0E0;
+            --text-accent: #D4AF37; /* Oro Institucional (Au) */
+            --text-muted: #8b949e;
+            --levo-color: #00ffaa;
+            --dextro-color: #D4AF37;
         }
 
         body {
             margin: 0;
             padding: 0;
             height: 100vh;
-            background: radial-gradient(circle at center, #0d1117 0%, var(--bg-color) 100%);
+            background: radial-gradient(circle at center, #0a0c10 0%, var(--bg-color) 100%);
             color: var(--text-main);
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            font-family: 'Rajdhani', sans-serif;
             display: flex;
             overflow: hidden;
         }
 
-        /* SVG Vortex Container */
         #visual-container {
             flex: 1;
             display: flex;
@@ -42,158 +48,186 @@
             max-height: 1200px;
         }
 
-        /* SVG Elements */
         .node circle {
             stroke-width: 2px;
-            transition: all 0.2s ease;
+            transition: all 0.3s ease;
             cursor: pointer;
         }
         .node text {
             fill: #ffffff;
             font-size: 11px;
-            font-weight: bold;
+            font-weight: 600;
+            font-family: 'Rajdhani', sans-serif;
             text-anchor: middle;
             pointer-events: none;
             text-shadow: 1px 1px 3px #000;
         }
         .node:hover circle {
-            stroke: #ffffff !important;
+            stroke: #D4AF37 !important;
             stroke-width: 3px !important;
             transform: scale(1.4);
-            filter: drop-shadow(0 0 10px rgba(255,255,255,0.8));
+            filter: drop-shadow(0 0 12px rgba(212, 175, 55, 0.8));
         }
 
-        /* Parastichy Lines */
         .line-13 {
             stroke: var(--levo-color);
             stroke-width: 1px;
-            opacity: 0.5;
+            opacity: 0.35;
             fill: none;
             transition: opacity 0.3s;
         }
         .line-21 {
             stroke: var(--dextro-color);
             stroke-width: 1px;
-            opacity: 0.5;
+            opacity: 0.35;
             fill: none;
             transition: opacity 0.3s;
         }
 
-        /* Right Telemetry Panel */
         #info-panel {
-            width: 420px;
+            width: 440px;
             background: var(--panel-bg);
             border-left: 1px solid var(--border-color);
             padding: 30px;
             display: flex;
             flex-direction: column;
-            box-shadow: -10px 0 30px rgba(0,0,0,0.7);
+            box-shadow: -10px 0 30px rgba(0,0,0,0.8);
             backdrop-filter: blur(10px);
             z-index: 10;
+            overflow-y: auto;
         }
 
-        /* Headers and References */
-        .header { margin-bottom: 25px; border-bottom: 1px solid var(--border-color); padding-bottom: 15px;}
-        .title { color: var(--text-accent); font-size: 24px; font-weight: bold; letter-spacing: 1px; text-transform: uppercase; margin-bottom: 5px;}
-        .subtitle { font-size: 13px; color: #8b949e; font-weight: bold; letter-spacing: 1px;}
-        .tesla-ref { color: #f0e68c; font-size: 13px; margin-top: 10px; font-style: italic; border-left: 3px solid #f0e68c; padding-left: 10px;}
+        .header { margin-bottom: 20px; border-bottom: 1px solid var(--border-color); padding-bottom: 15px;}
+        .title { color: var(--text-accent); font-family: 'Orbitron', sans-serif; font-size: 22px; font-weight: 700; letter-spacing: 1px; text-transform: uppercase; margin-bottom: 5px;}
+        .subtitle { font-size: 14px; color: var(--text-muted); font-weight: 600; letter-spacing: 1.5px;}
+        .tesla-ref { color: var(--text-accent); font-size: 14px; margin-top: 10px; font-weight: 500; border-left: 3px solid var(--text-accent); padding-left: 10px; background: rgba(212, 175, 55, 0.05); padding: 8px;}
 
-        /* Atomic Telemetry */
+        .postulate-box {
+            background: rgba(255, 255, 255, 0.02);
+            border: 1px dashed var(--border-color);
+            border-radius: 6px;
+            padding: 15px;
+            margin-bottom: 25px;
+        }
+        .postulate-box h4 {
+            font-family: 'Orbitron', sans-serif;
+            color: #E0E0E0;
+            margin: 0 0 5px 0;
+            font-size: 14px;
+            letter-spacing: 1px;
+        }
+        .postulate-box p {
+            font-size: 13px;
+            color: var(--text-muted);
+            margin: 0 0 10px 0;
+            line-height: 1.4;
+        }
+        .postulate-box a {
+            color: #58a6ff;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 13px;
+        }
+        .postulate-box a:hover { color: var(--text-accent); text-decoration: underline;}
+
         #telemetry-box {
-            background: #0d1117;
+            background: #050608;
             border: 1px solid var(--border-color);
-            border-radius: 8px;
+            border-top: 3px solid var(--text-accent);
+            border-radius: 6px;
             padding: 20px;
             margin-bottom: 25px;
-            min-height: 240px;
+            min-height: 250px;
             box-shadow: inset 0 0 20px rgba(0,0,0,0.5);
         }
-        .tel-title { font-size: 16px; color: #fff; margin-bottom: 15px; font-weight: bold; text-align: center; letter-spacing: 2px;}
-        .tel-row { display: flex; justify-content: space-between; margin-bottom: 10px; font-size: 14px; border-bottom: 1px dashed #30363d; padding-bottom: 5px;}
-        .tel-label { color: #8b949e; }
-        .tel-value { color: #58a6ff; font-weight: bold; font-family: monospace; font-size: 15px;}
-        .sym-large { font-size: 46px; text-align: center; color: #fff; font-weight: bold; margin-bottom: 5px; text-shadow: 0 0 15px rgba(255,255,255,0.3);}
-        .name-large { text-align: center; font-size: 20px; color: #8b949e; margin-bottom: 20px; text-transform: uppercase; letter-spacing: 1px;}
+        .tel-title { font-family: 'Orbitron', sans-serif; font-size: 15px; color: #fff; margin-bottom: 15px; font-weight: 700; text-align: center; letter-spacing: 2px;}
+        .tel-row { display: flex; justify-content: space-between; margin-bottom: 10px; font-size: 15px; border-bottom: 1px dashed #30363d; padding-bottom: 5px;}
+        .tel-label { color: var(--text-muted); font-weight: 500;}
+        .tel-value { color: #E0E0E0; font-weight: 700; font-family: 'Orbitron', monospace; font-size: 14px;}
+        .sym-large { font-family: 'Orbitron', sans-serif; font-size: 48px; text-align: center; color: #fff; font-weight: 700; margin-bottom: 5px; text-shadow: 0 0 15px rgba(255,255,255,0.2);}
+        .name-large { text-align: center; font-size: 20px; color: var(--text-accent); margin-bottom: 20px; font-weight: 600; text-transform: uppercase; letter-spacing: 2px;}
 
-        /* Controls */
         .controls { margin-bottom: auto;}
-        .control-label { display: flex; align-items: center; margin-bottom: 10px; cursor: pointer; font-size: 14px;}
-        .control-label input { margin-right: 10px; }
-        .color-box { display: inline-block; width: 14px; height: 14px; margin-right: 8px; border-radius: 3px;}
+        .control-label { display: flex; align-items: center; margin-bottom: 12px; cursor: pointer; font-size: 15px; font-weight: 500;}
+        .control-label input { margin-right: 10px; accent-color: var(--text-accent); }
+        .color-box { display: inline-block; width: 14px; height: 14px; margin-right: 10px; border-radius: 3px;}
         .cb-13 { background: var(--levo-color); box-shadow: 0 0 8px var(--levo-color);}
         .cb-21 { background: var(--dextro-color); box-shadow: 0 0 8px var(--dextro-color);}
 
-        /* Highlighted Footer */
         .footer {
             margin-top: 20px;
             padding: 20px;
-            background: rgba(88, 166, 255, 0.1);
-            border: 1px solid #58a6ff;
-            border-radius: 8px;
+            background: rgba(212, 175, 55, 0.05);
+            border: 1px solid var(--border-color);
+            border-radius: 6px;
             font-size: 14px;
-            color: #c9d1d9;
-            line-height: 1.8;
-            box-shadow: 0 0 15px rgba(88, 166, 255, 0.2);
+            color: var(--text-main);
+            line-height: 1.6;
+            text-align: center;
         }
-        .footer .footer-title { color: #58a6ff; font-size: 15px; font-weight: bold; margin-bottom: 8px; text-transform: uppercase; letter-spacing: 1px;}
-        .footer strong { color: #ffffff; }
+        .footer .footer-title { color: var(--text-accent); font-family: 'Orbitron', sans-serif; font-size: 13px; font-weight: 700; margin-bottom: 8px; text-transform: uppercase; letter-spacing: 1px;}
+        .footer strong { color: #ffffff; font-weight: 600;}
     </style>
 </head>
 <body>
 
-    <div id="visual-container">
-        </div>
+    <div id="visual-container"></div>
 
     <div id="info-panel">
         <div class="header">
             <div class="title">Chemical Sunflower</div>
             <div class="subtitle">ÆTHER CODEX - SOLID-STATE COSMOLOGY</div>
-            <div class="tesla-ref">"Tesla's 3-6-9 Reference. 13x21 Fibonacci Parastichies."</div>
+            <div class="tesla-ref">"Tesla's 3-6-9 Reference. 13x21 Fibonacci Parastichies. Universal Geometry of the Elements."</div>
+        </div>
+
+        <div class="postulate-box">
+            <h4>POSTULATE IV: THE ATOMIC ARCHITECTURE</h4>
+            <p>Matter is spatially organized in a Toroidal Periodic Vortex of seven octaves, governed by golden angle phyllotaxis (137.5°). Chemical bonding is defined as a pressure-gradient effect at <strong>Interstitial Nodes</strong>.</p>
+            <a href="https://doi.org/10.5281/zenodo.19542763" target="_blank">&#8628; DOI: 10.5281/zenodo.19542763</a>
         </div>
 
         <div id="telemetry-box">
-            <div class="tel-title">SCAN A NODE</div>
-            <div style="text-align: center; color: #8b949e; font-size: 14px; margin-top: 70px;">
-                Hover over the vortex elements to read the solid-state telemetry.
+            <div class="tel-title">SCAN A NODE / ESCANEAR NODO</div>
+            <div style="text-align: center; color: var(--text-muted); font-size: 15px; margin-top: 50px; font-weight: 500;">
+                Hover over the vortex elements to read the solid-state telemetry.<br><br>
+                <span style="font-size: 13px; color: #666;">(Pase el cursor sobre los nodos para leer la telemetría del estado sólido)</span>
             </div>
         </div>
 
         <div class="controls">
-            <div class="tel-title" style="font-size: 14px; text-align: left; color: #8b949e;">GEODESIC MESH (Parastichies)</div>
+            <div class="tel-title" style="font-size: 14px; text-align: left; color: var(--text-muted); margin-bottom: 15px;">GEODESIC MESH (Parastichies)</div>
             <label class="control-label">
                 <input type="checkbox" id="chk-13" checked>
-                <span class="color-box cb-13"></span> Show Levorotatory (Jumps of 13)
+                <span class="color-box cb-13"></span> Show Levorotatory Suction (Jumps of 13)
             </label>
             <label class="control-label">
                 <input type="checkbox" id="chk-21" checked>
-                <span class="color-box cb-21"></span> Show Dextrorotatory (Jumps of 21)
+                <span class="color-box cb-21"></span> Show Dextrorotatory Expansion (Jumps of 21)
             </label>
         </div>
 
         <div class="footer">
             <div class="footer-title">Author Information</div>
             <strong>Lead Author:</strong> W.H. Amelines<br>
-            <strong>Organization:</strong> ÆTHER - Universal Platform Solutions<br>
-            <strong>Email:</strong> aether.universalsolutions@gmail.com
+            <strong>Organization:</strong> ÆTHER Universal Platform Solutions<br>
+            <span style="font-size: 12px; color: var(--text-muted);">aether.universalsolutions@gmail.com</span>
         </div>
     </div>
 
     <script>
-        // === CHEMICAL GROUPS COLOR PALETTE ===
         const groupColors = {
             "Alkali Metals": "#ff5555",
-            "Alkaline Earth Metals": "#ffaa00",
-            "Transition Metals": "#ff55ff",
-            "Post-Transition Metals": "#55ffff",
-            "Metalloids": "#55ff55",
-            "Reactive Nonmetals": "#ffff55",
-            "Halogens": "#00ffaa",
-            "Noble Gases": "#aaaaff",
-            "Lanthanides": "#ffaaee",
-            "Actinides": "#ee88ff"
+            "Alkaline Earth Metals": "#D4AF37", 
+            "Transition Metals": "#b366ff", 
+            "Post-Transition Metals": "#58a6ff", 
+            "Metalloids": "#55ffaa", 
+            "Reactive Nonmetals": "#B89B5E", 
+            "Halogens": "#00ffaa", 
+            "Noble Gases": "#E0E0E0", 
+            "Lanthanides": "#ff77bb", 
+            "Actinides": "#ee5599"
         };
 
-        // === ELEMENT DATABASE (Z, Symbol, English Name, Mass, English Group) ===
         const elementData = [
             [1,"H","Hydrogen",1.008,"Reactive Nonmetals"], [2,"He","Helium",4.002,"Noble Gases"], [3,"Li","Lithium",6.94,"Alkali Metals"], [4,"Be","Beryllium",9.012,"Alkaline Earth Metals"],
             [5,"B","Boron",10.81,"Metalloids"], [6,"C","Carbon",12.011,"Reactive Nonmetals"], [7,"N","Nitrogen",14.007,"Reactive Nonmetals"], [8,"O","Oxygen",15.999,"Reactive Nonmetals"],
@@ -227,12 +261,10 @@
             [117,"Ts","Tennessine",294,"Halogens"], [118,"Og","Oganesson",294,"Noble Gases"]
         ];
 
-        // === SVG VORTEX INITIALIZATION ===
         const container = document.getElementById('visual-container');
         const svgNS = "http://www.w3.org/2000/svg";
         const svg = document.createElementNS(svgNS, "svg");
         
-        // Expanded ViewBox to make the spiral larger
         svg.setAttribute("viewBox", "-550 -550 1100 1100");
         container.appendChild(svg);
 
@@ -244,12 +276,10 @@
         svg.appendChild(lines21Group);
         svg.appendChild(nodesGroup);
 
-        // Phyllotactic Geometry (ÆTHER Codex)
         const goldenAngle = 137.508 * (Math.PI / 180);
-        const scalingFactor = 39; // Vastly expanded diameter
+        const scalingFactor = 39; 
         const positions = [];
 
-        // 1. Calculate positions
         elementData.forEach((el, index) => {
             const n = index + 1; 
             const r = scalingFactor * Math.sqrt(n);
@@ -261,7 +291,6 @@
             positions.push({x, y, data: el});
         });
 
-        // 2. Draw Levorotatory Parastichies (Jumps of 13 - GREEN)
         positions.forEach((pos, i) => {
             if (i + 13 < positions.length) {
                 const target = positions[i + 13];
@@ -273,7 +302,6 @@
             }
         });
 
-        // 3. Draw Dextrorotatory Parastichies (Jumps of 21 - RED)
         positions.forEach((pos, i) => {
             if (i + 21 < positions.length) {
                 const target = positions[i + 21];
@@ -285,7 +313,6 @@
             }
         });
 
-        // 4. Draw Nodes with Colors
         const telemetryBox = document.getElementById('telemetry-box');
 
         positions.forEach((pos) => {
@@ -296,9 +323,8 @@
             const circle = document.createElementNS(svgNS, "circle");
             circle.setAttribute("r", 15);
 
-            // Apply Group Colors
             const familyColor = groupColors[pos.data[4]] || "#ffffff";
-            circle.setAttribute("fill", "#0d1117"); 
+            circle.setAttribute("fill", "#050608"); 
             circle.setAttribute("stroke", familyColor); 
 
             const text = document.createElementNS(svgNS, "text");
@@ -309,26 +335,24 @@
             group.appendChild(text);
             nodesGroup.appendChild(group);
 
-            // 5. Telemetry Interaction (Hover)
             group.addEventListener("mouseenter", () => {
                 const [z, sym, name, mass, family] = pos.data;
-                const neutrons = Math.round(mass) - z; // Geodesic Node calculation
+                const neutrons = Math.round(mass) - z; 
                 
                 telemetryBox.innerHTML = `
-                    <div class="sym-large" style="color: ${familyColor}; text-shadow: 0 0 15px ${familyColor}80;">${sym}</div>
-                    <div class="name-large">${name}</div>
+                    <div class="sym-large" style="color: ${familyColor};">${sym}</div>
+                    <div class="name-large" style="color: ${familyColor};">${name}</div>
                     <div class="tel-row"><span class="tel-label">Scalar Pressure (Z / Protons):</span> <span class="tel-value">${z}</span></div>
                     <div class="tel-row"><span class="tel-label">Resistance (Electrons):</span> <span class="tel-value">${z}</span></div>
                     <div class="tel-row"><span class="tel-label">Geodesic Nodes (Neutrons):</span> <span class="tel-value">${neutrons}</span></div>
                     <div class="tel-row"><span class="tel-label">Density (Atomic Mass):</span> <span class="tel-value">${mass}</span></div>
-                    <div class="tel-row" style="border:none; margin-top:15px; padding-top:15px; border-top: 1px solid #30363d;">
-                        <span class="tel-label">Resonant Family:</span> <span class="tel-value" style="color:${familyColor};">${family}</span>
+                    <div class="tel-row" style="border:none; margin-top:15px; padding-top:15px; border-top: 1px solid rgba(212, 175, 55, 0.2);">
+                        <span class="tel-label">Resonant Family:</span> <span class="tel-value" style="color:${familyColor}; font-family: 'Rajdhani', sans-serif;">${family}</span>
                     </div>
                 `;
             });
         });
 
-        // 6. UI Controls
         const chk13 = document.getElementById('chk-13');
         const chk21 = document.getElementById('chk-21');
 
