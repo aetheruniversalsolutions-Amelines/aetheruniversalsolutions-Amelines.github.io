@@ -1,20 +1,44 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ÆTHER Universal Solutions - Official Research Repository</title>
-    <style>
-        /* AETHER GLOBAL BRANDING */
-        :root {
-            --bg-deep: #000000;
-            --bg-panel: #050d1a;
-            --text-main: #f1f1f1;
-            --text-sub: #b0bec5;
-            --accent-cyan: #00e5ff; /* Cyan from Logo/Cover glow */
-            --accent-gold: #f1c40f; /* Gold from Book Title */
-            --valid-green: #00e676; /* Status green */
-        }
+   <!-- Inyección de Fuentes de Estado Sólido -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700&family=Rajdhani:wght@400;600&display=swap" rel="stylesheet">
+
+<style>
+  /* Base del Plenum Oscuro */
+  body {
+    background-color: #050508; /* Negro espacio profundo */
+    color: #E0E0E0; /* Texto Plata de alta legibilidad */
+    font-family: 'Rajdhani', sans-serif; /* Fuente principal para lectura */
+    font-size: 1.15rem;
+    line-height: 1.6;
+  }
+
+  /* Títulos de Resonancia (Orbitron) */
+  h1, h2, h3, h4 {
+    font-family: 'Orbitron', sans-serif;
+    color: #FFD700; /* Oro ÆTHER */
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+  }
+
+  /* Modificación de Hipervínculos (Eliminar Azul) */
+  a {
+    color: #FFB300; /* Oro ambarino para links */
+    text-decoration: none;
+    border-bottom: 1px solid #FFB300; /* Subrayado elegante */
+    transition: all 0.3s ease; /* Transición suave de estado sólido */
+  }
+
+  /* Reacción al pasar el mouse (Efecto Plasma) */
+  a:hover {
+    color: #FFFFFF;
+    border-bottom: 1px solid #FFFFFF;
+    text-shadow: 0px 0px 8px rgba(255, 215, 0, 0.8);
+  }
+</style>
 
         body {
             background-color: var(--bg-deep);
