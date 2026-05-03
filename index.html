@@ -3,97 +3,172 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ÆTHER Universal Platform Solutions | Repositorio Teórico</title>
+    <title>ÆTHER Universal Platform Solutions | Códice Fundacional</title>
     
     <!-- Inyección de Fuentes de Estado Sólido -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700&family=Rajdhani:wght@400;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700;900&family=Rajdhani:wght@400;500;600;700&display=swap" rel="stylesheet">
     
     <style>
-        /* Base del Plenum Oscuro (Estado Sólido) */
+        /* Base del Plenum Oscuro: Gradiente de Espacio Profundo */
         body { 
-            background-color: #050508; 
+            background: linear-gradient(135deg, #020203 0%, #0a0a12 100%);
             color: #E0E0E0; 
             font-family: 'Rajdhani', sans-serif; 
-            font-size: 1.2rem; 
-            line-height: 1.6; 
+            font-size: 1.15rem; 
+            line-height: 1.7; 
             margin: 0; 
             padding: 0; 
+            min-height: 100vh;
         }
 
-        /* Títulos de Resonancia (Orbitron) */
-        h1, h2, h3, h4 { 
-            font-family: 'Orbitron', sans-serif; 
-            color: #FFD700; /* Oro ÆTHER */
-            text-transform: uppercase; 
-            letter-spacing: 2px; 
-            margin-bottom: 10px;
-        }
-
-        h1 { font-size: 2.2rem; text-shadow: 0px 0px 15px rgba(255, 215, 0, 0.3); }
-        h2 { font-size: 1.5rem; color: #A0A0A0; /* Plata para contraste */ }
-
-        /* Modificación de Hipervínculos (Eliminación de la entropía azul) */
-        a { 
-            color: #FFB300; /* Oro ambarino */
-            text-decoration: none; 
-            border-bottom: 1px solid #FFB300; 
-            transition: all 0.3s ease; 
-            font-weight: 600;
-        }
-
-        a:hover { 
-            color: #FFFFFF; 
-            border-bottom: 1px solid #FFFFFF; 
-            text-shadow: 0px 0px 10px rgba(255, 215, 0, 0.8); 
-        }
-
-        /* Estructura del Contenedor Principal */
+        /* Estructura del Contenedor Principal (Panel de Control) */
         .container { 
-            max-width: 900px; 
+            max-width: 1000px; 
             margin: 0 auto; 
-            padding: 50px 20px; 
+            padding: 60px 20px; 
         }
 
-        /* Nodo del Logo */
+        /* Nodo del Logo y Cabecera */
         .header-logo { 
             text-align: center; 
-            margin-bottom: 50px; 
+            margin-bottom: 60px; 
+            padding-bottom: 30px;
+            border-bottom: 1px solid rgba(255, 215, 0, 0.15);
         }
 
         .header-logo img { 
-            max-width: 350px; 
+            max-width: 400px; 
             height: auto; 
-            border-radius: 5px; 
+            filter: drop-shadow(0px 0px 15px rgba(255, 215, 0, 0.4));
+            margin-bottom: 20px;
         }
 
-        /* Cajas de Recursos (Módulos de Descarga) */
-        .resource-box { 
-            background-color: rgba(255, 215, 0, 0.03); 
+        h1, h2, h3, h4 { 
+            font-family: 'Orbitron', sans-serif; 
+            margin: 0;
+        }
+
+        h1 { 
+            color: #FFD700; 
+            font-size: 2.5rem; 
+            letter-spacing: 3px;
+            text-shadow: 0px 0px 20px rgba(255, 215, 0, 0.3); 
+            margin-bottom: 10px;
+        }
+
+        h2 { 
+            color: #A0A0A0; 
+            font-size: 1.2rem; 
+            letter-spacing: 2px;
+            font-weight: 500;
+        }
+
+        /* Texto introductorio */
+        .intro-text {
+            text-align: center;
+            max-width: 800px;
+            margin: 0 auto 50px auto;
+            color: #B0B0B0;
+            font-size: 1.2rem;
+        }
+
+        /* Tarjeta de Recurso (Data Card Sintrópica) */
+        .resource-card { 
+            background: rgba(15, 15, 20, 0.6); 
             border: 1px solid rgba(255, 215, 0, 0.2); 
-            border-left: 4px solid #FFD700;
-            padding: 25px; 
-            border-radius: 4px; 
-            margin-top: 30px; 
-            box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.5);
+            border-top: 4px solid #FFD700; /* Oro ÆTHER */
+            border-radius: 8px; 
+            padding: 40px; 
+            box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.8);
+            backdrop-filter: blur(5px);
         }
 
-        .resource-item { 
-            margin-top: 20px; 
-            padding: 15px;
-            background-color: rgba(255, 255, 255, 0.02);
+        .resource-card h3 {
+            color: #FFD700;
+            font-size: 1.6rem;
+            margin-bottom: 15px;
+            letter-spacing: 1.5px;
+            display: flex;
+            align-items: center;
+        }
+
+        /* Rejilla para los archivos (Grid Layout) */
+        .file-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 25px;
+            margin-top: 30px;
+        }
+
+        /* Item individual de descarga */
+        .file-item { 
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            border-radius: 6px;
+            padding: 25px;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .file-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0px 8px 20px rgba(255, 215, 0, 0.1);
+            border: 1px solid rgba(255, 215, 0, 0.3);
+        }
+
+        .file-item h4 {
+            color: #FFFFFF;
+            font-family: 'Rajdhani', sans-serif;
+            font-size: 1.3rem;
+            margin-bottom: 10px;
+        }
+
+        .file-item p {
+            color: #909090;
+            font-size: 1rem;
+            margin-bottom: 20px;
+            line-height: 1.5;
+        }
+
+        /* Botón de Descarga de Estado Sólido */
+        .download-btn {
+            display: inline-block;
+            background: transparent;
+            color: #FFD700;
+            font-family: 'Orbitron', sans-serif;
+            font-size: 0.9rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            text-decoration: none;
+            padding: 10px 20px;
+            border: 1px solid #FFD700;
             border-radius: 4px;
+            transition: all 0.3s ease;
+            letter-spacing: 1px;
+            width: 100%;
+            text-align: center;
+            box-sizing: border-box;
+        }
+
+        .download-btn:hover {
+            background: #FFD700;
+            color: #050508;
+            box-shadow: 0px 0px 15px rgba(255, 215, 0, 0.5);
         }
 
         /* Pie de página */
         footer { 
             text-align: center; 
             margin-top: 80px; 
-            padding-top: 20px; 
-            border-top: 1px solid rgba(255, 215, 0, 0.2); 
-            font-size: 0.95rem; 
+            padding-top: 30px; 
+            border-top: 1px solid rgba(255, 215, 0, 0.1); 
+            font-size: 1rem; 
             color: #666; 
+        }
+
+        footer span {
+            color: #FFD700;
         }
     </style>
 </head>
@@ -103,41 +178,47 @@
         
         <!-- CABECERA Y LOGO -->
         <header class="header-logo">
-            <!-- Asegúrate de subir la imagen a GitHub con este nombre exacto -->
-            <img src="LOGO AETHER Final web 2.jpg" alt="Logo de ÆTHER Universal Platform Solutions">
+            <!-- NOTA TÉCNICA SINTRO: Se ha añadido %20 para reemplazar los espacios vacíos y forzar la lectura del archivo -->
+            <img src="LOGO%20AETHER%20Final%20web%202.jpg" alt="Logo de ÆTHER Universal Platform Solutions">
             <h1>ÆTHER Universal Platform Solutions</h1>
-            <h2>Repositorio Abierto: Cosmología del Estado Sólido</h2>
+            <h2>REPOSITORIO ABIERTO: COSMOLOGÍA DEL ESTADO SÓLIDO</h2>
         </header>
+
+        <!-- INTRODUCCIÓN -->
+        <div class="intro-text">
+            <p>Bienvenidos al nodo de información matriz. Este repositorio aloja los datos crudos, modelos topológicos y archivos matemáticos de código abierto que sustentan la <strong>Lógica del Estado Sólido</strong>. Toda la tecnología física aplicada a la industria opera bajo licenciamiento y se mantiene bajo estricta reserva de propiedad intelectual.</p>
+        </div>
 
         <!-- CONTENIDO MATRIZ -->
         <main>
-            <p>Bienvenidos al nodo de información matriz. Este repositorio está destinado exclusivamente a alojar los datos crudos, modelos topológicos y archivos matemáticos de código abierto que sustentan la <strong>Lógica del Estado Sólido</strong>. Toda la tecnología aplicada a la infraestructura física se mantiene bajo reserva de propiedad intelectual.</p>
-
-            <div class="resource-box">
-                <h3>NODO 0: El Códice Fundacional</h3>
-                <p>Módulo de acceso a la <strong>Geometría Universal de los Elementos</strong>. Este modelo sustituye la tabla periódica plana por una matriz toroidal basada en las parastiquias de Fibonacci (13x21) y la frecuencia 3-6-9.</p>
+            <div class="resource-card">
+                <h3>NODO 0: EL CÓDICE FUNDACIONAL</h3>
+                <p style="color: #A0A0A0; margin-bottom: 30px;">Módulo de acceso a la <strong>Geometría Universal de los Elementos</strong>. Este modelo sustituye la tabla periódica probabilística por una matriz toroidal tridimensional, basada en las parastiquias de Fibonacci (13x21) y la constante armónica 3-6-9.</p>
                 
-                <!-- ARCHIVO EXCEL -->
-                <div class="resource-item">
-                    <strong>[DATOS] Matriz Geométrica:</strong><br>
-                    <p style="margin: 5px 0 10px 0; font-size: 0.95rem; color: #A0A0A0;">Hoja de cálculo con los cálculos de impedancia hidrodinámica, proporciones áureas y configuración fractal de los 118 elementos.</p>
-                    <a href="Geometria_Universal_Elementos.xlsx" download>&#8628; Descargar Matriz de Datos (.xlsx)</a>
+                <div class="file-grid">
+                    <!-- ARCHIVO EXCEL -->
+                    <div class="file-item">
+                        <h4>[DATOS] Matriz Geométrica</h4>
+                        <p>Hoja de cálculo técnica. Contiene los cálculos de Impedancia Hidrodinámica, proporciones áureas y configuración fractal de los 118 elementos.</p>
+                        <!-- Enlace directo al archivo -->
+                        <a href="Geometria_Universal_Elementos.xlsx" class="download-btn" download>&#8628; DESCARGAR .XLSX</a>
+                    </div>
+                    
+                    <!-- ARCHIVO OPENSCAD -->
+                    <div class="file-item">
+                        <h4>[TOPOLOGÍA] Modelo 3D</h4>
+                        <p>Código fuente computacional para renderizado tridimensional del ADN Cósmico. Requiere software OpenSCAD para compilar la geometría.</p>
+                        <!-- Enlace directo al archivo -->
+                        <a href="matriz_369_amelines.scad" class="download-btn" download>&#8628; DESCARGAR .SCAD</a>
+                    </div>
                 </div>
-                
-                <!-- ARCHIVO OPENSCAD -->
-                <div class="resource-item">
-                    <strong>[TOPOLOGÍA] Modelo 3D Computacional:</strong><br>
-                    <p style="margin: 5px 0 10px 0; font-size: 0.95rem; color: #A0A0A0;">Código fuente para renderizado tridimensional del ADN Cósmico. Requiere software OpenSCAD para compilar la geometría espacial.</p>
-                    <a href="matriz_369_amelines.scad" download>&#8628; Descargar Código Fuente OpenSCAD (.scad)</a>
-                </div>
-                
             </div>
         </main>
 
         <!-- FOOTER -->
         <footer>
-            <p>&copy; 2026 William Herrera Amelines | ÆTHER Universal Platform Solutions.<br>
-            Tecnología orientada a la Entalpía Máxima y el beneficio de la humanidad.</p>
+            <p>&copy; 2026 William Herrera Amelines | <span>ÆTHER</span> Universal Platform Solutions.<br>
+            Tecnología orientada a la Entalpía Máxima y la restauración de la civilización humana.</p>
         </footer>
 
     </div>
