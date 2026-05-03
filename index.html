@@ -3,392 +3,342 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Universal Geometry of the Elements - ÆTHER Codex</title>
+    <title>ÆTHER Universal Platform Solutions | Solid-State Cosmology</title>
     
-    <!-- Inyección de Fuentes de Estado Sólido -->
+    <!-- Fuentes de Estado Sólido -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Rajdhani:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Rajdhani:wght@400;500;600;700&display=swap" rel="stylesheet">
     
     <style>
+        /* Base y Resonancia Visual (Calibración Áurea) */
         :root {
-            --bg-color: #020203;
-            --panel-bg: rgba(10, 12, 16, 0.95);
-            --border-color: rgba(212, 175, 55, 0.2); /* Borde Oro tenue */
+            --bg-color: #050508;
             --text-main: #E0E0E0;
-            --text-accent: #D4AF37; /* Oro Institucional (Au) */
-            --text-muted: #8b949e;
-            --levo-color: #00ffaa; /* Levorotatory (13) - Sintropía */
-            --dextro-color: #D4AF37; /* Dextrorotatory (21) - Expansión Áurea */
+            --text-muted: #888899;
+            --aether-gold: #D4AF37; /* Oro Institucional (Au) */
+            --aether-gold-dim: rgba(212, 175, 55, 0.15);
+            --border-line: rgba(255, 255, 255, 0.1);
         }
 
         body {
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            font-family: 'Rajdhani', sans-serif;
+            font-size: 1.15rem;
+            line-height: 1.6;
             margin: 0;
             padding: 0;
-            height: 100vh;
-            background: radial-gradient(circle at center, #0a0c10 0%, var(--bg-color) 100%);
-            color: var(--text-main);
-            font-family: 'Rajdhani', sans-serif;
-            display: flex;
-            overflow: hidden;
         }
 
-        /* SVG Vortex Container */
-        #visual-container {
-            flex: 1;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            position: relative;
-        }
-
-        svg {
-            width: 100%;
-            height: 100%;
+        /* Estructura Principal */
+        .container {
             max-width: 1200px;
-            max-height: 1200px;
+            margin: 0 auto;
+            padding: 40px 20px;
         }
 
-        /* SVG Elements */
-        .node circle {
-            stroke-width: 2px;
-            transition: all 0.3s ease;
-            cursor: pointer;
-        }
-        .node text {
-            fill: #ffffff;
-            font-size: 11px;
-            font-weight: 600;
-            font-family: 'Rajdhani', sans-serif;
-            text-anchor: middle;
-            pointer-events: none;
-            text-shadow: 1px 1px 3px #000;
-        }
-        .node:hover circle {
-            stroke: #D4AF37 !important; /* Resonancia Oro al pasar el cursor */
-            stroke-width: 3px !important;
-            transform: scale(1.4);
-            filter: drop-shadow(0 0 12px rgba(212, 175, 55, 0.8));
-        }
-
-        /* Parastichy Lines */
-        .line-13 {
-            stroke: var(--levo-color);
-            stroke-width: 1px;
-            opacity: 0.35;
-            fill: none;
-            transition: opacity 0.3s;
-        }
-        .line-21 {
-            stroke: var(--dextro-color);
-            stroke-width: 1px;
-            opacity: 0.35;
-            fill: none;
-            transition: opacity 0.3s;
-        }
-
-        /* Right Telemetry Panel */
-        #info-panel {
-            width: 440px;
-            background: var(--panel-bg);
-            border-left: 1px solid var(--border-color);
-            padding: 30px;
-            display: flex;
-            flex-direction: column;
-            box-shadow: -10px 0 30px rgba(0,0,0,0.8);
-            backdrop-filter: blur(10px);
-            z-index: 10;
-            overflow-y: auto;
-        }
-
-        /* Headers and References */
-        .header { margin-bottom: 20px; border-bottom: 1px solid var(--border-color); padding-bottom: 15px;}
-        .title { color: var(--text-accent); font-family: 'Orbitron', sans-serif; font-size: 22px; font-weight: 700; letter-spacing: 1px; text-transform: uppercase; margin-bottom: 5px;}
-        .subtitle { font-size: 14px; color: var(--text-muted); font-weight: 600; letter-spacing: 1.5px;}
-        .tesla-ref { color: var(--text-accent); font-size: 14px; margin-top: 10px; font-weight: 500; border-left: 3px solid var(--text-accent); padding-left: 10px; background: rgba(212, 175, 55, 0.05); padding: 8px;}
-
-        /* Postulate IV Integration */
-        .postulate-box {
-            background: rgba(255, 255, 255, 0.02);
-            border: 1px dashed var(--border-color);
-            border-radius: 6px;
-            padding: 15px;
-            margin-bottom: 25px;
-        }
-        .postulate-box h4 {
+        /* Tipografía Orbitron para Títulos */
+        h1, h2, h3, h4 {
             font-family: 'Orbitron', sans-serif;
-            color: #E0E0E0;
-            margin: 0 0 5px 0;
-            font-size: 14px;
+            font-weight: 700;
+            margin-top: 0;
+            color: var(--aether-gold);
             letter-spacing: 1px;
         }
-        .postulate-box p {
-            font-size: 13px;
-            color: var(--text-muted);
-            margin: 0 0 10px 0;
-            line-height: 1.4;
-        }
-        .postulate-box a {
-            color: #58a6ff;
-            text-decoration: none;
-            font-weight: 600;
-            font-size: 13px;
-        }
-        .postulate-box a:hover { color: var(--text-accent); text-decoration: underline;}
 
-        /* Atomic Telemetry */
-        #telemetry-box {
-            background: #050608;
-            border: 1px solid var(--border-color);
-            border-top: 3px solid var(--text-accent);
-            border-radius: 6px;
-            padding: 20px;
-            margin-bottom: 25px;
-            min-height: 250px;
-            box-shadow: inset 0 0 20px rgba(0,0,0,0.5);
-        }
-        .tel-title { font-family: 'Orbitron', sans-serif; font-size: 15px; color: #fff; margin-bottom: 15px; font-weight: 700; text-align: center; letter-spacing: 2px;}
-        .tel-row { display: flex; justify-content: space-between; margin-bottom: 10px; font-size: 15px; border-bottom: 1px dashed #30363d; padding-bottom: 5px;}
-        .tel-label { color: var(--text-muted); font-weight: 500;}
-        .tel-value { color: #E0E0E0; font-weight: 700; font-family: 'Orbitron', monospace; font-size: 14px;}
-        .sym-large { font-family: 'Orbitron', sans-serif; font-size: 48px; text-align: center; color: #fff; font-weight: 700; margin-bottom: 5px; text-shadow: 0 0 15px rgba(255,255,255,0.2);}
-        .name-large { text-align: center; font-size: 20px; color: var(--text-accent); margin-bottom: 20px; font-weight: 600; text-transform: uppercase; letter-spacing: 2px;}
+        h1 { font-size: 2.2rem; text-align: center; margin-bottom: 5px; }
+        h2 { font-size: 1.5rem; text-align: center; color: #FFFFFF; margin-bottom: 50px; }
+        h3 { border-bottom: 1px solid var(--aether-gold-dim); padding-bottom: 10px; margin-top: 40px; }
 
-        /* Controls */
-        .controls { margin-bottom: auto;}
-        .control-label { display: flex; align-items: center; margin-bottom: 12px; cursor: pointer; font-size: 15px; font-weight: 500;}
-        .control-label input { margin-right: 10px; accent-color: var(--text-accent); }
-        .color-box { display: inline-block; width: 14px; height: 14px; margin-right: 10px; border-radius: 3px;}
-        .cb-13 { background: var(--levo-color); box-shadow: 0 0 8px var(--levo-color);}
-        .cb-21 { background: var(--dextro-color); box-shadow: 0 0 8px var(--dextro-color);}
-
-        /* Highlighted Footer */
-        .footer {
-            margin-top: 20px;
-            padding: 20px;
-            background: rgba(212, 175, 55, 0.05);
-            border: 1px solid var(--border-color);
-            border-radius: 6px;
-            font-size: 14px;
-            color: var(--text-main);
-            line-height: 1.6;
+        /* Cabecera y Logo */
+        .header-section {
             text-align: center;
+            border-bottom: 1px solid var(--border-line);
+            padding-bottom: 30px;
+            margin-bottom: 40px;
         }
-        .footer .footer-title { color: var(--text-accent); font-family: 'Orbitron', sans-serif; font-size: 13px; font-weight: 700; margin-bottom: 8px; text-transform: uppercase; letter-spacing: 1px;}
-        .footer strong { color: #ffffff; font-weight: 600;}
+        .header-section img {
+            max-width: 250px;
+            margin-bottom: 20px;
+            border-radius: 8px;
+        }
+
+        /* Diseño Bilingüe (Grid de 2 columnas) */
+        .bilingual-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+        
+        @media (max-width: 768px) {
+            .bilingual-grid { grid-template-columns: 1fr; }
+        }
+
+        .lang-block {
+            background: rgba(255, 255, 255, 0.02);
+            padding: 25px;
+            border-left: 3px solid var(--aether-gold);
+            border-radius: 4px;
+        }
+
+        .lang-tag {
+            font-size: 0.85rem;
+            font-weight: 700;
+            color: var(--bg-color);
+            background-color: var(--aether-gold);
+            padding: 2px 8px;
+            border-radius: 3px;
+            display: inline-block;
+            margin-bottom: 15px;
+            font-family: 'Orbitron', sans-serif;
+        }
+
+        /* Tarjetas de Publicaciones (Lista Profesional) */
+        .publication-list {
+            list-style: none;
+            padding: 0;
+        }
+
+        .publication-item {
+            background: rgba(0, 0, 0, 0.4);
+            border: 1px solid var(--border-line);
+            margin-bottom: 15px;
+            padding: 20px;
+            border-radius: 5px;
+            transition: border-color 0.3s;
+        }
+
+        .publication-item:hover {
+            border-color: var(--aether-gold-dim);
+            background: rgba(212, 175, 55, 0.02);
+        }
+
+        .pub-title {
+            font-size: 1.25rem;
+            font-weight: 700;
+            color: #FFFFFF;
+            margin-bottom: 5px;
+        }
+
+        .pub-meta {
+            font-size: 0.95rem;
+            color: var(--text-muted);
+            margin-bottom: 15px;
+        }
+
+        .doi-link {
+            color: #58a6ff; /* Azul técnico para enlaces DOI */
+            text-decoration: none;
+            display: inline-block;
+            margin-bottom: 10px;
+            font-weight: 600;
+        }
+        .doi-link:hover { text-decoration: underline; color: var(--aether-gold); }
+
+        /* Botones de Descarga Profesionales */
+        .btn-download {
+            display: inline-block;
+            font-family: 'Orbitron', sans-serif;
+            font-size: 0.85rem;
+            text-decoration: none;
+            color: var(--bg-color);
+            background-color: var(--aether-gold);
+            padding: 8px 16px;
+            border-radius: 4px;
+            font-weight: 700;
+            transition: all 0.3s ease;
+            text-transform: uppercase;
+        }
+        .btn-download:hover {
+            background-color: #FFFFFF;
+            box-shadow: 0 0 15px rgba(212, 175, 55, 0.5);
+        }
+
+        /* Botón Invertido (Para el interactivo) */
+        .btn-outline {
+            background-color: transparent;
+            color: var(--aether-gold);
+            border: 1px solid var(--aether-gold);
+        }
+        .btn-outline:hover {
+            background-color: var(--aether-gold);
+            color: var(--bg-color);
+        }
+
+        /* Archivos de Datos Específicos */
+        .data-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+        }
+        .data-card {
+            border: 1px dashed var(--aether-gold-dim);
+            padding: 20px;
+            text-align: center;
+            background: rgba(0,0,0,0.5);
+            border-radius: 6px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        footer {
+            text-align: center;
+            margin-top: 60px;
+            padding-top: 20px;
+            border-top: 1px solid var(--border-line);
+            color: var(--text-muted);
+            font-size: 0.9rem;
+        }
     </style>
 </head>
 <body>
 
-    <div id="visual-container">
-        <!-- SVG Inyectado vía JavaScript -->
+<div class="container">
+
+    <!-- CABECERA INSTITUCIONAL -->
+    <header class="header-section">
+        <!-- Logo con la ruta segura (espacios codificados) -->
+        <img src="LOGO%20AETHER%20Final%20web%202.jpg" alt="ÆTHER Universal Platform Solutions Logo">
+        <h1>ÆTHER UNIVERSAL PLATFORM SOLUTIONS</h1>
+        <h2>Solid-State Cosmology Open Repository</h2>
+    </header>
+
+    <!-- PRESENTACIÓN BILINGÜE -->
+    <div class="bilingual-grid">
+        <!-- INGLÉS -->
+        <div class="lang-block">
+            <span class="lang-tag">EN | ENGLISH</span>
+            <p>Welcome to the foundational repository of <strong>Solid-State Cosmology</strong>. This platform hosts the theoretical raw data, topological models, and open-source mathematical files that sustain our advanced logic.</p>
+            <p>We postulate that the Universe is a dynamically static Solid-State Organism, operating under the fluid mechanics of an incompressible medium (the Æther) based on Toroidal Geometry and the 3-6-9 frequency matrix. All applied industrial technologies (Energy Systems & Coatings) operate under licensing and intellectual property protection.</p>
+        </div>
+        
+        <!-- ESPAÑOL -->
+        <div class="lang-block">
+            <span class="lang-tag">ES | ESPAÑOL</span>
+            <p>Bienvenidos al repositorio fundacional de la <strong>Cosmología del Estado Sólido</strong>. Esta plataforma aloja los datos teóricos crudos, modelos topológicos y archivos matemáticos de código abierto que sustentan nuestra lógica avanzada.</p>
+            <p>Postulamos que el Universo es un Organismo de Estado Sólido dinámicamente estático, operando bajo la mecánica de fluidos de un medio incompresible (el Æther) basado en la Geometría Toroidal y la matriz de frecuencia 3-6-9. Toda tecnología industrial aplicada se rige bajo licenciamiento de propiedad intelectual.</p>
+        </div>
     </div>
 
-    <div id="info-panel">
-        <div class="header">
-            <div class="title">Chemical Sunflower</div>
-            <div class="subtitle">ÆTHER CODEX - SOLID-STATE COSMOLOGY</div>
-            <div class="tesla-ref">"Tesla's 3-6-9 Reference. 13x21 Fibonacci Parastichies. Universal Geometry of the Elements."</div>
-        </div>
-
-        <!-- Integración del Postulado IV -->
-        <div class="postulate-box">
-            <h4>POSTULATE IV: THE ATOMIC ARCHITECTURE</h4>
-            <p>Matter is spatially organized in a Toroidal Periodic Vortex of seven octaves, governed by golden angle phyllotaxis (137.5°). Chemical bonding is defined as a pressure-gradient effect at <strong>Interstitial Nodes</strong>.</p>
-            <a href="https://doi.org/10.5281/zenodo.19542763" target="_blank">&#8628; DOI: 10.5281/zenodo.19542763</a>
-        </div>
-
-        <div id="telemetry-box">
-            <div class="tel-title">SCAN A NODE / ESCANEAR NODO</div>
-            <div style="text-align: center; color: var(--text-muted); font-size: 15px; margin-top: 50px; font-weight: 500;">
-                Hover over the vortex elements to read the solid-state telemetry.<br><br>
-                <span style="font-size: 13px; color: #666;">(Pase el cursor sobre los nodos para leer la telemetría del estado sólido)</span>
+    <!-- SECCIÓN: MONOGRAFÍAS TÉCNICAS (CON DESCARGAS Y DOIs) -->
+    <h3>I. TECHNICAL MONOGRAPHS / MONOGRAFÍAS TÉCNICAS</h3>
+    <ul class="publication-list">
+        
+        <!-- MONOGRAFÍA I -->
+        <li class="publication-item">
+            <div class="pub-title">W.H.Amelines_Technical Monography I - THE SOLID STATE MANIFESTO</div>
+            <div class="pub-meta"><strong>Author:</strong> William Herrera Amelines | <strong>Status:</strong> Preprint</div>
+            <a href="https://doi.org/10.5281/zenodo.19994873" target="_blank" class="doi-link">DOI: 10.5281/zenodo.19994873</a>
+            <div class="bilingual-grid" style="gap: 20px; margin-bottom: 15px;">
+                <div><span style="color:#D4AF37; font-size:0.8rem; font-weight:600;">[EN]</span> Exposes the thermodynamic fallacy of the absolute vacuum, replacing relativistic calculus with Navier-Stokes equations for perfect fluids.</div>
+                <div><span style="color:#D4AF37; font-size:0.8rem; font-weight:600;">[ES]</span> Expone la falacia termodinámica del vacío absoluto, reemplazando el cálculo relativista con las ecuaciones de Navier-Stokes para fluidos perfectos.</div>
             </div>
+            <!-- Ruta exacta con %20 para reemplazar los espacios en blanco -->
+            <a href="W.H.Amelines_Technical%20Monography%20I%20-%20THE%20SOLID%20STATE%20MANIFESTO.pdf" class="btn-download" download>Download PDF</a>
+        </li>
+
+        <!-- MONOGRAFÍA II -->
+        <li class="publication-item">
+            <div class="pub-title">W.H.Amelines_Technical Monography II - THE TOPOLOGY OF COSMIC DNA</div>
+            <div class="pub-meta"><strong>Author:</strong> William Herrera Amelines | <strong>Status:</strong> Preprint</div>
+            <a href="https://doi.org/10.5281/zenodo.19995435" target="_blank" class="doi-link">DOI: 10.5281/zenodo.19995435</a>
+            <div class="bilingual-grid" style="gap: 20px; margin-bottom: 15px;">
+                <div><span style="color:#D4AF37; font-size:0.8rem; font-weight:600;">[EN]</span> Replaces the flat Periodic Table with a three-dimensional toroidal matrix based on Fibonacci parastichies (13x21).</div>
+                <div><span style="color:#D4AF37; font-size:0.8rem; font-weight:600;">[ES]</span> Reemplaza la Tabla Periódica plana por una matriz toroidal tridimensional basada en las parastiquias de Fibonacci (13x21).</div>
+            </div>
+            <!-- Ruta exacta con %20 para reemplazar los espacios en blanco -->
+            <a href="W.H.Amelines_Technical%20Monography%20II%20-%20THE%20TOPOLOGY%20OF%20COSMIC%20DNA.pdf" class="btn-download" download>Download PDF</a>
+        </li>
+
+        <!-- MONOGRAFÍA III -->
+        <li class="publication-item">
+            <div class="pub-title">W.H.Amelines_Technical Monography III - THE FLUID MECHANICS OF ENERGY and THE AMELINES TENSOR</div>
+            <div class="pub-meta"><strong>Author:</strong> William Herrera Amelines | <strong>Status:</strong> Preprint</div>
+            <a href="https://doi.org/10.5281/zenodo.19995654" target="_blank" class="doi-link">DOI: 10.5281/zenodo.19995654</a>
+            <div class="bilingual-grid" style="gap: 20px; margin-bottom: 15px;">
+                <div><span style="color:#D4AF37; font-size:0.8rem; font-weight:600;">[EN]</span> Mathematical demonstration replacing E=mc² with the Energy Impedance Theorem.</div>
+                <div><span style="color:#D4AF37; font-size:0.8rem; font-weight:600;">[ES]</span> Demostración matemática que reemplaza E=mc² por el Teorema de Impedancia Energética.</div>
+            </div>
+            <!-- Ruta exacta con %20 para reemplazar los espacios en blanco -->
+            <a href="W.H.Amelines_Technical%20Monography%20III%20-%20THE%20FLUID%20MECHANICS%20OF%20ENERGY%20and%20THE%20AMELINES%20TENSOR.pdf" class="btn-download" download>Download PDF</a>
+        </li>
+    </ul>
+
+    <!-- SECCIÓN: LOS POSTULADOS (DOIs) -->
+    <h3>II. FOUNDATIONAL POSTULATES / POSTULADOS FUNDACIONALES</h3>
+    <ul class="publication-list">
+        <li class="publication-item">
+            <div class="pub-title">Postulate I: The Universal Toroidal Engine</div>
+            <div class="pub-meta">Thermodynamics of Aetheric Fluids and the Axiom of Syntropic Creation.</div>
+            <a href="https://doi.org/10.5281/zenodo.19521973" target="_blank" class="doi-link">DOI: 10.5281/zenodo.19521973</a>
+        </li>
+        <li class="publication-item">
+            <div class="pub-title">Postulate II: The Quantum Information Substrate</div>
+            <div class="pub-meta">Fluid Dynamics of the Electrodynamic Vacuum and the Principle of Syntropic Self-Organization.</div>
+            <a href="https://doi.org/10.5281/zenodo.19521973" target="_blank" class="doi-link">DOI: 10.5281/zenodo.19521973</a>
+        </li>
+        <li class="publication-item">
+            <div class="pub-title">Postulate III: The Universal Symphony</div>
+            <div class="pub-meta">Cosmic Cymatics, Wave Mechanics and Fractal Scaling of Matter.</div>
+            <a href="https://doi.org/10.5281/zenodo.19521973" target="_blank" class="doi-link">DOI: 10.5281/zenodo.19521973</a>
+        </li>
+        <!-- Integración del Postulado IV -->
+        <li class="publication-item">
+            <div class="pub-title">Postulate IV: The Atomic Architecture of the Solid State</div>
+            <div class="pub-meta">The Toroidal Periodic Vortex and the Mechanics of Interstitial Bonding.</div>
+            <a href="https://doi.org/10.5281/zenodo.19542763" target="_blank" class="doi-link">DOI: 10.5281/zenodo.19542763</a>
+        </li>
+        <li class="publication-item">
+            <div class="pub-title">Postulate V: The Geodesic Architecture of the Unified Field</div>
+            <div class="pub-meta">The 3-6-9 Code and the Volumetric Redefinition of Planck's Constant.</div>
+            <a href="https://doi.org/10.5281/zenodo.19637986" target="_blank" class="doi-link">DOI: 10.5281/zenodo.19637986</a>
+        </li>
+    </ul>
+
+    <!-- SECCIÓN: DATOS DE LA MATRIZ Y VISUALIZADOR INTERACTIVO -->
+    <h3>III. RAW DATA MATRIX / DATOS CRUDOS E INTERACTIVOS</h3>
+    <div class="data-grid">
+        
+        <!-- Tarjeta 1: Excel -->
+        <div class="data-card">
+            <div>
+                <h4 style="color: #FFF;">Geometría Universal de los Elementos</h4>
+                <p style="font-size: 0.9rem; color: #aaa;">Data source (.xlsx) with hydro-impedance calculations for the 118 elements.</p>
+            </div>
+            <a href="Geometria_Universal_Elementos.xlsx" class="btn-download" download>Download Excel Data</a>
+        </div>
+        
+        <!-- Tarjeta 2: OpenSCAD -->
+        <div class="data-card">
+            <div>
+                <h4 style="color: #FFF;">Modelo Topológico 3D (13x21)</h4>
+                <p style="font-size: 0.9rem; color: #aaa;">OpenSCAD source code (.scad) for structural resonance rendering.</p>
+            </div>
+            <a href="matriz_369_amelines.scad" class="btn-download" download>Download OpenSCAD File</a>
         </div>
 
-        <div class="controls">
-            <div class="tel-title" style="font-size: 14px; text-align: left; color: var(--text-muted); margin-bottom: 15px;">GEODESIC MESH (Parastichies)</div>
-            <label class="control-label">
-                <input type="checkbox" id="chk-13" checked>
-                <span class="color-box cb-13"></span> Show Levorotatory Suction (Jumps of 13)
-            </label>
-            <label class="control-label">
-                <input type="checkbox" id="chk-21" checked>
-                <span class="color-box cb-21"></span> Show Dextrorotatory Expansion (Jumps of 21)
-            </label>
+        <!-- Tarjeta 3: Giraflor Químico Interactivo (NUEVA INTEGRACIÓN SINTRO) -->
+        <div class="data-card" style="border-color: #D4AF37; background: rgba(212, 175, 55, 0.05);">
+            <div>
+                <h4 style="color: #D4AF37;">Interactive Chemical Sunflower</h4>
+                <p style="font-size: 0.9rem; color: #E0E0E0;">Web-based interactive rendering of the UGE Matrix. Visualize the 13x21 Parastichies and Interstitial Nodes in real-time.</p>
+            </div>
+            <!-- Enlace directo al archivo matriz_interactiva.html -->
+            <a href="matriz_interactiva.html" target="_blank" class="btn-download btn-outline">OPEN INTERACTIVE MATRIX</a>
         </div>
 
-        <div class="footer">
-            <div class="footer-title">Author Information</div>
-            <strong>Lead Author:</strong> W.H. Amelines<br>
-            <strong>Organization:</strong> ÆTHER Universal Platform Solutions<br>
-            <span style="font-size: 12px; color: var(--text-muted);">aether.universalsolutions@gmail.com</span>
-        </div>
     </div>
 
-    <script>
-        // === CHEMICAL GROUPS COLOR PALETTE (Calibración Áurea) ===
-        // Se reemplazan los amarillos genéricos por tonos dorados, cobrizos y platas (Triada Au-Ag-Cu)
-        const groupColors = {
-            "Alkali Metals": "#ff5555", /* Rojo suave */
-            "Alkaline Earth Metals": "#D4AF37", /* ORO - Reemplaza el naranja/amarillo anterior */
-            "Transition Metals": "#b366ff", /* Púrpura profundo */
-            "Post-Transition Metals": "#58a6ff", /* Azul técnico */
-            "Metalloids": "#55ffaa", /* Verde esmeralda */
-            "Reactive Nonmetals": "#B89B5E", /* BRONCE/COBRE - Reemplaza el amarillo escandaloso */
-            "Halogens": "#00ffaa", /* Cian/Verde brillante */
-            "Noble Gases": "#E0E0E0", /* PLATA - Gases nobles de alta estabilidad */
-            "Lanthanides": "#ff77bb", /* Rosa técnico */
-            "Actinides": "#ee5599"
-        };
+    <!-- FOOTER -->
+    <footer>
+        <p>&copy; 2026 William Herrera Amelines | ÆTHER Universal Platform Solutions.<br>
+        Tecnología orientada a la Entalpía Máxima y el beneficio de la humanidad.</p>
+    </footer>
 
-        // === ELEMENT DATABASE (Z, Symbol, English Name, Mass, English Group) ===
-        const elementData = [
-            [1,"H","Hydrogen",1.008,"Reactive Nonmetals"], [2,"He","Helium",4.002,"Noble Gases"], [3,"Li","Lithium",6.94,"Alkali Metals"], [4,"Be","Beryllium",9.012,"Alkaline Earth Metals"],
-            [5,"B","Boron",10.81,"Metalloids"], [6,"C","Carbon",12.011,"Reactive Nonmetals"], [7,"N","Nitrogen",14.007,"Reactive Nonmetals"], [8,"O","Oxygen",15.999,"Reactive Nonmetals"],
-            [9,"F","Fluorine",18.998,"Halogens"], [10,"Ne","Neon",20.180,"Noble Gases"], [11,"Na","Sodium",22.990,"Alkali Metals"], [12,"Mg","Magnesium",24.305,"Alkaline Earth Metals"],
-            [13,"Al","Aluminum",26.982,"Post-Transition Metals"], [14,"Si","Silicon",28.085,"Metalloids"], [15,"P","Phosphorus",30.974,"Reactive Nonmetals"], [16,"S","Sulfur",32.06,"Reactive Nonmetals"],
-            [17,"Cl","Chlorine",35.45,"Halogens"], [18,"Ar","Argon",39.95,"Noble Gases"], [19,"K","Potassium",39.098,"Alkali Metals"], [20,"Ca","Calcium",40.078,"Alkaline Earth Metals"],
-            [21,"Sc","Scandium",44.956,"Transition Metals"], [22,"Ti","Titanium",47.867,"Transition Metals"], [23,"V","Vanadium",50.942,"Transition Metals"], [24,"Cr","Chromium",51.996,"Transition Metals"],
-            [25,"Mn","Manganese",54.938,"Transition Metals"], [26,"Fe","Iron",55.845,"Transition Metals"], [27,"Co","Cobalt",58.933,"Transition Metals"], [28,"Ni","Nickel",58.693,"Transition Metals"],
-            [29,"Cu","Copper",63.546,"Transition Metals"], [30,"Zn","Zinc",65.38,"Transition Metals"], [31,"Ga","Gallium",69.723,"Post-Transition Metals"], [32,"Ge","Germanium",72.630,"Metalloids"],
-            [33,"As","Arsenic",74.922,"Metalloids"], [34,"Se","Selenium",78.971,"Reactive Nonmetals"], [35,"Br","Bromine",79.904,"Halogens"], [36,"Kr","Krypton",83.798,"Noble Gases"],
-            [37,"Rb","Rubidium",85.468,"Alkali Metals"], [38,"Sr","Strontium",87.62,"Alkaline Earth Metals"], [39,"Y","Yttrium",88.906,"Transition Metals"], [40,"Zr","Zirconium",91.224,"Transition Metals"],
-            [41,"Nb","Niobium",92.906,"Transition Metals"], [42,"Mo","Molybdenum",95.95,"Transition Metals"], [43,"Tc","Technetium",98,"Transition Metals"], [44,"Ru","Ruthenium",101.07,"Transition Metals"],
-            [45,"Rh","Rhodium",102.91,"Transition Metals"], [46,"Pd","Palladium",106.42,"Transition Metals"], [47,"Ag","Silver",107.87,"Transition Metals"], [48,"Cd","Cadmium",112.41,"Transition Metals"],
-            [49,"In","Indium",114.82,"Post-Transition Metals"], [50,"Sn","Tin",118.71,"Post-Transition Metals"], [51,"Sb","Antimony",121.76,"Metalloids"], [52,"Te","Tellurium",127.60,"Metalloids"],
-            [53,"I","Iodine",126.90,"Halogens"], [54,"Xe","Xenon",131.29,"Noble Gases"], [55,"Cs","Cesium",132.91,"Alkali Metals"], [56,"Ba","Barium",137.33,"Alkaline Earth Metals"],
-            [57,"La","Lanthanum",138.91,"Lanthanides"], [58,"Ce","Cerium",140.12,"Lanthanides"], [59,"Pr","Praseodymium",140.91,"Lanthanides"], [60,"Nd","Neodymium",144.24,"Lanthanides"],
-            [61,"Pm","Promethium",145,"Lanthanides"], [62,"Sm","Samarium",150.36,"Lanthanides"], [63,"Eu","Europium",151.96,"Lanthanides"], [64,"Gd","Gadolinium",157.25,"Lanthanides"],
-            [65,"Tb","Terbium",158.93,"Lanthanides"], [66,"Dy","Dysprosium",162.50,"Lanthanides"], [67,"Ho","Holmium",164.93,"Lanthanides"], [68,"Er","Erbium",167.26,"Lanthanides"],
-            [69,"Tm","Thulium",168.93,"Lanthanides"], [70,"Yb","Ytterbium",173.05,"Lanthanides"], [71,"Lu","Lutetium",174.97,"Lanthanides"], [72,"Hf","Hafnium",178.49,"Transition Metals"],
-            [73,"Ta","Tantalum",180.95,"Transition Metals"], [74,"W","Tungsten",183.84,"Transition Metals"], [75,"Re","Rhenium",186.21,"Transition Metals"], [76,"Os","Osmium",190.23,"Transition Metals"],
-            [77,"Ir","Iridium",192.22,"Transition Metals"], [78,"Pt","Platinum",195.08,"Transition Metals"], [79,"Au","Gold",196.97,"Transition Metals"], [80,"Hg","Mercury",200.59,"Transition Metals"],
-            [81,"Tl","Thallium",204.38,"Post-Transition Metals"], [82,"Pb","Lead",207.2,"Post-Transition Metals"], [83,"Bi","Bismuth",208.98,"Post-Transition Metals"], [84,"Po","Polonium",209,"Metalloids"],
-            [85,"At","Astatine",210,"Halogens"], [86,"Rn","Radon",222,"Noble Gases"], [87,"Fr","Francium",223,"Alkali Metals"], [88,"Ra","Radium",226,"Alkaline Earth Metals"],
-            [89,"Ac","Actinium",227,"Actinides"], [90,"Th","Thorium",232.04,"Actinides"], [91,"Pa","Protactinium",231.04,"Actinides"], [92,"U","Uranium",238.03,"Actinides"],
-            [93,"Np","Neptunium",237,"Actinides"], [94,"Pu","Plutonium",244,"Actinides"], [95,"Am","Americium",243,"Actinides"], [96,"Cm","Curium",247,"Actinides"],
-            [97,"Bk","Berkelium",247,"Actinides"], [98,"Cf","Californium",251,"Actinides"], [99,"Es","Einsteinium",252,"Actinides"], [100,"Fm","Fermium",257,"Actinides"],
-            [101,"Md","Mendelevium",258,"Actinides"], [102,"No","Nobelium",259,"Actinides"], [103,"Lr","Lawrencium",266,"Actinides"], [104,"Rf","Rutherfordium",267,"Transition Metals"],
-            [105,"Db","Dubnium",268,"Transition Metals"], [106,"Sg","Seaborgium",269,"Transition Metals"], [107,"Bh","Bohrium",270,"Transition Metals"], [108,"Hs","Hassium",277,"Transition Metals"],
-            [109,"Mt","Meitnerium",278,"Transition Metals"], [110,"Ds","Darmstadtium",281,"Transition Metals"], [111,"Rg","Roentgenium",282,"Transition Metals"], [112,"Cn","Copernicium",285,"Transition Metals"],
-            [113,"Nh","Nihonium",286,"Post-Transition Metals"], [114,"Fl","Flerovium",289,"Post-Transition Metals"], [115,"Mc","Moscovium",290,"Post-Transition Metals"], [116,"Lv","Livermorium",293,"Post-Transition Metals"],
-            [117,"Ts","Tennessine",294,"Halogens"], [118,"Og","Oganesson",294,"Noble Gases"]
-        ];
+</div>
 
-        // === SVG VORTEX INITIALIZATION ===
-        const container = document.getElementById('visual-container');
-        const svgNS = "http://www.w3.org/2000/svg";
-        const svg = document.createElementNS(svgNS, "svg");
-        
-        // ViewBox expansivo
-        svg.setAttribute("viewBox", "-550 -550 1100 1100");
-        container.appendChild(svg);
-
-        const lines13Group = document.createElementNS(svgNS, "g");
-        const lines21Group = document.createElementNS(svgNS, "g");
-        const nodesGroup = document.createElementNS(svgNS, "g");
-        
-        svg.appendChild(lines13Group);
-        svg.appendChild(lines21Group);
-        svg.appendChild(nodesGroup);
-
-        // Phyllotactic Geometry (ÆTHER Codex)
-        const goldenAngle = 137.508 * (Math.PI / 180);
-        const scalingFactor = 39; 
-        const positions = [];
-
-        // 1. Calculate positions
-        elementData.forEach((el, index) => {
-            const n = index + 1; 
-            const r = scalingFactor * Math.sqrt(n);
-            const theta = n * goldenAngle;
-            
-            const x = r * Math.cos(theta);
-            const y = r * Math.sin(theta);
-            
-            positions.push({x, y, data: el});
-        });
-
-        // 2. Draw Levorotatory Parastichies (Jumps of 13)
-        positions.forEach((pos, i) => {
-            if (i + 13 < positions.length) {
-                const target = positions[i + 13];
-                const line = document.createElementNS(svgNS, "line");
-                line.setAttribute("x1", pos.x); line.setAttribute("y1", pos.y);
-                line.setAttribute("x2", target.x); line.setAttribute("y2", target.y);
-                line.setAttribute("class", "line-13");
-                lines13Group.appendChild(line);
-            }
-        });
-
-        // 3. Draw Dextrorotatory Parastichies (Jumps of 21)
-        positions.forEach((pos, i) => {
-            if (i + 21 < positions.length) {
-                const target = positions[i + 21];
-                const line = document.createElementNS(svgNS, "line");
-                line.setAttribute("x1", pos.x); line.setAttribute("y1", pos.y);
-                line.setAttribute("x2", target.x); line.setAttribute("y2", target.y);
-                line.setAttribute("class", "line-21");
-                lines21Group.appendChild(line);
-            }
-        });
-
-        // 4. Draw Nodes with Colors
-        const telemetryBox = document.getElementById('telemetry-box');
-
-        positions.forEach((pos) => {
-            const group = document.createElementNS(svgNS, "g");
-            group.setAttribute("class", "node");
-            group.setAttribute("transform", `translate(${pos.x}, ${pos.y})`);
-
-            const circle = document.createElementNS(svgNS, "circle");
-            circle.setAttribute("r", 15);
-
-            // Apply Group Colors
-            const familyColor = groupColors[pos.data[4]] || "#ffffff";
-            circle.setAttribute("fill", "#050608"); 
-            circle.setAttribute("stroke", familyColor); 
-
-            const text = document.createElementNS(svgNS, "text");
-            text.setAttribute("dy", 4);
-            text.textContent = pos.data[1]; 
-
-            group.appendChild(circle);
-            group.appendChild(text);
-            nodesGroup.appendChild(group);
-
-            // 5. Telemetry Interaction (Hover)
-            group.addEventListener("mouseenter", () => {
-                const [z, sym, name, mass, family] = pos.data;
-                const neutrons = Math.round(mass) - z; 
-                
-                telemetryBox.innerHTML = `
-                    <div class="sym-large" style="color: ${familyColor};">${sym}</div>
-                    <div class="name-large" style="color: ${familyColor};">${name}</div>
-                    <div class="tel-row"><span class="tel-label">Scalar Pressure (Z / Protons):</span> <span class="tel-value">${z}</span></div>
-                    <div class="tel-row"><span class="tel-label">Resistance (Electrons):</span> <span class="tel-value">${z}</span></div>
-                    <div class="tel-row"><span class="tel-label">Geodesic Nodes (Neutrons):</span> <span class="tel-value">${neutrons}</span></div>
-                    <div class="tel-row"><span class="tel-label">Density (Atomic Mass):</span> <span class="tel-value">${mass}</span></div>
-                    <div class="tel-row" style="border:none; margin-top:15px; padding-top:15px; border-top: 1px solid rgba(212, 175, 55, 0.2);">
-                        <span class="tel-label">Resonant Family:</span> <span class="tel-value" style="color:${familyColor}; font-family: 'Rajdhani', sans-serif;">${family}</span>
-                    </div>
-                `;
-            });
-        });
-
-        // 6. UI Controls
-        const chk13 = document.getElementById('chk-13');
-        const chk21 = document.getElementById('chk-21');
-
-        chk13.addEventListener('change', (e) => {
-            lines13Group.style.opacity = e.target.checked ? "1" : "0";
-        });
-
-        chk21.addEventListener('change', (e) => {
-            lines21Group.style.opacity = e.target.checked ? "1" : "0";
-        });
-
-    </script>
 </body>
 </html>
