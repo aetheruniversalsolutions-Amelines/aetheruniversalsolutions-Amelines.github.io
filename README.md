@@ -6,6 +6,6 @@ El marco teórico, conceptual y mecánico que fundamenta los protocolos de este 
 
 Para comprender en profundidad la dinámica de fluidos incompresibles del ÆTHER, el Motor Toroidal Universal y la aplicación del Ángulo Sintrópico, puedes adquirir el tratado maestro a través del siguiente enlace:
 
-👉 **[Ver en Amazon: Perfil Oficial de Autor W.H. Amelines](https://amazon.com/author/w.h.amelines)**
+👉 **[Ver en Amazon: Perfil Oficial de Autor W.H. Amelines](https://www.amazon.com/-/es/dp/B0GZZL7SK9/ref=tmm_kin_swatch_0)**
 
 ---
