@@ -9,7 +9,35 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Rajdhani:wght@400;500;600;700&display=swap" rel="stylesheet">
-    
+    /* Estilos para Miniaturas y Botones de Galería */
+        .preview-img {
+            width: 100%;
+            height: 160px;
+            object-fit: cover;
+            border-radius: 4px;
+            margin-bottom: 15px;
+            border: 1px solid var(--border-line);
+            transition: transform 0.3s ease, border-color 0.3s ease;
+        }
+        .preview-img:hover {
+            transform: scale(1.03);
+            border-color: var(--aether-gold);
+        }
+        .btn-group {
+            display: flex;
+            gap: 10px;
+            justify-content: center;
+            margin-top: 15px;
+        }
+        .btn-view {
+            background-color: transparent;
+            color: #58a6ff;
+            border: 1px solid #58a6ff;
+        }
+        .btn-view:hover {
+            background-color: #58a6ff;
+            color: var(--bg-color);
+        }
     <style>
         /* Base y Resonancia Visual (Calibración Áurea) */
         :root {
@@ -393,8 +421,8 @@
         V. HIGH-RESOLUTION GRAPHICS / GALERÍA DE DIAGRAMAS
     </h3>
     <p style="color: #c9d1d9; font-size: 0.95rem; margin-bottom: 25px;">
-        <span style="color:#D4AF37; font-weight:bold;">[EN]</span> Download the official full-color, high-resolution diagrams referenced in the Postulates and Monographs for detailed geometric auditing.<br>
-        <span style="color:#D4AF37; font-weight:bold;">[ES]</span> Descargue los diagramas oficiales a todo color y en alta resolución referenciados en la literatura para auditoría geométrica detallada.
+        <span style="color:#D4AF37; font-weight:bold;">[EN]</span> View or download the official full-color, high-resolution diagrams referenced in the Postulates and Monographs.<br>
+        <span style="color:#D4AF37; font-weight:bold;">[ES]</span> Visualice o descargue los diagramas oficiales a todo color y en alta resolución referenciados en la literatura.
     </p>
 
     <div class="data-grid">
@@ -402,66 +430,116 @@
         <div class="data-card">
             <div>
                 <h4 style="color: #FFF;">The Universal Toroidal Engine</h4>
-                <p style="font-size: 0.9rem; color: #aaa;">Primordial Toroidal Engine (PTPU): Full-color render of the Aetheric fluid dynamics and thermodynamic cycle.</p>
+                <a href="TOROIDE MOTOR.png" target="_blank">
+                    <img src="TOROIDE MOTOR.png" alt="Motor Toroidal" class="preview-img">
+                </a>
+                <p style="font-size: 0.9rem; color: #aaa;">Motor Toroidal (PTPU): Full-color render of the Aetheric fluid dynamics.</p>
             </div>
-            <a href="Primordial Toroidal Engine.png" class="btn-download" download>Download Image</a>
+            <div class="btn-group">
+                <a href="TOROIDE MOTOR.png" target="_blank" class="btn-download btn-view">VIEW</a>
+                <a href="TOROIDE MOTOR.png" class="btn-download" download>DL</a>
+            </div>
         </div>
         
         <div class="data-card">
             <div>
                 <h4 style="color: #FFF;">The Biological Torus</h4>
-                <p style="font-size: 0.9rem; color: #aaa;">Toroide Biológico: Syntropic scaling from the macro-cosmos to the biological human biofield.</p>
+                <a href="TOROIDE BIOLOGICO.png" target="_blank">
+                    <img src="TOROIDE BIOLOGICO.png" alt="Toroide Biológico" class="preview-img">
+                </a>
+                <p style="font-size: 0.9rem; color: #aaa;">Toroide Biológico: Syntropic scaling from the macro-cosmos to the biofield.</p>
             </div>
-            <a href="TOROIDE BIOLOGICO.png" class="btn-download" download>Download Image</a>
+            <div class="btn-group">
+                <a href="TOROIDE BIOLOGICO.png" target="_blank" class="btn-download btn-view">VIEW</a>
+                <a href="TOROIDE BIOLOGICO.png" class="btn-download" download>DL</a>
+            </div>
         </div>
 
         <div class="data-card">
             <div>
                 <h4 style="color: #FFF;">The Brachistochrone Curve</h4>
-                <p style="font-size: 0.9rem; color: #aaa;">Braquistócrona: The curve of fastest descent, mapping the centripetal implosion of Aether.</p>
+                <a href="BRAQUISTOCRONA.png" target="_blank">
+                    <img src="BRAQUISTOCRONA.png" alt="Braquistócrona" class="preview-img">
+                </a>
+                <p style="font-size: 0.9rem; color: #aaa;">Braquistócrona: The curve of fastest descent, mapping the centripetal implosion.</p>
             </div>
-            <a href="BRAQUISTOCRONA.png" class="btn-download" download>Download Image</a>
+            <div class="btn-group">
+                <a href="BRAQUISTOCRONA.png" target="_blank" class="btn-download btn-view">VIEW</a>
+                <a href="BRAQUISTOCRONA.png" class="btn-download" download>DL</a>
+            </div>
         </div>
 
         <div class="data-card">
             <div>
                 <h4 style="color: #FFF;">The Universe Octaves (3-6-9)</h4>
-                <p style="font-size: 0.9rem; color: #aaa;">Universe Octaves: Macroscopic toroidal context mapping acoustic resonance to chemical elements.</p>
+                <a href="Universe Octaves.png" target="_blank">
+                    <img src="Universe Octaves.png" alt="Octavas del Universo" class="preview-img">
+                </a>
+                <p style="font-size: 0.9rem; color: #aaa;">Universe Octaves: Toroidal context mapping acoustic resonance to elements.</p>
             </div>
-            <a href="Universe Octaves.png" class="btn-download" download>Download Image</a>
+            <div class="btn-group">
+                <a href="Universe Octaves.png" target="_blank" class="btn-download btn-view">VIEW</a>
+                <a href="Universe Octaves.png" class="btn-download" download>DL</a>
+            </div>
         </div>
 
         <div class="data-card">
             <div>
                 <h4 style="color: #FFF;">Solid-State Cosmology</h4>
-                <p style="font-size: 0.9rem; color: #aaa;">El Universo: Official master conceptual diagram of the universal structure.</p>
+                <a href="Cosmología del Estado Sólido.jpg" target="_blank">
+                    <img src="Cosmología del Estado Sólido.jpg" alt="Cosmología del Estado Sólido" class="preview-img">
+                </a>
+                <p style="font-size: 0.9rem; color: #aaa;">Cosmología del Estado Sólido: Official master conceptual diagram.</p>
             </div>
-            <a href="El Universo.png" class="btn-download" download>Download Image</a>
+            <div class="btn-group">
+                <a href="Cosmología del Estado Sólido.jpg" target="_blank" class="btn-download btn-view">VIEW</a>
+                <a href="Cosmología del Estado Sólido.jpg" class="btn-download" download>DL</a>
+            </div>
         </div>
 
         <div class="data-card">
             <div>
                 <h4 style="color: #FFF;">Geodesic Knot Rupture</h4>
-                <p style="font-size: 0.9rem; color: #aaa;">Ruptura del Nodo Geodésico: Topological illustration of the wave mechanics and fluid impedance.</p>
+                <a href="Geodesic knot rupture.png" target="_blank">
+                    <img src="Geodesic knot rupture.png" alt="Ruptura del Nodo" class="preview-img">
+                </a>
+                <p style="font-size: 0.9rem; color: #aaa;">Ruptura del Nodo Geodésico: Topological illustration of wave mechanics.</p>
             </div>
-            <a href="Geodesic knot rupture.png" class="btn-download" download>Download Image</a>
+            <div class="btn-group">
+                <a href="Geodesic knot rupture.png" target="_blank" class="btn-download btn-view">VIEW</a>
+                <a href="Geodesic knot rupture.png" class="btn-download" download>DL</a>
+            </div>
         </div>
 
         <div class="data-card">
             <div>
-                <h4 style="color: #FFF;">Cuboctahedron (Vector Equilibrium)</h4>
-                <p style="font-size: 0.9rem; color: #aaa;">Cuboctahedron: The zero-point energetic geometry and foundational 3D matrix of the vacuum.</p>
+                <h4 style="color: #FFF;">Cuboctahedron (Equilibrium)</h4>
+                <a href="CUBOCTAEDRO Color.png" target="_blank">
+                    <img src="CUBOCTAEDRO Color.png" alt="Cuboctaedro" class="preview-img">
+                </a>
+                <p style="font-size: 0.9rem; color: #aaa;">Cuboctaedro: The zero-point energetic geometry and 3D matrix of the vacuum.</p>
             </div>
-            <a href="CUBOCTAHEDRON.png" class="btn-download" download>Download Image</a>
+            <div class="btn-group">
+                <a href="CUBOCTAEDRO Color.png" target="_blank" class="btn-download btn-view">VIEW</a>
+                <a href="CUBOCTAEDRO Color.png" class="btn-download" download>DL</a>
+            </div>
         </div>
 
         <div class="data-card" style="border-color: #D4AF37;">
             <div>
-                <h4 style="color: #D4AF37;">Universal Geometry of the Elements (UGE)</h4>
-                <p style="font-size: 0.9rem; color: #E0E0E0;">UGE Master Map: The complete upscaled HD matrix of the Toroidal Periodic Vortex.</p>
+                <h4 style="color: #D4AF37;">Universal Geometry of the Elements</h4>
+                <a href="Geomentría Universal de los Elemetos _upscayl_2x_high-fidelity-4x.jpg" target="_blank">
+                    <img src="Geomentría Universal de los Elemetos _upscayl_2x_high-fidelity-4x.jpg" alt="UGE Map" class="preview-img" style="border-color: #D4AF37;">
+                </a>
+                <p style="font-size: 0.9rem; color: #E0E0E0;">UGE Master Map: The complete upscaled HD matrix of the Periodic Vortex.</p>
             </div>
-            <a href="Geomentría Universal de los Elemetos _upscayl_2x_high-fidelity-4x.png" class="btn-download" download>Download HD Map</a>
+            <div class="btn-group">
+                <a href="Geomentría Universal de los Elemetos _upscayl_2x_high-fidelity-4x.jpg" target="_blank" class="btn-download btn-view" style="border-color:#D4AF37; color:#D4AF37;">VIEW</a>
+                <a href="Geomentría Universal de los Elemetos _upscayl_2x_high-fidelity-4x.jpg" class="btn-download" download>DL HD</a>
+            </div>
         </div>
+
+    </div>
 
     </div>
 <!-- SECCIÓN: SOBRE EL AUTOR (NUEVO) -->
