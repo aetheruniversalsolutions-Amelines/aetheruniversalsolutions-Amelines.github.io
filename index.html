@@ -612,10 +612,10 @@
 </div>
 </div>
     
-   <!-- ==========================================
+ <!-- ==========================================
      REPOSITORIO ACADÉMICO ÆTHER
      Secciones I, II y III
-     Arquitectura UX/UI: Entalpía Visual Máxima
+     Arquitectura UX/UI: Entalpía Visual Máxima (Grid Paralelo 3x3)
      ========================================== -->
 <style>
   :root {
@@ -625,7 +625,7 @@
     --cu-copper: #B87333;
     --text-primary: #F5F5F7;
     --text-es: #E0E0E0;
-    --text-en: #8A95A5; /* Tono atenuado para el inglés, reduciendo fricción visual */
+    --text-en: #A0AAB2;
     --bg-card: rgba(255, 255, 255, 0.02);
     --border-card: rgba(212, 175, 55, 0.15);
   }
@@ -633,185 +633,132 @@
   .aether-repository {
     background-color: var(--aether-plenum);
     color: var(--text-primary);
-    padding: 4rem 1rem;
+    padding: 5rem 2rem;
     font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
   }
 
-  /* Contenedor Maestro para evitar el efecto "desplayado" */
+  /* Contenedor Maestro alineado con la sección de libros */
   .repo-container {
-    max-width: 1000px;
+    max-width: 1200px;
     margin: 0 auto;
   }
 
   .repo-section-title {
     color: var(--cu-copper);
-    font-size: 1.5rem;
+    font-size: 1.8rem;
     font-weight: 600;
     letter-spacing: 2px;
     text-transform: uppercase;
     margin-top: 4rem;
-    margin-bottom: 2rem;
+    margin-bottom: 2.5rem;
     border-bottom: 1px solid rgba(184, 115, 51, 0.3);
-    padding-bottom: 0.5rem;
+    padding-bottom: 0.8rem;
+    text-align: center;
   }
 
-  /* =========================================
-     ESTILOS: MONOGRAFÍAS Y ERRATAS (Tarjetas Horizontales)
-     ========================================= */
-  .mono-card {
+  /* Grid en Paralelo (3 columnas) */
+  .repo-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2.5rem;
+  }
+
+  /* Diseño de Tarjetas Universales (Postulados y Monografías) */
+  .repo-card {
     background: var(--bg-card);
-    border-left: 3px solid var(--au-gold);
-    border-top: 1px solid var(--border-card);
+    border-top: 3px solid var(--au-gold);
+    border-left: 1px solid var(--border-card);
     border-right: 1px solid var(--border-card);
     border-bottom: 1px solid var(--border-card);
-    border-radius: 0 6px 6px 0;
+    border-radius: 4px;
     padding: 2rem;
-    margin-bottom: 2rem;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-  }
-
-  .mono-card:hover {
-    transform: translateX(5px);
-    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.4);
-    border-left-color: var(--cu-copper);
-  }
-
-  .mono-header {
     display: flex;
-    justify-content: space-between;
-    align-items: flex-start;
-    flex-wrap: wrap;
-    gap: 1rem;
-    margin-bottom: 1rem;
+    flex-direction: column;
+    transition: transform 0.3s ease, box-shadow 0.3s ease, border-top-color 0.3s ease;
   }
 
-  .mono-title h3 {
+  .repo-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.5);
+    border-top-color: var(--cu-copper);
+  }
+
+  .repo-card-title {
     color: var(--au-gold);
-    font-size: 1.3rem;
-    margin: 0 0 0.3rem 0;
+    font-size: 1.2rem;
+    margin: 0 0 0.5rem 0;
+    line-height: 1.3;
   }
 
-  .mono-title h4 {
-    color: var(--ag-silver);
-    font-size: 1rem;
-    font-weight: 400;
-    margin: 0;
+  .repo-card-meta {
+    font-size: 0.85rem;
+    color: var(--cu-copper);
+    margin-bottom: 1.5rem;
     text-transform: uppercase;
     letter-spacing: 1px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+    padding-bottom: 0.8rem;
   }
 
-  .mono-meta {
-    font-size: 0.85rem;
-    color: var(--text-en);
-    text-align: right;
-  }
-  
-  .mono-meta span {
-    display: block;
-    margin-bottom: 0.2rem;
-  }
-
-  .doi-link {
-    color: var(--cu-copper);
-    text-decoration: none;
-    font-weight: bold;
-  }
-  
-  .doi-link:hover {
-    text-decoration: underline;
-  }
-
-  .mono-content {
-    margin-bottom: 1.5rem;
-  }
-
-  .text-es {
+  .repo-desc-es {
     color: var(--text-es);
-    font-size: 1rem;
+    font-size: 0.95rem;
     line-height: 1.6;
     margin-bottom: 0.8rem;
   }
 
-  .text-en {
+  .repo-desc-en {
     color: var(--text-en);
-    font-size: 0.95rem;
+    font-size: 0.9rem;
     line-height: 1.5;
     font-style: italic;
-    margin-bottom: 0;
+    margin-bottom: 2rem;
+    flex-grow: 1; /* Empuja el botón al fondo */
   }
 
-  .repo-btn {
-    display: inline-block;
-    padding: 0.6rem 1.5rem;
-    background-color: transparent;
+  /* Botón Zenodo DOI */
+  .zenodo-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0.8rem 1rem;
+    background-color: rgba(212, 175, 55, 0.05);
     color: var(--au-gold);
+    text-decoration: none;
+    font-weight: 600;
     border: 1px solid var(--au-gold);
     border-radius: 4px;
-    text-decoration: none;
-    font-size: 0.85rem;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-    font-weight: 600;
     transition: all 0.3s ease;
+    font-size: 0.85rem;
+    letter-spacing: 1px;
   }
 
-  .repo-btn:hover {
+  .zenodo-btn:hover {
     background-color: var(--au-gold);
     color: var(--aether-plenum);
   }
-
-  /* =========================================
-     ESTILOS: POSTULADOS (Malla/Grid de Alta Densidad)
-     ========================================= */
-  .postulates-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(450px, 1fr));
-    gap: 2rem;
+  
+  .zenodo-btn span {
+    font-weight: normal;
+    margin-right: 5px;
   }
 
-  .postulate-card {
-    background: var(--bg-card);
-    border: 1px solid var(--border-card);
-    border-radius: 6px;
-    padding: 1.8rem;
-    position: relative;
-    transition: all 0.3s ease;
+  /* Tarjeta Centrada para Erratas */
+  .errata-container {
+    max-width: 800px;
+    margin: 0 auto;
   }
 
-  .postulate-card:hover {
-    border-color: var(--au-gold);
-    box-shadow: 0 8px 20px rgba(212, 175, 55, 0.1);
+  /* Responsividad */
+  @media (max-width: 1024px) {
+    .repo-grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
   }
 
-  .postulate-card h3 {
-    color: var(--au-gold);
-    font-size: 1.1rem;
-    margin: 0 0 0.5rem 0;
-  }
-
-  .postulate-card p.postulate-desc {
-    color: var(--text-es);
-    font-size: 0.95rem;
-    line-height: 1.5;
-    margin-bottom: 1.5rem;
-  }
-
-  .postulate-meta {
-    border-top: 1px solid rgba(255, 255, 255, 0.05);
-    padding-top: 1rem;
-    font-size: 0.85rem;
-  }
-
-  /* Excepción para pantallas muy pequeñas */
-  @media (max-width: 600px) {
-    .postulates-grid {
+  @media (max-width: 768px) {
+    .repo-grid {
       grid-template-columns: 1fr;
-    }
-    .mono-header {
-      flex-direction: column;
-    }
-    .mono-meta {
-      text-align: left;
     }
   }
 </style>
@@ -820,129 +767,98 @@
   <div class="repo-container">
 
     <!-- ==========================================
-         SECCIÓN I: MONOGRAFÍAS TÉCNICAS
+         SECCIÓN I: POSTULADOS FUNDACIONALES
          ========================================== -->
-    <h2 class="repo-section-title">I. Technical Monographs / Monografías Técnicas</h2>
+    <h2 class="repo-section-title">I. Foundational Postulates / Postulados Fundacionales</h2>
 
-    <!-- Monografía I -->
-    <div class="mono-card">
-      <div class="mono-header">
-        <div class="mono-title">
-          <h3>W.H.Amelines_Technical Monography I</h3>
-          <h4>The Solid State Manifesto</h4>
-        </div>
-        <div class="mono-meta">
-          <span><strong>Author:</strong> William Herrera Amelines</span>
-          <span><strong>Status:</strong> Preprint</span>
-          <span><strong>DOI:</strong> <a href="https://doi.org/10.5281/zenodo.19994873" target="_blank" rel="noopener noreferrer" class="doi-link">10.5281/zenodo.19994873</a></span>
-        </div>
+    <div class="repo-grid">
+      <!-- Postulado I -->
+      <div class="repo-card">
+        <h3 class="repo-card-title">Postulate I: The Universal Toroidal Engine</h3>
+        <div class="repo-card-meta">Author: W.H. Amelines | Status: Published</div>
+        <p class="repo-desc-es"><strong>[ES]</strong> Termodinámica de fluidos etéricos y el axioma de creación sintrópica.</p>
+        <p class="repo-desc-en"><strong>[EN]</strong> Thermodynamics of Aetheric Fluids and the Axiom of Syntropic Creation.</p>
+        <a href="https://doi.org/10.5281/zenodo.19521973" target="_blank" rel="noopener noreferrer" class="zenodo-btn"><span>Zenodo DOI:</span> 10.5281/zenodo.19521973</a>
       </div>
-      <div class="mono-content">
-        <p class="text-es"><strong>[ES]</strong> Expone la falacia termodinámica del vacío absoluto, reemplazando el cálculo relativista con las ecuaciones de Navier-Stokes para fluidos perfectos.</p>
-        <p class="text-en"><strong>[EN]</strong> Exposes the thermodynamic fallacy of the absolute vacuum, replacing relativistic calculus with Navier-Stokes equations for perfect fluids.</p>
-      </div>
-      <a href="#" class="repo-btn">Download PDF</a>
-    </div>
 
-    <!-- Monografía II -->
-    <div class="mono-card">
-      <div class="mono-header">
-        <div class="mono-title">
-          <h3>W.H.Amelines_Technical Monography II</h3>
-          <h4>The Topology of Cosmic DNA</h4>
-        </div>
-        <div class="mono-meta">
-          <span><strong>Author:</strong> William Herrera Amelines</span>
-          <span><strong>Status:</strong> Preprint</span>
-          <span><strong>DOI:</strong> <a href="https://doi.org/10.5281/zenodo.19995435" target="_blank" rel="noopener noreferrer" class="doi-link">10.5281/zenodo.19995435</a></span>
-        </div>
+      <!-- Postulado II -->
+      <div class="repo-card">
+        <h3 class="repo-card-title">Postulate II: The Quantum Information Substrate</h3>
+        <div class="repo-card-meta">Author: W.H. Amelines | Status: Published</div>
+        <p class="repo-desc-es"><strong>[ES]</strong> Dinámica de fluidos del vacío electrodinámico y el principio de autoorganización sintrópica.</p>
+        <p class="repo-desc-en"><strong>[EN]</strong> Fluid Dynamics of the Electrodynamic Vacuum and the Principle of Syntropic Self-Organization.</p>
+        <a href="https://doi.org/10.5281/zenodo.19521973" target="_blank" rel="noopener noreferrer" class="zenodo-btn"><span>Zenodo DOI:</span> 10.5281/zenodo.19521973</a>
       </div>
-      <div class="mono-content">
-        <p class="text-es"><strong>[ES]</strong> Reemplaza la Tabla Periódica plana por una matriz toroidal tridimensional basada en las parastiquias de Fibonacci (13x21).</p>
-        <p class="text-en"><strong>[EN]</strong> Replaces the flat Periodic Table with a three-dimensional toroidal matrix based on Fibonacci parastichies (13x21).</p>
-      </div>
-      <a href="#" class="repo-btn">Download PDF</a>
-    </div>
 
-    <!-- Monografía III -->
-    <div class="mono-card">
-      <div class="mono-header">
-        <div class="mono-title">
-          <h3>W.H.Amelines_Technical Monography III</h3>
-          <h4>The Fluid Mechanics of Energy and The AMELINES Tensor</h4>
-        </div>
-        <div class="mono-meta">
-          <span><strong>Author:</strong> William Herrera Amelines</span>
-          <span><strong>Status:</strong> Preprint</span>
-          <span><strong>DOI:</strong> <a href="https://doi.org/10.5281/zenodo.19995654" target="_blank" rel="noopener noreferrer" class="doi-link">10.5281/zenodo.19995654</a></span>
-        </div>
+      <!-- Postulado III -->
+      <div class="repo-card">
+        <h3 class="repo-card-title">Postulate III: The Universal Symphony</h3>
+        <div class="repo-card-meta">Author: W.H. Amelines | Status: Published</div>
+        <p class="repo-desc-es"><strong>[ES]</strong> Cimática cósmica, mecánica de ondas y escalamiento fractal de la materia.</p>
+        <p class="repo-desc-en"><strong>[EN]</strong> Cosmic Cymatics, Wave Mechanics and Fractal Scaling of Matter.</p>
+        <a href="https://doi.org/10.5281/zenodo.19521973" target="_blank" rel="noopener noreferrer" class="zenodo-btn"><span>Zenodo DOI:</span> 10.5281/zenodo.19521973</a>
       </div>
-      <div class="mono-content">
-        <p class="text-es"><strong>[ES]</strong> Demostración matemática que reemplaza E=mc² por el Teorema de Impedancia Energética.</p>
-        <p class="text-en"><strong>[EN]</strong> Mathematical demonstration replacing E=mc² with the Energy Impedance Theorem.</p>
+
+      <!-- Postulado IV -->
+      <div class="repo-card">
+        <h3 class="repo-card-title">Postulate IV: The Atomic Architecture of the Solid State</h3>
+        <div class="repo-card-meta">Author: W.H. Amelines | Status: Published</div>
+        <p class="repo-desc-es"><strong>[ES]</strong> El vórtice periódico toroidal y la mecánica del enlace intersticial.</p>
+        <p class="repo-desc-en"><strong>[EN]</strong> The Toroidal Periodic Vortex and the Mechanics of Interstitial Bonding.</p>
+        <a href="https://doi.org/10.5281/zenodo.19542763" target="_blank" rel="noopener noreferrer" class="zenodo-btn"><span>Zenodo DOI:</span> 10.5281/zenodo.19542763</a>
       </div>
-      <a href="#" class="repo-btn">Download PDF</a>
+
+      <!-- Addendum IV -->
+      <div class="repo-card">
+        <h3 class="repo-card-title">Addendum IV: The DNA of the Universe</h3>
+        <div class="repo-card-meta">Author: W.H. Amelines | Status: Published</div>
+        <p class="repo-desc-es"><strong>[ES]</strong> Topología Estructural.</p>
+        <p class="repo-desc-en"><strong>[EN]</strong> Structural Topology.</p>
+        <a href="https://doi.org/10.5281/zenodo.19619217" target="_blank" rel="noopener noreferrer" class="zenodo-btn"><span>Zenodo DOI:</span> 10.5281/zenodo.19619217</a>
+      </div>
+
+      <!-- Postulado V -->
+      <div class="repo-card">
+        <h3 class="repo-card-title">Postulate V: The Geodesic Architecture of the Unified Field</h3>
+        <div class="repo-card-meta">Author: W.H. Amelines | Status: Published</div>
+        <p class="repo-desc-es"><strong>[ES]</strong> El código 3-6-9 y la redefinición volumétrica de la Constante de Planck.</p>
+        <p class="repo-desc-en"><strong>[EN]</strong> The 3-6-9 Code and the Volumetric Redefinition of Planck's Constant.</p>
+        <a href="https://doi.org/10.5281/zenodo.19637986" target="_blank" rel="noopener noreferrer" class="zenodo-btn"><span>Zenodo DOI:</span> 10.5281/zenodo.19637986</a>
+      </div>
     </div>
 
 
     <!-- ==========================================
-         SECCIÓN II: POSTULADOS FUNDACIONALES
+         SECCIÓN II: MONOGRAFÍAS TÉCNICAS
          ========================================== -->
-    <h2 class="repo-section-title">II. Foundational Postulates / Postulados Fundacionales</h2>
+    <h2 class="repo-section-title">II. Technical Monographs / Monografías Técnicas</h2>
 
-    <div class="postulates-grid">
-      <!-- Postulado I -->
-      <div class="postulate-card">
-        <h3>Postulate I: The Universal Toroidal Engine</h3>
-        <p class="postulate-desc">Thermodynamics of Aetheric Fluids and the Axiom of Syntropic Creation.</p>
-        <div class="postulate-meta">
-          <span><strong>DOI:</strong> <a href="https://doi.org/10.5281/zenodo.19521973" target="_blank" rel="noopener noreferrer" class="doi-link">10.5281/zenodo.19521973</a></span>
-        </div>
+    <div class="repo-grid">
+      <!-- Monografía I -->
+      <div class="repo-card">
+        <h3 class="repo-card-title">W.H.Amelines_Technical Monography I - THE SOLID STATE MANIFESTO</h3>
+        <div class="repo-card-meta">Author: William Herrera Amelines | Status: Preprint</div>
+        <p class="repo-desc-es"><strong>[ES]</strong> Expone la falacia termodinámica del vacío absoluto, reemplazando el cálculo relativista con las ecuaciones de Navier-Stokes para fluidos perfectos.</p>
+        <p class="repo-desc-en"><strong>[EN]</strong> Exposes the thermodynamic fallacy of the absolute vacuum, replacing relativistic calculus with Navier-Stokes equations for perfect fluids.</p>
+        <a href="https://doi.org/10.5281/zenodo.19994873" target="_blank" rel="noopener noreferrer" class="zenodo-btn"><span>Zenodo DOI:</span> 10.5281/zenodo.19994873</a>
       </div>
 
-      <!-- Postulado II -->
-      <div class="postulate-card">
-        <h3>Postulate II: The Quantum Information Substrate</h3>
-        <p class="postulate-desc">Fluid Dynamics of the Electrodynamic Vacuum and the Principle of Syntropic Self-Organization.</p>
-        <div class="postulate-meta">
-          <span><strong>DOI:</strong> <a href="https://doi.org/10.5281/zenodo.19521973" target="_blank" rel="noopener noreferrer" class="doi-link">10.5281/zenodo.19521973</a></span>
-        </div>
+      <!-- Monografía II -->
+      <div class="repo-card">
+        <h3 class="repo-card-title">W.H.Amelines_Technical Monography II - THE TOPOLOGY OF COSMIC DNA</h3>
+        <div class="repo-card-meta">Author: William Herrera Amelines | Status: Preprint</div>
+        <p class="repo-desc-es"><strong>[ES]</strong> Reemplaza la Tabla Periódica plana por una matriz toroidal tridimensional basada en las parastiquias de Fibonacci (13x21).</p>
+        <p class="repo-desc-en"><strong>[EN]</strong> Replaces the flat Periodic Table with a three-dimensional toroidal matrix based on Fibonacci parastichies (13x21).</p>
+        <a href="https://doi.org/10.5281/zenodo.19995435" target="_blank" rel="noopener noreferrer" class="zenodo-btn"><span>Zenodo DOI:</span> 10.5281/zenodo.19995435</a>
       </div>
 
-      <!-- Postulado III -->
-      <div class="postulate-card">
-        <h3>Postulate III: The Universal Symphony</h3>
-        <p class="postulate-desc">Cosmic Cymatics, Wave Mechanics and Fractal Scaling of Matter.</p>
-        <div class="postulate-meta">
-          <span><strong>DOI:</strong> <a href="https://doi.org/10.5281/zenodo.19521973" target="_blank" rel="noopener noreferrer" class="doi-link">10.5281/zenodo.19521973</a></span>
-        </div>
-      </div>
-
-      <!-- Postulado IV -->
-      <div class="postulate-card">
-        <h3>Postulate IV: The Atomic Architecture of the Solid State</h3>
-        <p class="postulate-desc">The Toroidal Periodic Vortex and the Mechanics of Interstitial Bonding.</p>
-        <div class="postulate-meta">
-          <span><strong>DOI:</strong> <a href="https://doi.org/10.5281/zenodo.19542763" target="_blank" rel="noopener noreferrer" class="doi-link">10.5281/zenodo.19542763</a></span>
-        </div>
-      </div>
-
-      <!-- Addendum IV -->
-      <div class="postulate-card">
-        <h3>Addendum IV: The DNA of the Universe</h3>
-        <p class="postulate-desc">Structural Topology.</p>
-        <div class="postulate-meta">
-          <span><strong>DOI:</strong> <a href="https://doi.org/10.5281/zenodo.19619217" target="_blank" rel="noopener noreferrer" class="doi-link">10.5281/zenodo.19619217</a></span>
-        </div>
-      </div>
-
-      <!-- Postulado V -->
-      <div class="postulate-card">
-        <h3>Postulate V: The Geodesic Architecture of the Unified Field</h3>
-        <p class="postulate-desc">The 3-6-9 Code and the Volumetric Redefinition of Planck's Constant.</p>
-        <div class="postulate-meta">
-          <span><strong>DOI:</strong> <a href="https://doi.org/10.5281/zenodo.19637986" target="_blank" rel="noopener noreferrer" class="doi-link">10.5281/zenodo.19637986</a></span>
-        </div>
+      <!-- Monografía III -->
+      <div class="repo-card">
+        <h3 class="repo-card-title">W.H.Amelines_Technical Monography III - THE FLUID MECHANICS OF ENERGY and THE AMELINES TENSOR</h3>
+        <div class="repo-card-meta">Author: William Herrera Amelines | Status: Preprint</div>
+        <p class="repo-desc-es"><strong>[ES]</strong> Demostración matemática que reemplaza E=mc² por el Teorema de Impedancia Energética.</p>
+        <p class="repo-desc-en"><strong>[EN]</strong> Mathematical demonstration replacing E=mc² with the Energy Impedance Theorem.</p>
+        <a href="https://doi.org/10.5281/zenodo.19995654" target="_blank" rel="noopener noreferrer" class="zenodo-btn"><span>Zenodo DOI:</span> 10.5281/zenodo.19995654</a>
       </div>
     </div>
 
@@ -952,28 +868,18 @@
          ========================================== -->
     <h2 class="repo-section-title">III. Official Errata & Terminological Unification / Notas Aclaratorias</h2>
 
-    <div class="mono-card" style="border-left-color: var(--cu-copper);">
-      <div class="mono-header">
-        <div class="mono-title">
-          <h3 style="color: var(--cu-copper);">Errata Notice: Epistemological Consolidation of the Códice ÆTHER</h3>
-        </div>
-        <div class="mono-meta">
-          <span><strong>Author:</strong> W.H. Amelines</span>
-          <span><strong>Status:</strong> Official Supplement / Preprint</span>
-          <span><strong>DOI:</strong> <a href="https://doi.org/10.5281/zenodo.20368442" target="_blank" rel="noopener noreferrer" class="doi-link">10.5281/zenodo.20368442</a></span>
-        </div>
+    <div class="errata-container">
+      <div class="repo-card" style="border-top-color: var(--cu-copper);">
+        <h3 class="repo-card-title" style="color: var(--cu-copper);">Errata Notice: Epistemological Consolidation of the Códice ÆTHER</h3>
+        <div class="repo-card-meta" style="color: var(--au-gold);">Author: W.H. Amelines | Status: Official Supplement / Preprint</div>
+        <p class="repo-desc-es"><strong>[ES]</strong> Este documento resuelve matemáticamente la asimetría tipográfica del ciclo toroidal en el Postulado I y establece la unificación definitiva de conceptos (Masa como Impedancia, Velocidad de la Luz y Gravedad Acústica) según el marco final de la serie Cosmología de Estado Sólido.</p>
+        <p class="repo-desc-en"><strong>[EN]</strong> This document mathematically resolves the typographical asymmetry of the toroidal cycle in Postulate I and establishes the definitive unification of concepts (Mass as Impedance, Speed of Light, and Acoustic Gravity) according to the final framework of the Solid-State Cosmology series.</p>
+        <a href="https://doi.org/10.5281/zenodo.20368442" target="_blank" rel="noopener noreferrer" class="zenodo-btn" style="border-color: var(--cu-copper); color: var(--cu-copper);"><span>Zenodo DOI:</span> 10.5281/zenodo.20368442</a>
       </div>
-      <div class="mono-content">
-        <p class="text-es"><strong>[ES]</strong> Este documento resuelve matemáticamente la asimetría tipográfica del ciclo toroidal en el Postulado I y establece la unificación definitiva de conceptos (Masa como Impedancia, Velocidad de la Luz y Gravedad Acústica) según el marco final de la serie Cosmología de Estado Sólido.</p>
-        <p class="text-en"><strong>[EN]</strong> This document mathematically resolves the typographical asymmetry of the toroidal cycle in Postulate I and establishes the definitive unification of concepts (Mass as Impedance, Speed of Light, and Acoustic Gravity) according to the final framework of the Solid-State Cosmology series.</p>
-      </div>
-      <a href="#" class="repo-btn" style="border-color: var(--cu-copper); color: var(--cu-copper);">Download Errata PDF</a>
     </div>
 
   </div> <!-- Fin de repo-container -->
 </div> <!-- Fin de aether-repository -->
-    </ul>
-
     </div>
     <h3>IV. RAW DATA MATRIX / DATOS CRUDOS E INTERACTIVOS</h3>
     <div class="data-grid">
