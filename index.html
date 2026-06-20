@@ -258,8 +258,8 @@
         
       </div>
 
-    <!-- ==========================================
-     SECCIÓN: PUBLICACIONES OFICIALES
+   <!-- ==========================================
+     SECCIÓN: PUBLICACIONES OFICIALES Y ARQUITECTURA
      Serie: Cosmología del Estado Sólido
      Arquitectura: ÆTHER Universal Platform Solutions
      ========================================== -->
@@ -284,7 +284,7 @@
 
   .pub-header {
     text-align: center;
-    margin-bottom: 4rem;
+    margin-bottom: 3rem;
   }
 
   .pub-series-tag {
@@ -311,6 +311,15 @@
     max-width: 800px;
     margin: 0 auto;
     line-height: 1.6;
+  }
+
+  .pub-diagram-container {
+    max-width: 800px;
+    margin: 0 auto 4rem auto;
+    border: 1px solid rgba(212, 175, 55, 0.2);
+    border-radius: 8px;
+    background: rgba(255, 255, 255, 0.01);
+    padding: 1rem;
   }
 
   .pub-grid {
@@ -406,21 +415,29 @@
   }
 
   .pub-btn-series {
-    margin-top: 3rem;
+    margin-top: 4rem;
     text-align: center;
   }
   
   .pub-btn-series a {
     background-color: rgba(212, 175, 55, 0.1);
-    padding: 1rem 3rem;
+    padding: 1.2rem 3.5rem;
     font-size: 1.1rem;
     border-color: var(--au-gold);
     color: var(--au-gold);
+    text-decoration: none;
+    text-transform: uppercase;
+    font-weight: bold;
+    letter-spacing: 2px;
+    border-radius: 4px;
+    transition: all 0.3s ease;
+    display: inline-block;
   }
 
   .pub-btn-series a:hover {
     background-color: var(--au-gold);
     color: var(--aether-plenum);
+    box-shadow: 0 10px 25px rgba(212, 175, 55, 0.3);
   }
 
 </style>
@@ -429,7 +446,55 @@
   <div class="pub-header">
     <span class="pub-series-tag">Serie Oficial / Official Series</span>
     <h2>Cosmología del Estado Sólido</h2>
-    <p>La colección fundamental que desmantela el paradigma de la entropía y el vacío. Un compendio bilingüe que expone los engranajes termodinámicos, matemáticos y fluidodinámicos del Motor Toroidal Universal y la Matriz de la realidad.</p>
+    <p>La colección fundamental que desmantela el paradigma de la entropía y el vacío. Un compendio bilingüe que expone los engranajes termodinámicos, matemáticos y fluidodinámicos del Motor Toroidal Universal y la Matriz de la realidad física.</p>
+  </div>
+
+  <!-- DIAGRAMA VECTORIAL (MOTOR TOROIDAL) -->
+  <div class="pub-diagram-container">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" width="100%" height="100%" style="background-color: transparent; font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;">
+      <defs>
+        <radialGradient id="ptpu-glow" cx="50%" cy="50%" r="50%">
+          <stop offset="0%" stop-color="#ffffff" stop-opacity="1" />
+          <stop offset="30%" stop-color="#D4AF37" stop-opacity="0.8" />
+          <stop offset="100%" stop-color="#090a0f" stop-opacity="0" />
+        </radialGradient>
+      </defs>
+      
+      <!-- Geometría Toroidal (Matriz 13x21) -->
+      <ellipse cx="250" cy="250" rx="140" ry="180" fill="none" stroke="#B87333" stroke-width="1.5" stroke-dasharray="4 4" opacity="0.4"/>
+      <ellipse cx="550" cy="250" rx="140" ry="180" fill="none" stroke="#B87333" stroke-width="1.5" stroke-dasharray="4 4" opacity="0.4"/>
+      
+      <ellipse cx="400" cy="250" rx="320" ry="70" fill="none" stroke="#D4AF37" stroke-width="2" opacity="0.6"/>
+      <ellipse cx="400" cy="250" rx="280" ry="50" fill="none" stroke="#D4AF37" stroke-width="1" opacity="0.3"/>
+      
+      <!-- Eje Vertical 3-6-9 -->
+      <line x1="400" y1="40" x2="400" y2="460" stroke="#E0E0E0" stroke-width="1.5" stroke-dasharray="3 3" opacity="0.8"/>
+      
+      <!-- Núcleo PTPU -->
+      <circle cx="400" cy="250" r="70" fill="url(#ptpu-glow)" />
+      <circle cx="400" cy="250" r="12" fill="#ffffff" />
+
+      <!-- Succión Polar (Gravedad 1-4-7) -->
+      <path d="M 385 90 L 400 150 L 415 90 Z" fill="#E0E0E0" opacity="0.7"/>
+      <path d="M 385 410 L 400 350 L 415 410 Z" fill="#E0E0E0" opacity="0.7"/>
+
+      <!-- Expansión Ecuatorial (Electromagnetismo 2-5-8) -->
+      <path d="M 480 242 L 550 250 L 480 258 Z" fill="#B87333" opacity="0.9"/>
+      <path d="M 320 242 L 250 250 L 320 258 Z" fill="#B87333" opacity="0.9"/>
+
+      <!-- Etiquetas Técnicas -->
+      <text x="420" y="245" fill="#D4AF37" font-size="14" font-weight="bold">PTPU</text>
+      <text x="420" y="260" fill="#E0E0E0" font-size="10">Transición de Fase</text>
+      
+      <text x="420" y="70" fill="#E0E0E0" font-size="12" font-weight="bold">SUCCIÓN POLAR (1-4-7)</text>
+      <text x="420" y="85" fill="#E0E0E0" font-size="10">Implosión / Gravedad</text>
+
+      <text x="570" y="240" fill="#B87333" font-size="12" font-weight="bold">EXPANSIÓN ECUATORIAL (2-5-8)</text>
+      <text x="570" y="255" fill="#B87333" font-size="10">Fuerza Electromagnética</text>
+
+      <text x="120" y="100" fill="#D4AF37" font-size="12" font-weight="bold">MATRIZ 13x21</text>
+      <text x="410" y="450" fill="#E0E0E0" font-size="11" font-weight="bold">EJE DE RESONANCIA 3-6-9</text>
+    </svg>
   </div>
 
   <div class="pub-grid">
@@ -437,46 +502,45 @@
     <!-- Libro 1 -->
     <div class="pub-card">
       <h3 class="pub-book-title">La Lógica del Estado Sólido</h3>
-      <span class="pub-book-subtitle">Cómo el Æther, la Geometría y tu Biocampo crean el Universo.</span>
-      <p>El tratado fundacional que unifica la mecánica de fluidos con la biología humana (La Quinta Octava), estableciendo la Succión Hidrodinámica como el origen de la gravedad y la resonancia sintrópica.</p>
+      <span class="pub-book-subtitle">Cómo el Æther, la Geometría y tu Biocampo crean el Universo</span>
+      <p>El tratado fundacional que unifica la mecánica de fluidos con la biología humana (La Quinta Octava), estableciendo la Succión Hidrodinámica como el origen de la gravedad y la resonancia sintrópica para alcanzar la Entalpía Máxima.</p>
       <div class="pub-actions">
-        <a href="https://www.amazon.com/-/es/dp/B0H57CJ34F?binding=kindle_edition&ref=dbs_dp_rwt_sb_bx_tkin" target="_blank" rel="noopener noreferrer" class="pub-btn">Ver Edición en Español</a>
-        <a href="https://www.amazon.com/-/es/dp/B0H57CJ34F?binding=kindle_edition&ref=dbs_dp_rwt_sb_bx_tkin" target="_blank" rel="noopener noreferrer" class="pub-btn">View English Edition</a>
+        <a href="https://www.amazon.com/-/es/dp/B0H57CJ34F?binding=kindle_edition&ref=dbs_dp_rwt_sb_bx_tkin" target="_blank" rel="noopener noreferrer" class="pub-btn">Versión Español (Kindle & Print)</a>
+        <a href="https://www.amazon.com/-/es/dp/B0H57CJ34F?binding=kindle_edition&ref=dbs_dp_rwt_sb_bx_tkin" target="_blank" rel="noopener noreferrer" class="pub-btn">English Version (Kindle & Print)</a>
       </div>
     </div>
 
     <!-- Libro 2 -->
     <div class="pub-card">
       <h3 class="pub-book-title">El Dossier de Evidencias</h3>
-      <span class="pub-book-subtitle">Refutación del Vacío, Dinámica del Æther y el Fin de la Física de la Escasez.</span>
-      <p>Monografía táctica que expone la falsación empírica del modelo estándar, la resolución del "zoológico cuántico" de partículas y la prueba irrefutable de la Expansión Nonagonal en el átomo.</p>
+      <span class="pub-book-subtitle">Refutación del Vacío, Dinámica del Æther y el Fin de la Física de la Escasez</span>
+      <p>Monografía táctica que expone la falsación empírica del modelo estándar, la resolución del "zoológico cuántico" de partículas mediante ondas de choque, y la prueba irrefutable de la Expansión Nonagonal en el átomo.</p>
       <div class="pub-actions">
-        <a href="https://www.amazon.com/-/es/dp/B0H57CJ34F?binding=kindle_edition&ref=dbs_dp_rwt_sb_bx_tkin" target="_blank" rel="noopener noreferrer" class="pub-btn">Ver Edición en Español</a>
-        <a href="https://www.amazon.com/-/es/dp/B0H57CJ34F?binding=kindle_edition&ref=dbs_dp_rwt_sb_bx_tkin" target="_blank" rel="noopener noreferrer" class="pub-btn">View English Edition</a>
+        <a href="https://www.amazon.com/-/es/dp/B0H57CJ34F?binding=kindle_edition&ref=dbs_dp_rwt_sb_bx_tkin" target="_blank" rel="noopener noreferrer" class="pub-btn">Versión Español (Kindle & Print)</a>
+        <a href="https://www.amazon.com/-/es/dp/B0H57CJ34F?binding=kindle_edition&ref=dbs_dp_rwt_sb_bx_tkin" target="_blank" rel="noopener noreferrer" class="pub-btn">English Version (Kindle & Print)</a>
       </div>
     </div>
 
     <!-- Libro 3 -->
     <div class="pub-card">
       <h3 class="pub-book-title">El Códice ÆTHER</h3>
-      <span class="pub-book-subtitle">El Manual del Universo Cotidiano.</span>
-      <p>El compendio de ingeniería universal que detalla la topología de la Matriz 13x21, la anulación de la "acción fantasmal" a distancia y los vectores matemáticos de la Tríada PTPU-RHF-PME.</p>
+      <span class="pub-book-subtitle">El Manual del Universo Cotidiano</span>
+      <p>El compendio de ingeniería universal que detalla la topología de la Matriz 13x21, la anulación de la "acción fantasmal" a distancia mediante acústica de fluidos, y los vectores matemáticos de la Tríada PTPU-RHF-PME.</p>
       <div class="pub-actions">
-        <a href="https://www.amazon.com/-/es/dp/B0H57CJ34F?binding=kindle_edition&ref=dbs_dp_rwt_sb_bx_tkin" target="_blank" rel="noopener noreferrer" class="pub-btn">Ver Edición en Español</a>
-        <a href="https://www.amazon.com/-/es/dp/B0H57CJ34F?binding=kindle_edition&ref=dbs_dp_rwt_sb_bx_tkin" target="_blank" rel="noopener noreferrer" class="pub-btn">View English Edition</a>
+        <a href="https://www.amazon.com/-/es/dp/B0H57CJ34F?binding=kindle_edition&ref=dbs_dp_rwt_sb_bx_tkin" target="_blank" rel="noopener noreferrer" class="pub-btn">Versión Español (Kindle & Print)</a>
+        <a href="https://www.amazon.com/-/es/dp/B0H57CJ34F?binding=kindle_edition&ref=dbs_dp_rwt_sb_bx_tkin" target="_blank" rel="noopener noreferrer" class="pub-btn">English Version (Kindle & Print)</a>
       </div>
     </div>
 
   </div>
 
   <div class="pub-btn-series">
-    <a href="https://www.amazon.com/-/es/dp/B0H57CJ34F?binding=kindle_edition&ref=dbs_dp_rwt_sb_bx_tkin" target="_blank" rel="noopener noreferrer" class="pub-btn">Explorar la Serie Completa en Amazon KDP</a>
+    <a href="https://www.amazon.com/-/es/dp/B0H57CJ34F?binding=kindle_edition&ref=dbs_dp_rwt_sb_bx_tkin" target="_blank" rel="noopener noreferrer">Explorar la Serie Completa en Amazon KDP</a>
   </div>
 </section>
 <!-- ==========================================
      FIN DE SECCIÓN: PUBLICACIONES OFICIALES
      ========================================== -->
-<!-- ========================================== -->
 
     </div>
     
