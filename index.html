@@ -256,57 +256,226 @@
     
     <div style="max-width: 1000px; margin: 0 auto; display: flex; flex-wrap: wrap; justify-content: center; gap: 40px;">
         
-      <div class="aether-publications">
-    <h3>Publicaciones Oficiales / Official Publications</h3>
-    <p>Documentación central de la Cosmología del Estado Sólido y tratados de aplicación práctica. / <em>Central documentation of Solid State Cosmology and practical application treatises.</em></p>
+      </div>
 
-    <div class="publication-group">
-        <h4>I. Obra Matriz / Matrix Work: La Lógica del Estado Sólido</h4>
-        <p>
-            <strong>ES:</strong> Demostración matemática y termodinámica del fluido universal hiperdenso.<br>
-            <strong>EN:</strong> Mathematical and thermodynamic demonstration of the hyperdense universal fluid.
-        </p>
-        <ul>
-            <li><a href="https://www.amazon.com/stores/W.-H.-Amelines/author/B0H12VKFW3/allbooks?ccs_id=f290f4aa-0527-42b4-a6cc-5c59f5db1c46" target="_blank" rel="noopener noreferrer">Versión en Español (Amazon)</a></li>
-            <li><a href="https://www.amazon.com/stores/W.-H.-Amelines/author/B0H12VKFW3/allbooks?ccs_id=f290f4aa-0527-42b4-a6cc-5c59f5db1c46" target="_blank" rel="noopener noreferrer">English Version (Amazon)</a></li>
-        </ul>
+    <!-- ==========================================
+     SECCIÓN: PUBLICACIONES OFICIALES
+     Serie: Cosmología del Estado Sólido
+     Arquitectura: ÆTHER Universal Platform Solutions
+     ========================================== -->
+<style>
+  :root {
+    --aether-plenum: #090a0f;
+    --au-gold: #D4AF37;
+    --ag-silver: #E0E0E0;
+    --cu-copper: #B87333;
+    --text-primary: #F5F5F7;
+    --text-muted: #8A95A5;
+  }
+
+  #publicaciones-oficiales {
+    background-color: var(--aether-plenum);
+    color: var(--text-primary);
+    padding: 5rem 2rem;
+    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    border-top: 1px solid var(--cu-copper);
+    border-bottom: 1px solid var(--cu-copper);
+  }
+
+  .pub-header {
+    text-align: center;
+    margin-bottom: 4rem;
+  }
+
+  .pub-series-tag {
+    color: var(--cu-copper);
+    font-size: 1rem;
+    font-weight: 600;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    display: block;
+    margin-bottom: 0.5rem;
+  }
+
+  .pub-header h2 {
+    color: var(--au-gold);
+    font-size: 2.8rem;
+    letter-spacing: 1px;
+    margin-bottom: 1rem;
+    text-transform: uppercase;
+  }
+
+  .pub-header p {
+    color: var(--ag-silver);
+    font-size: 1.15rem;
+    max-width: 800px;
+    margin: 0 auto;
+    line-height: 1.6;
+  }
+
+  .pub-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 3rem;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+
+  .pub-card {
+    background: rgba(255, 255, 255, 0.02);
+    border: 1px solid rgba(224, 224, 224, 0.1);
+    border-radius: 6px;
+    padding: 2.5rem 2rem;
+    transition: transform 0.4s ease, border-color 0.4s ease;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .pub-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 3px;
+    background: linear-gradient(90deg, var(--au-gold), var(--cu-copper));
+    opacity: 0;
+    transition: opacity 0.4s ease;
+  }
+
+  .pub-card:hover {
+    transform: translateY(-5px);
+    border-color: rgba(212, 175, 55, 0.4);
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.5);
+  }
+
+  .pub-card:hover::before {
+    opacity: 1;
+  }
+
+  .pub-book-title {
+    color: var(--ag-silver);
+    font-size: 1.6rem;
+    margin-bottom: 0.5rem;
+    line-height: 1.2;
+  }
+
+  .pub-book-subtitle {
+    color: var(--cu-copper);
+    font-size: 0.95rem;
+    margin-bottom: 1.5rem;
+    font-style: italic;
+  }
+
+  .pub-description {
+    color: var(--text-muted);
+    font-size: 0.95rem;
+    line-height: 1.6;
+    margin-bottom: 2rem;
+    flex-grow: 1;
+  }
+
+  .pub-actions {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .pub-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0.8rem 1.2rem;
+    background-color: transparent;
+    color: var(--au-gold);
+    text-decoration: none;
+    font-weight: 600;
+    border: 1px solid var(--au-gold);
+    border-radius: 4px;
+    transition: all 0.3s ease;
+    text-transform: uppercase;
+    font-size: 0.85rem;
+    letter-spacing: 1px;
+  }
+
+  .pub-btn:hover {
+    background-color: var(--au-gold);
+    color: var(--aether-plenum);
+  }
+
+  .pub-btn-series {
+    margin-top: 3rem;
+    text-align: center;
+  }
+  
+  .pub-btn-series a {
+    background-color: rgba(212, 175, 55, 0.1);
+    padding: 1rem 3rem;
+    font-size: 1.1rem;
+    border-color: var(--au-gold);
+    color: var(--au-gold);
+  }
+
+  .pub-btn-series a:hover {
+    background-color: var(--au-gold);
+    color: var(--aether-plenum);
+  }
+
+</style>
+
+<section id="publicaciones-oficiales">
+  <div class="pub-header">
+    <span class="pub-series-tag">Serie Oficial / Official Series</span>
+    <h2>Cosmología del Estado Sólido</h2>
+    <p>La colección fundamental que desmantela el paradigma de la entropía y el vacío. Un compendio bilingüe que expone los engranajes termodinámicos, matemáticos y fluidodinámicos del Motor Toroidal Universal y la Matriz de la realidad.</p>
+  </div>
+
+  <div class="pub-grid">
+    
+    <!-- Libro 1 -->
+    <div class="pub-card">
+      <h3 class="pub-book-title">La Lógica del Estado Sólido</h3>
+      <span class="pub-book-subtitle">Cómo el Æther, la Geometría y tu Biocampo crean el Universo.</span>
+      <p>El tratado fundacional que unifica la mecánica de fluidos con la biología humana (La Quinta Octava), estableciendo la Succión Hidrodinámica como el origen de la gravedad y la resonancia sintrópica.</p>
+      <div class="pub-actions">
+        <a href="https://www.amazon.com/-/es/dp/B0H57CJ34F?binding=kindle_edition&ref=dbs_dp_rwt_sb_bx_tkin" target="_blank" rel="noopener noreferrer" class="pub-btn">Ver Edición en Español</a>
+        <a href="https://www.amazon.com/-/es/dp/B0H57CJ34F?binding=kindle_edition&ref=dbs_dp_rwt_sb_bx_tkin" target="_blank" rel="noopener noreferrer" class="pub-btn">View English Edition</a>
+      </div>
     </div>
 
-    <div class="publication-group">
-        <h4>II. Manual de Aplicación / Application Manual: El Códice ÆTHER</h4>
-        <p>
-            <strong>ES:</strong> Traducción de la mecánica de Fricción Cero para el universo cotidiano y el Biocampo.<br>
-            <strong>EN:</strong> Translation of Zero Friction mechanics for the everyday universe and the Biofield.
-        </p>
-        <ul>
-            <li><a href="https://www.amazon.com/stores/W.-H.-Amelines/author/B0H12VKFW3/allbooks?ccs_id=f290f4aa-0527-42b4-a6cc-5c59f5db1c46" target="_blank" rel="noopener noreferrer">Versión en Español (Amazon)</a></li>
-            <li><a href="https://www.amazon.com/stores/W.-H.-Amelines/author/B0H12VKFW3/allbooks?ccs_id=f290f4aa-0527-42b4-a6cc-5c59f5db1c46" target="_blank" rel="noopener noreferrer">English Version (Amazon)</a></li>
-        </ul>
-    </div>
-</div>
-    </div>
-</div>
-
-    <!-- BLOQUE: LA OBRA MATRIZ (FUNDAMENTO) -->
-    <div class="matrix-work-section">
-        <h3 style="color: #2c3e50; border-bottom: 2px solid #ccc; padding-bottom: 5px;">🏛️ EL FUNDAMENTO: La Obra Matriz</h3>
-        <p style="font-size: 1.05em; color: #555;">
-            Para los ingenieros, físicos y mentes disidentes. La demostración termodinámica y matemática absoluta de que el "vacío" no existe. Adéntrate en las verdaderas leyes de la dinámica de fluidos y la gravedad.
-        </p>
-        
-        <ul style="list-style-type: none; padding-left: 0;">
-            <li style="margin-bottom: 15px;">
-                <span style="font-size: 1.2em;">📐</span> <strong>La Lógica del Estado Sólido (Español):</strong> 
-                <a href="https://www.amazon.com/stores/W.-H.-Amelines/author/B0H12VKFW3/allbooks?ccs_id=f290f4aa-0527-42b4-a6cc-5c59f5db1c46" target="_blank" rel="noopener noreferrer" style="color: #2980b9; font-weight: bold; text-decoration: none;">➜ Leer el Tratado Matriz (Amazon ES)</a>
-            </li>
-            <li>
-                <span style="font-size: 1.2em;">📐</span> <strong>The Logic of the Solid State (English):</strong> 
-                <a href="https://www.amazon.com/stores/W.-H.-Amelines/author/B0H12VKFW3/allbooks?ccs_id=f290f4aa-0527-42b4-a6cc-5c59f5db1c46" target="_blank" rel="noopener noreferrer" style="color: #2980b9; font-weight: bold; text-decoration: none;">➜ Read the Matrix Work (Amazon EN)</a>
-            </li>
-        </ul>
+    <!-- Libro 2 -->
+    <div class="pub-card">
+      <h3 class="pub-book-title">El Dossier de Evidencias</h3>
+      <span class="pub-book-subtitle">Refutación del Vacío, Dinámica del Æther y el Fin de la Física de la Escasez.</span>
+      <p>Monografía táctica que expone la falsación empírica del modelo estándar, la resolución del "zoológico cuántico" de partículas y la prueba irrefutable de la Expansión Nonagonal en el átomo.</p>
+      <div class="pub-actions">
+        <a href="https://www.amazon.com/-/es/dp/B0H57CJ34F?binding=kindle_edition&ref=dbs_dp_rwt_sb_bx_tkin" target="_blank" rel="noopener noreferrer" class="pub-btn">Ver Edición en Español</a>
+        <a href="https://www.amazon.com/-/es/dp/B0H57CJ34F?binding=kindle_edition&ref=dbs_dp_rwt_sb_bx_tkin" target="_blank" rel="noopener noreferrer" class="pub-btn">View English Edition</a>
+      </div>
     </div>
 
-</div>
+    <!-- Libro 3 -->
+    <div class="pub-card">
+      <h3 class="pub-book-title">El Códice ÆTHER</h3>
+      <span class="pub-book-subtitle">El Manual del Universo Cotidiano.</span>
+      <p>El compendio de ingeniería universal que detalla la topología de la Matriz 13x21, la anulación de la "acción fantasmal" a distancia y los vectores matemáticos de la Tríada PTPU-RHF-PME.</p>
+      <div class="pub-actions">
+        <a href="https://www.amazon.com/-/es/dp/B0H57CJ34F?binding=kindle_edition&ref=dbs_dp_rwt_sb_bx_tkin" target="_blank" rel="noopener noreferrer" class="pub-btn">Ver Edición en Español</a>
+        <a href="https://www.amazon.com/-/es/dp/B0H57CJ34F?binding=kindle_edition&ref=dbs_dp_rwt_sb_bx_tkin" target="_blank" rel="noopener noreferrer" class="pub-btn">View English Edition</a>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="pub-btn-series">
+    <a href="https://www.amazon.com/-/es/dp/B0H57CJ34F?binding=kindle_edition&ref=dbs_dp_rwt_sb_bx_tkin" target="_blank" rel="noopener noreferrer" class="pub-btn">Explorar la Serie Completa en Amazon KDP</a>
+  </div>
+</section>
+<!-- ==========================================
+     FIN DE SECCIÓN: PUBLICACIONES OFICIALES
+     ========================================== -->
 <!-- ========================================== -->
 
     </div>
