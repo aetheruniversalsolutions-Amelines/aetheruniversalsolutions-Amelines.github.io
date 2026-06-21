@@ -1,1 +1,1168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ÆTHER Universal Platform Solutions | Solid-State Cosmology</title>
+    
+    <!-- Fuentes de Estado Sólido -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Rajdhani:wght@400;500;600;700&display=swap" rel="stylesheet">
+    
+    <style>
+        /* Base y Resonancia Visual (Calibración Áurea) */
+        :root {
+            --bg-color: #050508;
+            --text-main: #E0E0E0;
+            --text-muted: #888899;
+            --aether-gold: #D4AF37; /* Oro Institucional (Au) */
+            --aether-gold-dim: rgba(212, 175, 55, 0.15);
+            --border-line: rgba(255, 255, 255, 0.1);
+        }
 
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            font-family: 'Aptos', 'Montserrat', 'Segoe UI', sans-serif;
+            font-size: 1.15rem;
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+        }
+
+        /* Estructura Principal */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 40px 20px;
+        }
+
+        /* Tipografía Orbitron para Títulos */
+        h1, h2, h3, h4 {
+            font-family: 'Aptos', 'Montserrat', 'Segoe UI', sans-serif;
+            font-weight: 600;
+            margin-top: 0;
+            color: var(--aether-gold);
+            letter-spacing: 1px;
+        }
+
+        h1 { font-size: 2.2rem; text-align: center; margin-bottom: 5px; }
+        h2 { font-size: 1.5rem; text-align: center; color: #FFFFFF; margin-bottom: 50px; }
+        h3 { border-bottom: 1px solid var(--aether-gold-dim); padding-bottom: 10px; margin-top: 40px; }
+
+        /* Cabecera y Logo */
+        .header-section {
+            text-align: center;
+            border-bottom: 1px solid var(--border-line);
+            padding-bottom: 30px;
+            margin-bottom: 40px;
+        }
+        .header-section img {
+            max-width: 250px;
+            margin-bottom: 20px;
+            border-radius: 8px;
+        }
+
+        /* Diseño Bilingüe (Grid de 2 columnas) */
+        .bilingual-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+        
+        @media (max-width: 768px) {
+            .bilingual-grid { grid-template-columns: 1fr; }
+        }
+
+        .lang-block {
+            background: rgba(255, 255, 255, 0.02);
+            padding: 25px;
+            border-left: 3px solid var(--aether-gold);
+            border-radius: 4px;
+        }
+
+        .lang-tag {
+            font-size: 0.85rem;
+            font-weight: 700;
+            color: var(--bg-color);
+            background-color: var(--aether-gold);
+            padding: 2px 8px;
+            border-radius: 3px;
+            display: inline-block;
+            margin-bottom: 15px;
+            font-family: 'Orbitron', sans-serif;
+        }
+
+        /* Tarjetas de Publicaciones (Lista Profesional) */
+        .publication-list {
+            list-style: none;
+            padding: 0;
+        }
+
+        .publication-item {
+            background: rgba(0, 0, 0, 0.4);
+            border: 1px solid var(--border-line);
+            margin-bottom: 15px;
+            padding: 20px;
+            border-radius: 5px;
+            transition: border-color 0.3s;
+        }
+
+        .publication-item:hover {
+            border-color: var(--aether-gold-dim);
+            background: rgba(212, 175, 55, 0.02);
+        }
+
+        .pub-title {
+            font-size: 1.25rem;
+            font-weight: 700;
+            color: #FFFFFF;
+            margin-bottom: 5px;
+        }
+
+        .pub-meta {
+            font-size: 0.95rem;
+            color: var(--text-muted);
+            margin-bottom: 15px;
+        }
+
+        .doi-link {
+            color: #58a6ff; /* Azul técnico para enlaces DOI */
+            text-decoration: none;
+            display: inline-block;
+            margin-bottom: 10px;
+            font-weight: 600;
+        }
+        .doi-link:hover { text-decoration: underline; color: var(--aether-gold); }
+
+        /* Botones de Descarga Profesionales */
+        .btn-download {
+            display: inline-block;
+            font-family: 'Orbitron', sans-serif;
+            font-size: 0.85rem;
+            text-decoration: none;
+            color: var(--bg-color);
+            background-color: var(--aether-gold);
+            padding: 8px 16px;
+            border-radius: 4px;
+            font-weight: 700;
+            transition: all 0.3s ease;
+            text-transform: uppercase;
+        }
+        .btn-download:hover {
+            background-color: #FFFFFF;
+            box-shadow: 0 0 15px rgba(212, 175, 55, 0.5);
+        }
+
+        /* Botón Invertido (Para el interactivo) */
+        .btn-outline {
+            background-color: transparent;
+            color: var(--aether-gold);
+            border: 1px solid var(--aether-gold);
+        }
+        .btn-outline:hover {
+            background-color: var(--aether-gold);
+            color: var(--bg-color);
+        }
+
+        /* Archivos de Datos Específicos */
+        .data-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+        }
+        .data-card {
+            border: 1px dashed var(--aether-gold-dim);
+            padding: 20px;
+            text-align: center;
+            background: rgba(0,0,0,0.5);
+            border-radius: 6px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        footer {
+            text-align: center;
+            margin-top: 60px;
+            padding-top: 20px;
+            border-top: 1px solid var(--border-line);
+            color: var(--text-muted);
+            font-size: 0.9rem;
+        }
+        /* Estilos para Miniaturas y Botones de Galería */
+        .preview-img {
+            width: 100%;
+            height: 160px;
+            object-fit: cover;
+            border-radius: 4px;
+            margin-bottom: 15px;
+            border: 1px solid var(--border-line);
+            transition: transform 0.3s ease, border-color 0.3s ease;
+        }
+        .preview-img:hover {
+            transform: scale(1.03);
+            border-color: var(--aether-gold);
+        }
+        .btn-group {
+            display: flex;
+            gap: 10px;
+            justify-content: center;
+            margin-top: 15px;
+        }
+        .btn-view {
+            background-color: transparent;
+            color: #58a6ff;
+            border: 1px solid #58a6ff;
+        }
+        .btn-view:hover {
+            background-color: #58a6ff;
+            color: var(--bg-color);
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+
+    <!-- CABECERA INSTITUCIONAL -->
+    <header class="header-section">
+        <!-- Logo con la ruta segura (espacios codificados) -->
+        <img src="LOGO%20AETHER%20Final%20web%202.jpg" alt="ÆTHER Universal Platform Solutions Logo">
+        <h1>ÆTHER Universal Platform Solutions</h1>
+        <h2>Solid-State Cosmology Open Repository</h2>
+    </header>
+
+    <!-- PRESENTACIÓN BILINGÜE -->
+    <div class="bilingual-grid">
+        <!-- INGLÉS -->
+        <div class="lang-block">
+            <span class="lang-tag">EN | ENGLISH</span>
+            <p>Welcome to the foundational repository of <strong>Solid-State Cosmology and the Códice ÆTHER</strong>. This platform hosts the theoretical raw data, topological models, and open-source mathematical files that sustain our advanced logic.</p>
+            <p>We postulate that the Universe is a dynamically static Solid-State Organism, operating under the fluid mechanics of an incompressible medium (the Æther) based on Toroidal Geometry and the 3-6-9 frequency matrix. All scientific development or applied industrial technology is governed by intellectual property licensing.</p>
+        </div>
+        
+        <!-- ESPAÑOL -->
+        <div class="lang-block">
+            <span class="lang-tag">ES | ESPAÑOL</span>
+            <p>Bienvenidos al repositorio fundacional de la <strong>Cosmología del Estado Sólido y el Códice ÆTHER</strong>. Esta plataforma aloja los datos teóricos crudos, modelos topológicos y archivos matemáticos de código abierto que sustentan nuestra lógica avanzada.</p>
+            <p>Postulamos que el Universo es un Organismo de Estado Sólido dinámicamente estático, operando bajo la mecánica de fluidos de un medio incompresible (el Æther) basado en la Geometría Toroidal y la matriz de frecuencia 3-6-9. Todo desarrollo científico o tecnología industrial aplicada se rige bajo licenciamiento de propiedad intelectual.</p>
+        </div>
+    </div>
+
+<div style="background: linear-gradient(135deg, #020617 0%, #1e293b 100%); padding: 60px 20px; text-align: center; border-bottom: 4px solid #fbbf24; color: #f1f5f9; font-family: 'Arial', sans-serif;">
+    
+    <div style="max-width: 1000px; margin: 0 auto; display: flex; flex-wrap: wrap; justify-content: center; gap: 40px;">
+        
+      </div>
+
+    <!-- ==========================================
+     SECCIÓN: PUBLICACIONES OFICIALES Y ARQUITECTURA
+     Serie: Cosmología del Estado Sólido / Solid State Cosmology
+     Arquitectura: ÆTHER Universal Platform Solutions
+     ========================================== -->
+<style>
+  :root {
+    --aether-plenum: #090a0f;
+    --au-gold: #D4AF37;
+    --ag-silver: #E0E0E0;
+    --cu-copper: #B87333;
+    --text-primary: #F5F5F7;
+    --text-muted: #8A95A5;
+    --text-en: #A0AAB2; /* Color para diferenciación bilingüe */
+  }
+
+  #publicaciones-oficiales {
+    background-color: var(--aether-plenum);
+    color: var(--text-primary);
+    padding: 5rem 2rem;
+    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    border-top: 1px solid var(--cu-copper);
+    border-bottom: 1px solid var(--cu-copper);
+  }
+
+  .pub-header {
+    text-align: center;
+    margin-bottom: 3rem;
+  }
+
+  .pub-series-tag {
+    color: var(--cu-copper);
+    font-size: 1rem;
+    font-weight: 600;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    display: block;
+    margin-bottom: 0.5rem;
+  }
+
+  .pub-header h2 {
+    color: var(--au-gold);
+    font-size: 2.8rem;
+    letter-spacing: 1px;
+    margin-bottom: 0.5rem;
+    text-transform: uppercase;
+  }
+  
+  .pub-header h3.title-en {
+    color: var(--cu-copper);
+    font-size: 1.8rem;
+    letter-spacing: 1px;
+    margin-top: 0;
+    margin-bottom: 1.5rem;
+    text-transform: uppercase;
+    font-weight: 400;
+  }
+
+  .pub-header p {
+    color: var(--ag-silver);
+    font-size: 1.15rem;
+    max-width: 800px;
+    margin: 0 auto 0.5rem auto;
+    line-height: 1.6;
+  }
+  
+  .pub-header p.lang-en {
+    color: var(--text-en);
+    font-size: 1.05rem;
+    font-style: italic;
+  }
+
+  .pub-diagram-container {
+    max-width: 800px;
+    margin: 0 auto 4rem auto;
+    border: 1px solid rgba(212, 175, 55, 0.2);
+    border-radius: 8px;
+    background: rgba(255, 255, 255, 0.01);
+    padding: 1rem;
+  }
+
+  .pub-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 3rem;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+
+  .pub-card {
+    background: rgba(255, 255, 255, 0.02);
+    border: 1px solid rgba(224, 224, 224, 0.1);
+    border-radius: 6px;
+    padding: 2.5rem 2rem;
+    transition: transform 0.4s ease, border-color 0.4s ease;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .pub-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 3px;
+    background: linear-gradient(90deg, var(--au-gold), var(--cu-copper));
+    opacity: 0;
+    transition: opacity 0.4s ease;
+  }
+
+  .pub-card:hover {
+    transform: translateY(-5px);
+    border-color: rgba(212, 175, 55, 0.4);
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.5);
+  }
+
+  .pub-card:hover::before {
+    opacity: 1;
+  }
+
+  .pub-book-title {
+    color: var(--ag-silver);
+    font-size: 1.6rem;
+    margin-bottom: 0.2rem;
+    line-height: 1.2;
+  }
+  
+  .pub-book-title-en {
+    color: var(--au-gold);
+    font-size: 1.2rem;
+    margin-top: 0;
+    margin-bottom: 0.8rem;
+    font-weight: 400;
+  }
+
+  .pub-book-subtitle {
+    color: var(--cu-copper);
+    font-size: 0.95rem;
+    margin-bottom: 1.5rem;
+    font-style: italic;
+    line-height: 1.4;
+    display: block;
+  }
+
+  .pub-description {
+    color: var(--ag-silver);
+    font-size: 0.95rem;
+    line-height: 1.6;
+    margin-bottom: 0.8rem;
+  }
+  
+  .pub-description-en {
+    color: var(--text-en);
+    font-size: 0.9rem;
+    line-height: 1.5;
+    margin-bottom: 2rem;
+    flex-grow: 1;
+  }
+
+  .pub-actions {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    margin-top: auto;
+  }
+
+  .pub-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0.8rem 1.2rem;
+    background-color: transparent;
+    color: var(--au-gold);
+    text-decoration: none;
+    font-weight: 600;
+    border: 1px solid var(--au-gold);
+    border-radius: 4px;
+    transition: all 0.3s ease;
+    text-transform: uppercase;
+    font-size: 0.85rem;
+    letter-spacing: 1px;
+  }
+
+  .pub-btn:hover {
+    background-color: var(--au-gold);
+    color: var(--aether-plenum);
+  }
+
+  .pub-btn-series {
+    margin-top: 4rem;
+    text-align: center;
+  }
+  
+  .pub-btn-series a {
+    background-color: rgba(212, 175, 55, 0.1);
+    padding: 1.2rem 3.5rem;
+    font-size: 1.1rem;
+    border-color: var(--au-gold);
+    color: var(--au-gold);
+    text-decoration: none;
+    text-transform: uppercase;
+    font-weight: bold;
+    letter-spacing: 2px;
+    border-radius: 4px;
+    transition: all 0.3s ease;
+    display: inline-block;
+  }
+
+  .pub-btn-series a:hover {
+    background-color: var(--au-gold);
+    color: var(--aether-plenum);
+    box-shadow: 0 10px 25px rgba(212, 175, 55, 0.3);
+  }
+  
+  .pub-btn-en {
+    display: block;
+    font-size: 0.85rem;
+    margin-top: 0.3rem;
+    font-weight: normal;
+  }
+
+</style>
+
+<section id="publicaciones-oficiales">
+  <div class="pub-header">
+    <span class="pub-series-tag">Serie Oficial / Official Series</span>
+    <h2>Cosmología del Estado Sólido</h2>
+    <h3 class="title-en">Solid State Cosmology</h3>
+    <p>La colección fundamental que desmantela el paradigma de la entropía y el vacío. Un compendio que expone los engranajes termodinámicos, matemáticos y fluidodinámicos del Motor Toroidal Universal.</p>
+    <p class="lang-en">The foundational collection that dismantles the paradigm of entropy and the void. A compendium exposing the thermodynamic, mathematical, and fluid-dynamic gears of the Universal Toroidal Motor.</p>
+  </div>
+
+  <!-- DIAGRAMA VECTORIAL (MOTOR TOROIDAL) -->
+  <div class="pub-diagram-container">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" width="100%" height="100%" style="background-color: transparent; font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;">
+      <defs>
+        <radialGradient id="ptpu-glow" cx="50%" cy="50%" r="50%">
+          <stop offset="0%" stop-color="#ffffff" stop-opacity="1" />
+          <stop offset="30%" stop-color="#D4AF37" stop-opacity="0.8" />
+          <stop offset="100%" stop-color="#090a0f" stop-opacity="0" />
+        </radialGradient>
+      </defs>
+      
+      <!-- Geometría Toroidal (Matriz 13x21) -->
+      <ellipse cx="250" cy="250" rx="140" ry="180" fill="none" stroke="#B87333" stroke-width="1.5" stroke-dasharray="4 4" opacity="0.4"/>
+      <ellipse cx="550" cy="250" rx="140" ry="180" fill="none" stroke="#B87333" stroke-width="1.5" stroke-dasharray="4 4" opacity="0.4"/>
+      
+      <ellipse cx="400" cy="250" rx="320" ry="70" fill="none" stroke="#D4AF37" stroke-width="2" opacity="0.6"/>
+      <ellipse cx="400" cy="250" rx="280" ry="50" fill="none" stroke="#D4AF37" stroke-width="1" opacity="0.3"/>
+      
+      <!-- Eje Vertical 3-6-9 -->
+      <line x1="400" y1="40" x2="400" y2="460" stroke="#E0E0E0" stroke-width="1.5" stroke-dasharray="3 3" opacity="0.8"/>
+      
+      <!-- Núcleo PTPU -->
+      <circle cx="400" cy="250" r="70" fill="url(#ptpu-glow)" />
+      <circle cx="400" cy="250" r="12" fill="#ffffff" />
+
+      <!-- Succión Polar (Gravedad 1-4-7) -->
+      <path d="M 385 90 L 400 150 L 415 90 Z" fill="#E0E0E0" opacity="0.7"/>
+      <path d="M 385 410 L 400 350 L 415 410 Z" fill="#E0E0E0" opacity="0.7"/>
+
+      <!-- Expansión Ecuatorial (Electromagnetismo 2-5-8) -->
+      <path d="M 480 242 L 550 250 L 480 258 Z" fill="#B87333" opacity="0.9"/>
+      <path d="M 320 242 L 250 250 L 320 258 Z" fill="#B87333" opacity="0.9"/>
+
+      <!-- Etiquetas Técnicas -->
+      <text x="420" y="245" fill="#D4AF37" font-size="14" font-weight="bold">PTPU</text>
+      <text x="420" y="260" fill="#E0E0E0" font-size="10">Transición de Fase / Phase Transition</text>
+      
+      <text x="420" y="70" fill="#E0E0E0" font-size="12" font-weight="bold">SUCCIÓN POLAR (1-4-7)</text>
+      <text x="420" y="85" fill="#E0E0E0" font-size="10">Implosión / Gravity</text>
+
+      <text x="570" y="240" fill="#B87333" font-size="12" font-weight="bold">EXPANSIÓN ECUATORIAL (2-5-8)</text>
+      <text x="570" y="255" fill="#B87333" font-size="10">Electromagnetic Force</text>
+
+      <text x="120" y="100" fill="#D4AF37" font-size="12" font-weight="bold">MATRIZ 13x21</text>
+      <text x="410" y="450" fill="#E0E0E0" font-size="11" font-weight="bold">EJE DE RESONANCIA 3-6-9</text>
+    </svg>
+  </div>
+
+  <div class="pub-grid">
+    
+    <!-- Libro 1 -->
+    <div class="pub-card">
+      <h3 class="pub-book-title">La Lógica del Estado Sólido</h3>
+      <h4 class="pub-book-title-en">The Logic of the Solid State</h4>
+      
+      <span class="pub-book-subtitle">Cómo el Æther, la Geometría y tu Biocampo crean el Universo.<br>
+      <span style="color: var(--text-en);">How Æther, Geometry, and your Biofield create the Universe.</span></span>
+      
+      <p class="pub-description">El tratado fundacional que unifica la mecánica de fluidos con la biología humana (La Quinta Octava), estableciendo la Succión Hidrodinámica como el origen de la gravedad para alcanzar la Entalpía Máxima.</p>
+      
+      <p class="pub-description-en">The foundational treatise that unifies fluid mechanics with human biology (The Fifth Octave), establishing Hydrodynamic Suction as the origin of gravity and syntropic resonance to achieve Maximum Enthalpy.</p>
+      
+      <div class="pub-actions">
+        <a href="https://www.amazon.com/-/es/dp/B0H57CJ34F?binding=kindle_edition&ref=dbs_dp_rwt_sb_bx_tkin" target="_blank" rel="noopener noreferrer" class="pub-btn">Versión Español (Kindle & Print)</a>
+        <a href="https://www.amazon.com/-/es/dp/B0H57CJ34F?binding=kindle_edition&ref=dbs_dp_rwt_sb_bx_tkin" target="_blank" rel="noopener noreferrer" class="pub-btn">English Version (Kindle & Print)</a>
+      </div>
+    </div>
+
+    <!-- Libro 2 -->
+    <div class="pub-card">
+      <h3 class="pub-book-title">El Dossier de Evidencias</h3>
+      <h4 class="pub-book-title-en">The Evidence Dossier</h4>
+      
+      <span class="pub-book-subtitle">Refutación del Vacío, Dinámica del Æther y el Fin de la Física de la Escasez.<br>
+      <span style="color: var(--text-en);">Refutation of the Void, Æther Dynamics, and the End of Scarcity Physics.</span></span>
+      
+      <p class="pub-description">Monografía táctica que expone la falsación empírica del modelo estándar, la resolución del "zoológico cuántico" de partículas mediante ondas de choque y la prueba irrefutable de la Expansión Nonagonal.</p>
+      
+      <p class="pub-description-en">Tactical monograph exposing the empirical falsification of the standard model, the resolution of the particle "quantum zoo" via shockwaves, and the irrefutable proof of Nonagonal Expansion in the atom.</p>
+      
+      <div class="pub-actions">
+        <a href="https://www.amazon.com/-/es/dp/B0H57CJ34F?binding=kindle_edition&ref=dbs_dp_rwt_sb_bx_tkin" target="_blank" rel="noopener noreferrer" class="pub-btn">Versión Español (Kindle & Print)</a>
+        <a href="https://www.amazon.com/-/es/dp/B0H57CJ34F?binding=kindle_edition&ref=dbs_dp_rwt_sb_bx_tkin" target="_blank" rel="noopener noreferrer" class="pub-btn">English Version (Kindle & Print)</a>
+      </div>
+    </div>
+
+    <!-- Libro 3 -->
+    <div class="pub-card">
+      <h3 class="pub-book-title">El Códice ÆTHER</h3>
+      <h4 class="pub-book-title-en">The ÆTHER Codex</h4>
+      
+      <span class="pub-book-subtitle">El Manual del Universo Cotidiano.<br>
+      <span style="color: var(--text-en);">The Manual of the Everyday Universe.</span></span>
+      
+      <p class="pub-description">La traducción accesible y cotidiana de La Lógica del Estado Sólido. Un manual diseñado para el público general que explica cómo la Matriz 13x21, el Æther y la Tríada PTPU-RHF-PME operan en la vida diaria, desmitificando la física avanzada en términos simples y prácticos.</p>
+      
+      <p class="pub-description-en">The accessible, everyday translation of The Logic of the Solid State. A manual designed for the general public that explains how the 13x21 Matrix, the Æther, and the PTPU-RHF-PME Triad operate in daily life, demystifying advanced physics in simple and practical terms.</p>
+      
+      <div class="pub-actions">
+        <a href="https://www.amazon.com/-/es/dp/B0H57CJ34F?binding=kindle_edition&ref=dbs_dp_rwt_sb_bx_tkin" target="_blank" rel="noopener noreferrer" class="pub-btn">Versión Español (Kindle & Print)</a>
+        <a href="https://www.amazon.com/-/es/dp/B0H57CJ34F?binding=kindle_edition&ref=dbs_dp_rwt_sb_bx_tkin" target="_blank" rel="noopener noreferrer" class="pub-btn">English Version (Kindle & Print)</a>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="pub-btn-series">
+    <a href="https://www.amazon.com/-/es/dp/B0H57CJ34F?binding=kindle_edition&ref=dbs_dp_rwt_sb_bx_tkin" target="_blank" rel="noopener noreferrer">
+      Explorar la Serie Completa en Amazon KDP
+      <span class="pub-btn-en">Explore the Complete Series on Amazon KDP</span>
+    </a>
+  </div>
+</section>
+<!-- ==========================================
+     FIN DE SECCIÓN: PUBLICACIONES OFICIALES
+     ========================================== -->
+</div>
+</div>
+    
+<!-- ==========================================
+     REPOSITORIO ACADÉMICO ÆTHER
+     Secciones I, II y III
+     Arquitectura UX/UI: Entalpía Visual Máxima (Grid Paralelo 3x3)
+     Paleta de Alta Frecuencia: Plasma Blue & Solar Yellow
+     ========================================== -->
+<style>
+  :root {
+    --aether-plenum: #090a0f;
+    --solar-yellow: #FFD700; /* Amarillo resonante, vibrante y limpio */
+    --plasma-blue: #00D4FF; /* Azul de alta energía, plasma fluido */
+    --text-primary: #F5F5F7;
+    --text-es: #E0E0E0;
+    --text-en: #A0AAB2;
+    --bg-card: rgba(255, 255, 255, 0.02);
+    --border-card: rgba(0, 212, 255, 0.15); /* Borde sutilmente ionizado */
+  }
+
+  .aether-repository {
+    background-color: var(--aether-plenum);
+    color: var(--text-primary);
+    padding: 5rem 2rem;
+    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  }
+
+  /* Contenedor Maestro alineado con la sección de libros */
+  .repo-container {
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+
+  .repo-section-title {
+    color: var(--plasma-blue);
+    font-size: 1.8rem;
+    font-weight: 600;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    margin-top: 4rem;
+    margin-bottom: 2.5rem;
+    border-bottom: 1px solid rgba(0, 212, 255, 0.3);
+    padding-bottom: 0.8rem;
+    text-align: center;
+  }
+
+  /* Grid en Paralelo (3 columnas) */
+  .repo-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2.5rem;
+  }
+
+  /* Diseño de Tarjetas Universales (Postulados y Monografías) */
+  .repo-card {
+    background: var(--bg-card);
+    border-top: 3px solid var(--solar-yellow);
+    border-left: 1px solid var(--border-card);
+    border-right: 1px solid var(--border-card);
+    border-bottom: 1px solid var(--border-card);
+    border-radius: 4px;
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    transition: transform 0.3s ease, box-shadow 0.3s ease, border-top-color 0.3s ease;
+  }
+
+  .repo-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 30px rgba(0, 212, 255, 0.15);
+    border-top-color: var(--plasma-blue);
+  }
+
+  .repo-card-title {
+    color: var(--solar-yellow);
+    font-size: 1.2rem;
+    margin: 0 0 0.5rem 0;
+    line-height: 1.3;
+  }
+
+  .repo-card-meta {
+    font-size: 0.85rem;
+    color: var(--plasma-blue);
+    margin-bottom: 1.5rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+    padding-bottom: 0.8rem;
+  }
+
+  .repo-desc-es {
+    color: var(--text-es);
+    font-size: 0.95rem;
+    line-height: 1.6;
+    margin-bottom: 0.8rem;
+  }
+
+  .repo-desc-en {
+    color: var(--text-en);
+    font-size: 0.9rem;
+    line-height: 1.5;
+    font-style: italic;
+    margin-bottom: 2rem;
+    flex-grow: 1; /* Empuja el botón al fondo */
+  }
+
+  /* Botón Zenodo DOI */
+  .zenodo-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0.8rem 1rem;
+    background-color: rgba(255, 215, 0, 0.05);
+    color: var(--solar-yellow);
+    text-decoration: none;
+    font-weight: 600;
+    border: 1px solid var(--solar-yellow);
+    border-radius: 4px;
+    transition: all 0.3s ease;
+    font-size: 0.85rem;
+    letter-spacing: 1px;
+  }
+
+  .zenodo-btn:hover {
+    background-color: var(--solar-yellow);
+    color: var(--aether-plenum);
+  }
+  
+  .zenodo-btn span {
+    font-weight: normal;
+    margin-right: 5px;
+  }
+
+  /* Tarjeta Centrada para Erratas */
+  .errata-container {
+    max-width: 800px;
+    margin: 0 auto;
+  }
+
+  /* Responsividad */
+  @media (max-width: 1024px) {
+    .repo-grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+
+  @media (max-width: 768px) {
+    .repo-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>
+
+<div class="aether-repository">
+  <div class="repo-container">
+
+    <!-- ==========================================
+         SECCIÓN I: POSTULADOS FUNDACIONALES
+         ========================================== -->
+    <h2 class="repo-section-title">I. Foundational Postulates / Postulados Fundacionales</h2>
+
+    <div class="repo-grid">
+      <!-- Postulado I -->
+      <div class="repo-card">
+        <h3 class="repo-card-title">Postulate I: The Universal Toroidal Engine</h3>
+        <div class="repo-card-meta">Author: W.H. Amelines | Status: Published</div>
+        <p class="repo-desc-es"><strong>[ES]</strong> Termodinámica de fluidos etéricos y el axioma de creación sintrópica.</p>
+        <p class="repo-desc-en"><strong>[EN]</strong> Thermodynamics of Aetheric Fluids and the Axiom of Syntropic Creation.</p>
+        <a href="https://doi.org/10.5281/zenodo.19521973" target="_blank" rel="noopener noreferrer" class="zenodo-btn"><span>Zenodo DOI:</span> 10.5281/zenodo.19521973</a>
+      </div>
+
+      <!-- Postulado II -->
+      <div class="repo-card">
+        <h3 class="repo-card-title">Postulate II: The Quantum Information Substrate</h3>
+        <div class="repo-card-meta">Author: W.H. Amelines | Status: Published</div>
+        <p class="repo-desc-es"><strong>[ES]</strong> Dinámica de fluidos del vacío electrodinámico y el principio de autoorganización sintrópica.</p>
+        <p class="repo-desc-en"><strong>[EN]</strong> Fluid Dynamics of the Electrodynamic Vacuum and the Principle of Syntropic Self-Organization.</p>
+        <a href="https://doi.org/10.5281/zenodo.19521973" target="_blank" rel="noopener noreferrer" class="zenodo-btn"><span>Zenodo DOI:</span> 10.5281/zenodo.19521973</a>
+      </div>
+
+      <!-- Postulado III -->
+      <div class="repo-card">
+        <h3 class="repo-card-title">Postulate III: The Universal Symphony</h3>
+        <div class="repo-card-meta">Author: W.H. Amelines | Status: Published</div>
+        <p class="repo-desc-es"><strong>[ES]</strong> Cimática cósmica, mecánica de ondas y escalamiento fractal de la materia.</p>
+        <p class="repo-desc-en"><strong>[EN]</strong> Cosmic Cymatics, Wave Mechanics and Fractal Scaling of Matter.</p>
+        <a href="https://doi.org/10.5281/zenodo.19521973" target="_blank" rel="noopener noreferrer" class="zenodo-btn"><span>Zenodo DOI:</span> 10.5281/zenodo.19521973</a>
+      </div>
+
+      <!-- Postulado IV -->
+      <div class="repo-card">
+        <h3 class="repo-card-title">Postulate IV: The Atomic Architecture of the Solid State</h3>
+        <div class="repo-card-meta">Author: W.H. Amelines | Status: Published</div>
+        <p class="repo-desc-es"><strong>[ES]</strong> El vórtice periódico toroidal y la mecánica del enlace intersticial.</p>
+        <p class="repo-desc-en"><strong>[EN]</strong> The Toroidal Periodic Vortex and the Mechanics of Interstitial Bonding.</p>
+        <a href="https://doi.org/10.5281/zenodo.19542763" target="_blank" rel="noopener noreferrer" class="zenodo-btn"><span>Zenodo DOI:</span> 10.5281/zenodo.19542763</a>
+      </div>
+
+      <!-- Addendum IV -->
+      <div class="repo-card">
+        <h3 class="repo-card-title">Addendum IV: The DNA of the Universe</h3>
+        <div class="repo-card-meta">Author: W.H. Amelines | Status: Published</div>
+        <p class="repo-desc-es"><strong>[ES]</strong> Topología Estructural.</p>
+        <p class="repo-desc-en"><strong>[EN]</strong> Structural Topology.</p>
+        <a href="https://doi.org/10.5281/zenodo.19619217" target="_blank" rel="noopener noreferrer" class="zenodo-btn"><span>Zenodo DOI:</span> 10.5281/zenodo.19619217</a>
+      </div>
+
+      <!-- Postulado V -->
+      <div class="repo-card">
+        <h3 class="repo-card-title">Postulate V: The Geodesic Architecture of the Unified Field</h3>
+        <div class="repo-card-meta">Author: W.H. Amelines | Status: Published</div>
+        <p class="repo-desc-es"><strong>[ES]</strong> El código 3-6-9 y la redefinición volumétrica de la Constante de Planck.</p>
+        <p class="repo-desc-en"><strong>[EN]</strong> The 3-6-9 Code and the Volumetric Redefinition of Planck's Constant.</p>
+        <a href="https://doi.org/10.5281/zenodo.19637986" target="_blank" rel="noopener noreferrer" class="zenodo-btn"><span>Zenodo DOI:</span> 10.5281/zenodo.19637986</a>
+      </div>
+    </div>
+
+
+    <!-- ==========================================
+         SECCIÓN II: MONOGRAFÍAS TÉCNICAS
+         ========================================== -->
+    <h2 class="repo-section-title">II. Technical Monographs / Monografías Técnicas</h2>
+
+    <div class="repo-grid">
+      <!-- Monografía I -->
+      <div class="repo-card">
+        <h3 class="repo-card-title">W.H.Amelines_Technical Monography I - THE SOLID STATE MANIFESTO</h3>
+        <div class="repo-card-meta">Author: William Herrera Amelines | Status: Preprint</div>
+        <p class="repo-desc-es"><strong>[ES]</strong> Expone la falacia termodinámica del vacío absoluto, reemplazando el cálculo relativista con las ecuaciones de Navier-Stokes para fluidos perfectos.</p>
+        <p class="repo-desc-en"><strong>[EN]</strong> Exposes the thermodynamic fallacy of the absolute vacuum, replacing relativistic calculus with Navier-Stokes equations for perfect fluids.</p>
+        <a href="https://doi.org/10.5281/zenodo.19994873" target="_blank" rel="noopener noreferrer" class="zenodo-btn"><span>Zenodo DOI:</span> 10.5281/zenodo.19994873</a>
+      </div>
+
+      <!-- Monografía II -->
+      <div class="repo-card">
+        <h3 class="repo-card-title">W.H.Amelines_Technical Monography II - THE TOPOLOGY OF COSMIC DNA</h3>
+        <div class="repo-card-meta">Author: William Herrera Amelines | Status: Preprint</div>
+        <p class="repo-desc-es"><strong>[ES]</strong> Reemplaza la Tabla Periódica plana por una matriz toroidal tridimensional basada en las parastiquias de Fibonacci (13x21).</p>
+        <p class="repo-desc-en"><strong>[EN]</strong> Replaces the flat Periodic Table with a three-dimensional toroidal matrix based on Fibonacci parastichies (13x21).</p>
+        <a href="https://doi.org/10.5281/zenodo.19995435" target="_blank" rel="noopener noreferrer" class="zenodo-btn"><span>Zenodo DOI:</span> 10.5281/zenodo.19995435</a>
+      </div>
+
+      <!-- Monografía III -->
+      <div class="repo-card">
+        <h3 class="repo-card-title">W.H.Amelines_Technical Monography III - THE FLUID MECHANICS OF ENERGY and THE AMELINES TENSOR</h3>
+        <div class="repo-card-meta">Author: William Herrera Amelines | Status: Preprint</div>
+        <p class="repo-desc-es"><strong>[ES]</strong> Demostración matemática que reemplaza E=mc² por el Teorema de Impedancia Energética.</p>
+        <p class="repo-desc-en"><strong>[EN]</strong> Mathematical demonstration replacing E=mc² with the Energy Impedance Theorem.</p>
+        <a href="https://doi.org/10.5281/zenodo.19995654" target="_blank" rel="noopener noreferrer" class="zenodo-btn"><span>Zenodo DOI:</span> 10.5281/zenodo.19995654</a>
+      </div>
+    </div>
+
+
+    <!-- ==========================================
+         SECCIÓN III: ERRATAS Y UNIFICACIÓN
+         ========================================== -->
+    <h2 class="repo-section-title">III. Official Errata & Terminological Unification / Notas Aclaratorias</h2>
+
+    <div class="errata-container">
+      <div class="repo-card" style="border-top-color: var(--plasma-blue);">
+        <h3 class="repo-card-title" style="color: var(--plasma-blue);">Errata Notice: Epistemological Consolidation of the Códice ÆTHER</h3>
+        <div class="repo-card-meta" style="color: var(--solar-yellow);">Author: W.H. Amelines | Status: Official Supplement / Preprint</div>
+        <p class="repo-desc-es"><strong>[ES]</strong> Este documento resuelve matemáticamente la asimetría tipográfica del ciclo toroidal en el Postulado I y establece la unificación definitiva de conceptos (Masa como Impedancia, Velocidad de la Luz y Gravedad Acústica) según el marco final de la serie Cosmología de Estado Sólido.</p>
+        <p class="repo-desc-en"><strong>[EN]</strong> This document mathematically resolves the typographical asymmetry of the toroidal cycle in Postulate I and establishes the definitive unification of concepts (Mass as Impedance, Speed of Light, and Acoustic Gravity) according to the final framework of the Solid-State Cosmology series.</p>
+        <a href="https://doi.org/10.5281/zenodo.20368442" target="_blank" rel="noopener noreferrer" class="zenodo-btn" style="border-color: var(--plasma-blue); color: var(--plasma-blue);"><span>Zenodo DOI:</span> 10.5281/zenodo.20368442</a>
+      </div>
+    </div>
+
+  </div> <!-- Fin de repo-container -->
+</div> <!-- Fin de aether-repository -->
+    </div>
+   <style>
+  /* Clases adicionales para la Galería y Secciones Dobles */
+  .repo-grid-2 {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2.5rem;
+  }
+  
+  .repo-preview-img {
+    width: 100%;
+    height: auto;
+    border-radius: 4px;
+    margin-bottom: 1.5rem;
+    border: 1px solid rgba(0, 212, 255, 0.2);
+    transition: border-color 0.3s ease;
+  }
+
+  .repo-card:hover .repo-preview-img {
+    border-color: var(--solar-yellow);
+  }
+
+  .btn-group-flex {
+    display: flex;
+    gap: 10px;
+    margin-top: auto;
+    width: 100%;
+  }
+
+  .btn-group-flex .zenodo-btn {
+    flex: 1;
+    text-align: center;
+  }
+
+  @media (max-width: 900px) {
+    .repo-grid-2 {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>
+
+<div class="aether-repository">
+  <div class="repo-container">
+
+    <h2 class="repo-section-title" style="margin-top: 2rem;">IV. RAW DATA MATRIX / DATOS CRUDOS E INTERACTIVOS</h2>
+
+    <div class="repo-grid-2">
+        
+        <div class="repo-card">
+            <h3 class="repo-card-title">Geometría Universal de los Elementos 3-6-9</h3>
+            <p class="repo-desc-es"><strong>[ES]</strong> Fuente de datos (.xlsx) con cálculos de hidro-impedancia para los 118 elementos.</p>
+            <p class="repo-desc-en" style="margin-bottom: 1.5rem;"><strong>[EN]</strong> Data source (.xlsx) with hydro-impedance calculations for the 118 elements.</p>
+            <a href="Geometria Universal de los Elementos 3-6-9.xlsx" class="zenodo-btn" style="margin-top: auto;" download>Download Excel Data</a>
+        </div>
+        
+        <div class="repo-card">
+            <h3 class="repo-card-title">Modelo Topológico 3D (13x21)</h3>
+            <p class="repo-desc-es"><strong>[ES]</strong> Código fuente OpenSCAD (.scad) para el renderizado de la resonancia estructural.</p>
+            <p class="repo-desc-en" style="margin-bottom: 1.5rem;"><strong>[EN]</strong> OpenSCAD source code (.scad) for structural resonance rendering.</p>
+            <a href="Vortex_periodic_Table 4.scad" class="zenodo-btn" style="margin-top: auto;" download>Download OpenSCAD File</a>
+        </div>
+
+        <div class="repo-card" style="border-top-color: var(--solar-yellow); background: rgba(255, 215, 0, 0.02);">
+            <h3 class="repo-card-title" style="color: var(--solar-yellow);">Interactive Chemical Sunflower</h3>
+            <p class="repo-desc-es"><strong>[ES]</strong> Renderizado web interactivo de la Matriz UGE. Visualice las Parastiquias 13x21 y los Nodos Intersticiales.</p>
+            <p class="repo-desc-en" style="margin-bottom: 1.5rem; color: var(--text-es);"><strong>[EN]</strong> Web-based interactive rendering of the UGE Matrix. Visualize the 13x21 Parastichies and Interstitial Nodes.</p>
+            <a href="Phyllotactic_Matrix_Chemical_Sunflower_Architecture.html" target="_blank" class="zenodo-btn" style="margin-top: auto; border-color: var(--solar-yellow); color: var(--solar-yellow);">OPEN INTERACTIVE MATRIX</a>
+        </div>
+
+        <div class="repo-card">
+            <h3 class="repo-card-title">Official Presentation: La Lógica del Estado Sólido</h3>
+            <p class="repo-desc-es"><strong>[ES]</strong> Diapositivas en PDF detallando la Cosmología del Estado Sólido, el Motor Toroidal y la Matriz 13x21.</p>
+            <p class="repo-desc-en" style="margin-bottom: 1.5rem;"><strong>[EN]</strong> PDF slides detailing the Solid State Cosmology, Toroidal Engine, and the 13x21 Matrix.</p>
+            <a href="Presentacion_Logica_Estado_Solido.pdf" class="zenodo-btn" style="margin-top: auto;" download>Download PDF</a>
+        </div>
+                            
+    </div>
+
+
+    <h2 class="repo-section-title">V. HIGH-RESOLUTION GRAPHICS / GALERÍA DE DIAGRAMAS</h2>
+    
+    <p class="repo-desc-es" style="text-align: center; max-width: 800px; margin: 0 auto 3rem auto;">
+        <span style="color:var(--plasma-blue); font-weight:bold;">[EN]</span> View or download the official full-color, high-resolution diagrams referenced in the Postulates and Monographs.<br>
+        <span style="color:var(--plasma-blue); font-weight:bold;">[ES]</span> Visualice o descargue los diagramas oficiales a todo color y en alta resolución referenciados en la literatura.
+    </p>
+
+    <div class="repo-grid-2">
+        
+        <div class="repo-card">
+            <h3 class="repo-card-title">The Universal Toroidal Engine</h3>
+            <a href="Primordial Toroidal Engine.png" target="_blank">
+                <img src="Primordial Toroidal Engine.png" alt="Primordial Toroidal Engine" class="repo-preview-img">
+            </a>
+            <p class="repo-desc-es"><strong>[ES]</strong> Motor Toroidal Primordial (PTPU): Render a todo color de la dinámica de fluidos etéricos.</p>
+            <p class="repo-desc-en"><strong>[EN]</strong> Primordial Toroidal Engine (PTPU): Full-color render of the Aetheric fluid dynamics.</p>
+            <div class="btn-group-flex">
+                <a href="Primordial Toroidal Engine.png" target="_blank" class="zenodo-btn">VIEW</a>
+                <a href="Primordial Toroidal Engine.png" class="zenodo-btn" download>DL HD</a>
+            </div>
+        </div>
+        
+        <div class="repo-card">
+            <h3 class="repo-card-title">The Biological Torus</h3>
+            <a href="TOROIDE BIOLOGICO.png" target="_blank">
+                <img src="TOROIDE BIOLOGICO.png" alt="Toroide Biológico" class="repo-preview-img">
+            </a>
+            <p class="repo-desc-es"><strong>[ES]</strong> Toroide Biológico: Escalamiento sintrópico desde el macrocosmos hasta el biocampo humano.</p>
+            <p class="repo-desc-en"><strong>[EN]</strong> Biological Torus: Syntropic scaling from the macro-cosmos to the biofield.</p>
+            <div class="btn-group-flex">
+                <a href="TOROIDE BIOLOGICO.png" target="_blank" class="zenodo-btn">VIEW</a>
+                <a href="TOROIDE BIOLOGICO.png" class="zenodo-btn" download>DL HD</a>
+            </div>
+        </div>
+
+        <div class="repo-card">
+            <h3 class="repo-card-title">The Brachistochrone Curve</h3>
+            <a href="BRAQUISTOCRONA.png" target="_blank">
+                <img src="BRAQUISTOCRONA.png" alt="Braquistócrona" class="repo-preview-img">
+            </a>
+            <p class="repo-desc-es"><strong>[ES]</strong> Braquistócrona: La curva de descenso más rápido, mapeando la implosión centrípeta.</p>
+            <p class="repo-desc-en"><strong>[EN]</strong> Brachistochrone: The curve of fastest descent, mapping the centripetal implosion.</p>
+            <div class="btn-group-flex">
+                <a href="BRAQUISTOCRONA.png" target="_blank" class="zenodo-btn">VIEW</a>
+                <a href="BRAQUISTOCRONA.png" class="zenodo-btn" download>DL HD</a>
+            </div>
+        </div>
+
+        <div class="repo-card">
+            <h3 class="repo-card-title">The Universe Octaves (3-6-9)</h3>
+            <a href="Universe Octaves.png" target="_blank">
+                <img src="Universe Octaves.png" alt="Octavas del Universo" class="repo-preview-img">
+            </a>
+            <p class="repo-desc-es"><strong>[ES]</strong> Octavas del Universo: Contexto toroidal que mapea la resonancia acústica hacia los elementos.</p>
+            <p class="repo-desc-en"><strong>[EN]</strong> Universe Octaves: Toroidal context mapping acoustic resonance to elements.</p>
+            <div class="btn-group-flex">
+                <a href="Universe Octaves.png" target="_blank" class="zenodo-btn">VIEW</a>
+                <a href="Universe Octaves.png" class="zenodo-btn" download>DL HD</a>
+            </div>
+        </div>
+
+        <div class="repo-card">
+            <h3 class="repo-card-title">Solid-State Cosmology</h3>
+            <a href="Cosmology of the Solid State.png" target="_blank">
+                <img src="Cosmology of the Solid State.png" alt="El Universo" class="repo-preview-img">
+            </a>
+            <p class="repo-desc-es"><strong>[ES]</strong> Cosmología del Estado Sólido: Diagrama conceptual maestro oficial.</p>
+            <p class="repo-desc-en"><strong>[EN]</strong> Cosmology of the Solid State: Official master conceptual diagram.</p>
+            <div class="btn-group-flex">
+                <a href="Cosmology of the Solid State.png" target="_blank" class="zenodo-btn">VIEW</a>
+                <a href="Cosmology of the Solid State.png" class="zenodo-btn" download>DL HD</a>
+            </div>
+        </div>
+
+        <div class="repo-card">
+            <h3 class="repo-card-title">Geodesic Knot Rupture</h3>
+            <a href="Geodesic knot rupture.png" target="_blank">
+                <img src="Geodesic knot rupture.png" alt="Ruptura del Nodo" class="repo-preview-img">
+            </a>
+            <p class="repo-desc-es"><strong>[ES]</strong> Ruptura del Nodo Geodésico: Ilustración topológica de la mecánica de ondas y choques.</p>
+            <p class="repo-desc-en"><strong>[EN]</strong> Geodesic Knot Rupture: Topological illustration of wave mechanics and shocks.</p>
+            <div class="btn-group-flex">
+                <a href="Geodesic knot rupture.png" target="_blank" class="zenodo-btn">VIEW</a>
+                <a href="Geodesic knot rupture.png" class="zenodo-btn" download>DL HD</a>
+            </div>
+        </div>
+
+        <div class="repo-card">
+            <h3 class="repo-card-title">Cuboctahedron (Equilibrium Vector)</h3>
+            <a href="CUBOCTAHEDRON.png" target="_blank">
+                <img src="CUBOCTAHEDRON.png" alt="Cuboctahedron" class="repo-preview-img">
+            </a>
+            <p class="repo-desc-es"><strong>[ES]</strong> Cuboctaedro: La geometría energética de punto cero y matriz tridimensional del vacío.</p>
+            <p class="repo-desc-en"><strong>[EN]</strong> Cuboctahedron: The zero-point energetic geometry and 3D matrix of the vacuum.</p>
+            <div class="btn-group-flex">
+                <a href="CUBOCTAHEDRON.png" target="_blank" class="zenodo-btn">VIEW</a>
+                <a href="CUBOCTAHEDRON.png" class="zenodo-btn" download>DL HD</a>
+            </div>
+        </div>
+
+        <div class="repo-card" style="border-top-color: var(--solar-yellow);">
+            <h3 class="repo-card-title" style="color: var(--solar-yellow);">Universal Geometry of the Elements</h3>
+            <a href="Geomentría Universal de los Elemetos _upscayl_2x_high-fidelity-4x.png" target="_blank">
+                <img src="Geomentría Universal de los Elemetos _upscayl_2x_high-fidelity-4x.png" alt="UGE Map" class="repo-preview-img" style="border-color: var(--solar-yellow);">
+            </a>
+            <p class="repo-desc-es"><strong>[ES]</strong> Mapa Maestro UGE: La matriz completa escalada en HD del Vórtice Periódico.</p>
+            <p class="repo-desc-en"><strong>[EN]</strong> UGE Master Map: The complete upscaled HD matrix of the Periodic Vortex.</p>
+            <div class="btn-group-flex">
+                <a href="Geomentría Universal de los Elemetos _upscayl_2x_high-fidelity-4x.png" target="_blank" class="zenodo-btn" style="border-color:var(--solar-yellow); color:var(--solar-yellow);">VIEW</a>
+                <a href="Geomentría Universal de los Elemetos _upscayl_2x_high-fidelity-4x.png" class="zenodo-btn" style="border-color:var(--solar-yellow); color:var(--solar-yellow);" download>DL HD</a>
+            </div>
+        </div>
+
+        <div class="repo-card" style="border-top-color: var(--solar-yellow);">
+            <h3 class="repo-card-title" style="color: var(--solar-yellow);">Table Universal Geometry of the Elements</h3>
+            <a href="Tabla - Geometría Universal de los Elementos.png" target="_blank">
+                <img src="Tabla - Geometría Universal de los Elementos.png" alt="UGE Map" class="repo-preview-img" style="border-color: var(--solar-yellow);">
+            </a>
+            <p class="repo-desc-es"><strong>[ES]</strong> Tabla UGE: Propiedades tabuladas y organizadas del Vórtice Periódico.</p>
+            <p class="repo-desc-en"><strong>[EN]</strong> UGE Table: Detailed tabulated properties of the Periodic Vortex.</p>
+            <div class="btn-group-flex">
+                <a href="Tabla - Geometría Universal de los Elementos.png" target="_blank" class="zenodo-btn" style="border-color:var(--solar-yellow); color:var(--solar-yellow);">VIEW</a>
+                <a href="Tabla - Geometría Universal de los Elementos.png" class="zenodo-btn" style="border-color:var(--solar-yellow); color:var(--solar-yellow);" download>DL HD</a>
+            </div>
+        </div>
+
+        <div class="repo-card" style="border-top-color: var(--solar-yellow);">
+            <h3 class="repo-card-title" style="color: var(--solar-yellow);">Solfeggio Sequence in UGE</h3>
+            <a href="Solfeggio Secuence in UGE.png" target="_blank">
+                <img src="Solfeggio Secuence in UGE.png" alt="UGE Map" class="repo-preview-img" style="border-color: var(--solar-yellow);">
+            </a>
+            <p class="repo-desc-es"><strong>[ES]</strong> Secuencia Solfeggio: Mapeo armónico sobre la Geometría Universal de los Elementos.</p>
+            <p class="repo-desc-en"><strong>[EN]</strong> Solfeggio Sequence mapping across the Universal Geometry of Elements.</p>
+            <div class="btn-group-flex">
+                <a href="Solfeggio Secuence in UGE.png" target="_blank" class="zenodo-btn" style="border-color:var(--solar-yellow); color:var(--solar-yellow);">VIEW</a>
+                <a href="Solfeggio Secuence in UGE.png" class="zenodo-btn" style="border-color:var(--solar-yellow); color:var(--solar-yellow);" download>DL HD</a>
+            </div>
+        </div>
+        
+    </div>
+        
+    </div>
+
+    <h2 class="repo-section-title">VI. ABOUT THE ARCHITECT / SOBRE EL AUTOR</h2>
+    
+    <div class="repo-grid-2">
+        <div class="repo-card" style="border-top-color: var(--solar-yellow);">
+            <div class="repo-card-meta" style="color: var(--solar-yellow); font-weight: bold;">EN | ABOUT THE AUTHOR</div>
+            <p class="repo-desc-es"><strong>William Herrera Amelines</strong> is an independent researcher, visionary thinker, and the architect of Solid-State Cosmology and the Códice ÆTHER. He is the author of <em>The Logic of the Solid State</em>, <em>The Códice ÆTHER - The Everyday Universe Manual</em>, and <em>Solid-State Engineering</em>, revolutionary works based on his 5 Scientific Postulates. These postulates are formally published, indexed, and safeguarded under the academic rigor of the OpenAIRE global network, the CERN repository (Zenodo), his ORCID registry (0009-0003-2206-6342), and his Science Researcher ID PWF-6028-2026.</p>
+        </div>
+        
+        <div class="repo-card" style="border-top-color: var(--plasma-blue);">
+            <div class="repo-card-meta" style="color: var(--plasma-blue); font-weight: bold;">ES | SOBRE EL AUTOR</div>
+            <p class="repo-desc-es"><strong>William Herrera Amelines</strong> es un investigador independiente, pensador visionario y el arquitecto de la Cosmología del Estado Sólido y el Códice ÆTHER (Postulados). Es el autor de <em>La Lógica del Estado Sólido</em>, <em>El Códice ÆTHER - El Manual del Universo Cotidiano</em> y de <em>La Ingeniería del Estado Sólido</em>, obras revolucionarias fundamentadas en sus 5 Postulados Científicos, los cuales se encuentran formalmente publicados, indexados y salvaguardados bajo el rigor académico de la red global OpenAIRE, el repositorio del CERN (Zenodo), su registro ORCID (0009-0003-2206-6342) y su Science Researcher ID PWF-6028-2026.</p>
+        </div>
+    </div>
+
+
+    <h2 class="repo-section-title">VII. JOIN THE SYNTROPIC NETWORK / CONTACTO Y COMUNIDAD</h2>
+    
+    <div class="repo-grid-2" style="margin-bottom: 4rem;">
+        
+        <div class="repo-card" style="border-top-color: var(--solar-yellow); text-align: center; align-items: center;">
+            <h3 class="repo-card-title" style="color: var(--solar-yellow); margin-bottom: 15px;">Official Comm-Link / Contacto Directo</h3>
+            <p class="repo-desc-es">Do you have technical inquiries or investment proposals? Connect directly with the Architect's Office.</p>
+            
+            <a href="mailto:aether.universalsolutions@gmail.com" class="zenodo-btn" style="margin-top: 15px; padding: 12px 24px; border-color: var(--solar-yellow); color: var(--solar-yellow);">EMAIL THE ARCHITECT</a>
+            
+            <p style="font-size: 0.85rem; color: var(--text-en); margin-top: 15px; user-select: all;">
+                Or copy / O copie la dirección:<br>
+                <strong style="color: var(--text-es);">aether.universalsolutions@gmail.com</strong>
+            </p>
+        </div>
+
+        <div class="repo-card" style="border-top-color: var(--plasma-blue);">
+            <h3 class="repo-card-title" style="color: var(--plasma-blue); margin-bottom: 15px;">Syntropic Newsletter</h3>
+            <p class="repo-desc-es">Subscribe to receive updates on Solid-State Engineering, new patents, and public releases.</p>
+            
+            <form action="https://formspree.io/f/mlgvwpnp" method="POST" style="display: flex; gap: 10px; margin-top: auto; flex-wrap: wrap;">
+                <input type="email" name="email" placeholder="Enter your email..." required style="flex: 1; min-width: 200px; padding: 12px; border-radius: 4px; border: 1px solid var(--border-card); background: rgba(0,0,0,0.5); color: #FFF; font-family: inherit; outline: none;">
+                <button type="submit" class="zenodo-btn" style="background-color: var(--plasma-blue); color: #050508; border: none; cursor: pointer; padding: 12px 24px;">SUBSCRIBE</button>
+            </form>
+            <p style="font-size: 0.75rem; color: var(--text-en); margin-top: 15px;">*No spam. Only high-density technical information.</p>
+        </div>
+
+    </div>
+
+    <div style="text-align: center; margin-bottom: 4rem; background: var(--bg-card); padding: 2rem; border-radius: 8px; border: 1px dashed var(--border-card);">
+        <p style="font-size: 0.85rem; color: var(--text-en); text-transform: uppercase; letter-spacing: 2px; margin-bottom: 15px;">Syntropic Resonance Confirmed By</p>
+        <img src="https://visitor-badge.laobi.icu/badge?page_id=aetheruniversalsolutions.github.io&left_color=1A1A1A&right_color=00D4FF&left_text=GLOBAL%20VISITORS" alt="Visitor Counter" style="border-radius: 4px; box-shadow: 0 4px 15px rgba(0, 212, 255, 0.2);">
+    </div>
+
+    <div style="text-align: center; margin-bottom: 4rem;">
+        <p style="color: var(--solar-yellow); font-size: 0.9rem; margin-bottom: 15px; letter-spacing: 1px; font-weight: bold;">SCAN FOR ORCID PROFILE</p>
+        <img src="ORCID_QR_Amelines.png" alt="ORCID William Herrera Amelines" style="width: 130px; height: 130px; border: 2px solid var(--solar-yellow); border-radius: 8px; padding: 8px; background: #E0E0E0; box-shadow: 0 0 20px rgba(255, 215, 0, 0.15);">
+    </div>
+    
+    <footer style="text-align: center; padding-top: 2rem; border-top: 1px solid var(--border-card); color: var(--text-en); font-size: 0.9rem; line-height: 1.8;">
+        <p>
+            &copy; 2026 William Herrera Amelines | ÆTHER Universal Platform Solutions.<br>
+            <span style="color: var(--text-es);">[ES]</span> Tecnología orientada a la Entalpía Máxima y el beneficio de la Humanidad.<br>
+            <span style="color: var(--text-es);">[EN]</span> Technology oriented toward Maximum Enthalpy and the benefit of Humanity.
+        </p>
+    </footer>
+
+  </div> </div> </body>
+</html>
