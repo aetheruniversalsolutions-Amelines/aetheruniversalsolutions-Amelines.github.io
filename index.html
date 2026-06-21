@@ -613,21 +613,19 @@
 </div>
     
 <!-- ==========================================
-     REPOSITORIO ACADÉMICO ÆTHER
-     Secciones I, II y III
-     Arquitectura UX/UI: Entalpía Visual Máxima (Grid Paralelo 3x3)
-     Paleta de Alta Frecuencia: Plasma Blue & Solar Yellow
+     REPOSITORIO ACADÉMICO ÆTHER - COMPENDIO TOTAL
+     DOCUMENTO COMPLETO INTEGRADO
      ========================================== -->
 <style>
   :root {
     --aether-plenum: #090a0f;
-    --solar-yellow: #FFD700; /* Amarillo resonante, vibrante y limpio */
-    --plasma-blue: #00D4FF; /* Azul de alta energía, plasma fluido */
+    --solar-yellow: #FFD700;
+    --plasma-blue: #00D4FF;
     --text-primary: #F5F5F7;
     --text-es: #E0E0E0;
     --text-en: #A0AAB2;
     --bg-card: rgba(255, 255, 255, 0.02);
-    --border-card: rgba(0, 212, 255, 0.15); /* Borde sutilmente ionizado */
+    --border-card: rgba(0, 212, 255, 0.15);
   }
 
   .aether-repository {
@@ -637,7 +635,6 @@
     font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
   }
 
-  /* Contenedor Maestro alineado con la sección de libros */
   .repo-container {
     max-width: 1200px;
     margin: 0 auto;
@@ -656,14 +653,18 @@
     text-align: center;
   }
 
-  /* Grid en Paralelo (3 columnas) */
   .repo-grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 2.5rem;
   }
 
-  /* Diseño de Tarjetas Universales (Postulados y Monografías) */
+  .repo-grid-2 {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2.5rem;
+  }
+
   .repo-card {
     background: var(--bg-card);
     border-top: 3px solid var(--solar-yellow);
@@ -677,9 +678,10 @@
     transition: transform 0.3s ease, box-shadow 0.3s ease, border-top-color 0.3s ease;
   }
 
+  /* EFECTO PLASMA ACTIVADO */
   .repo-card:hover {
     transform: translateY(-5px);
-    box-shadow: 0 12px 30px rgba(0, 212, 255, 0.15);
+    box-shadow: 0 0 25px rgba(0, 212, 255, 0.4), inset 0 0 10px rgba(0, 212, 255, 0.05);
     border-top-color: var(--plasma-blue);
   }
 
@@ -713,10 +715,29 @@
     line-height: 1.5;
     font-style: italic;
     margin-bottom: 2rem;
-    flex-grow: 1; /* Empuja el botón al fondo */
+    flex-grow: 1; 
   }
 
-  /* Botón Zenodo DOI */
+  .repo-preview-img {
+    width: 100%;
+    height: auto;
+    border-radius: 4px;
+    margin-bottom: 1.5rem;
+    border: 1px solid rgba(0, 212, 255, 0.2);
+    transition: border-color 0.3s ease;
+  }
+
+  .repo-card:hover .repo-preview-img {
+    border-color: var(--solar-yellow);
+  }
+
+  .btn-group-flex {
+    display: flex;
+    gap: 10px;
+    margin-top: auto;
+    width: 100%;
+  }
+
   .zenodo-btn {
     display: flex;
     align-items: center;
@@ -731,11 +752,14 @@
     transition: all 0.3s ease;
     font-size: 0.85rem;
     letter-spacing: 1px;
+    flex: 1;
+    text-align: center;
   }
 
   .zenodo-btn:hover {
     background-color: var(--solar-yellow);
     color: var(--aether-plenum);
+    box-shadow: 0 0 15px rgba(255, 215, 0, 0.3);
   }
   
   .zenodo-btn span {
@@ -743,13 +767,11 @@
     margin-right: 5px;
   }
 
-  /* Tarjeta Centrada para Erratas */
   .errata-container {
     max-width: 800px;
     margin: 0 auto;
   }
 
-  /* Responsividad */
   @media (max-width: 1024px) {
     .repo-grid {
       grid-template-columns: repeat(2, 1fr);
@@ -757,7 +779,7 @@
   }
 
   @media (max-width: 768px) {
-    .repo-grid {
+    .repo-grid, .repo-grid-2 {
       grid-template-columns: 1fr;
     }
   }
@@ -769,7 +791,7 @@
     <!-- ==========================================
          SECCIÓN I: POSTULADOS FUNDACIONALES
          ========================================== -->
-    <h2 class="repo-section-title">I. Foundational Postulates / Postulados Fundacionales</h2>
+    <h2 class="repo-section-title" style="margin-top: 0;">I. Foundational Postulates / Postulados Fundacionales</h2>
 
     <div class="repo-grid">
       <!-- Postulado I -->
@@ -812,8 +834,8 @@
       <div class="repo-card">
         <h3 class="repo-card-title">Addendum IV: The DNA of the Universe</h3>
         <div class="repo-card-meta">Author: W.H. Amelines | Status: Published</div>
-        <p class="repo-desc-es"><strong>[ES]</strong> Topología Estructural.</p>
-        <p class="repo-desc-en"><strong>[EN]</strong> Structural Topology.</p>
+        <p class="repo-desc-es"><strong>[ES]</strong> Topología Estructural de la Geometría Universal de los Elementos.</p>
+        <p class="repo-desc-en"><strong>[EN]</strong> Structural Topology of the Universal Geometry of the Elements.</p>
         <a href="https://doi.org/10.5281/zenodo.19619217" target="_blank" rel="noopener noreferrer" class="zenodo-btn"><span>Zenodo DOI:</span> 10.5281/zenodo.19619217</a>
       </div>
 
@@ -836,17 +858,17 @@
     <div class="repo-grid">
       <!-- Monografía I -->
       <div class="repo-card">
-        <h3 class="repo-card-title">W.H.Amelines_Technical Monography I - THE SOLID STATE MANIFESTO</h3>
-        <div class="repo-card-meta">Author: William Herrera Amelines | Status: Preprint</div>
-        <p class="repo-desc-es"><strong>[ES]</strong> Expone la falacia termodinámica del vacío absoluto, reemplazando el cálculo relativista con las ecuaciones de Navier-Stokes para fluidos perfectos.</p>
-        <p class="repo-desc-en"><strong>[EN]</strong> Exposes the thermodynamic fallacy of the absolute vacuum, replacing relativistic calculus with Navier-Stokes equations for perfect fluids.</p>
+        <h3 class="repo-card-title">Technical Monography I: THE SOLID STATE MANIFESTO</h3>
+        <div class="repo-card-meta">Author: W.H. Amelines | Status: Preprint</div>
+        <p class="repo-desc-es"><strong>[ES]</strong> Refutación hidrodinámica del vacío absoluto, reemplazando el cálculo relativista con las ecuaciones de fluidos perfectos.</p>
+        <p class="repo-desc-en"><strong>[EN]</strong> Hydrodynamic refutation of the absolute vacuum, replacing relativistic calculus with perfect fluid equations.</p>
         <a href="https://doi.org/10.5281/zenodo.19994873" target="_blank" rel="noopener noreferrer" class="zenodo-btn"><span>Zenodo DOI:</span> 10.5281/zenodo.19994873</a>
       </div>
 
       <!-- Monografía II -->
       <div class="repo-card">
-        <h3 class="repo-card-title">W.H.Amelines_Technical Monography II - THE TOPOLOGY OF COSMIC DNA</h3>
-        <div class="repo-card-meta">Author: William Herrera Amelines | Status: Preprint</div>
+        <h3 class="repo-card-title">Technical Monography II: THE TOPOLOGY OF COSMIC DNA</h3>
+        <div class="repo-card-meta">Author: W.H. Amelines | Status: Preprint</div>
         <p class="repo-desc-es"><strong>[ES]</strong> Reemplaza la Tabla Periódica plana por una matriz toroidal tridimensional basada en las parastiquias de Fibonacci (13x21).</p>
         <p class="repo-desc-en"><strong>[EN]</strong> Replaces the flat Periodic Table with a three-dimensional toroidal matrix based on Fibonacci parastichies (13x21).</p>
         <a href="https://doi.org/10.5281/zenodo.19995435" target="_blank" rel="noopener noreferrer" class="zenodo-btn"><span>Zenodo DOI:</span> 10.5281/zenodo.19995435</a>
@@ -854,8 +876,8 @@
 
       <!-- Monografía III -->
       <div class="repo-card">
-        <h3 class="repo-card-title">W.H.Amelines_Technical Monography III - THE FLUID MECHANICS OF ENERGY and THE AMELINES TENSOR</h3>
-        <div class="repo-card-meta">Author: William Herrera Amelines | Status: Preprint</div>
+        <h3 class="repo-card-title">Technical Monography III: THE FLUID MECHANICS OF ENERGY and THE AMELINES TENSOR</h3>
+        <div class="repo-card-meta">Author: W.H. Amelines | Status: Preprint</div>
         <p class="repo-desc-es"><strong>[ES]</strong> Demostración matemática que reemplaza E=mc² por el Teorema de Impedancia Energética.</p>
         <p class="repo-desc-en"><strong>[EN]</strong> Mathematical demonstration replacing E=mc² with the Energy Impedance Theorem.</p>
         <a href="https://doi.org/10.5281/zenodo.19995654" target="_blank" rel="noopener noreferrer" class="zenodo-btn"><span>Zenodo DOI:</span> 10.5281/zenodo.19995654</a>
@@ -878,87 +900,50 @@
       </div>
     </div>
 
-  </div> <!-- Fin de repo-container -->
-</div> <!-- Fin de aether-repository -->
-    </div>
-   <style>
-  /* Clases adicionales para la Galería y Secciones Dobles */
-  .repo-grid-2 {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 2.5rem;
-  }
-  
-  .repo-preview-img {
-    width: 100%;
-    height: auto;
-    border-radius: 4px;
-    margin-bottom: 1.5rem;
-    border: 1px solid rgba(0, 212, 255, 0.2);
-    transition: border-color 0.3s ease;
-  }
-
-  .repo-card:hover .repo-preview-img {
-    border-color: var(--solar-yellow);
-  }
-
-  .btn-group-flex {
-    display: flex;
-    gap: 10px;
-    margin-top: auto;
-    width: 100%;
-  }
-
-  .btn-group-flex .zenodo-btn {
-    flex: 1;
-    text-align: center;
-  }
-
-  @media (max-width: 900px) {
-    .repo-grid-2 {
-      grid-template-columns: 1fr;
-    }
-  }
-</style>
-
-<div class="aether-repository">
-  <div class="repo-container">
-
-    <h2 class="repo-section-title" style="margin-top: 2rem;">IV. RAW DATA MATRIX / DATOS CRUDOS E INTERACTIVOS</h2>
+    <!-- ==========================================
+         SECCIÓN IV: DATOS CRUDOS E INTERACTIVOS
+         ========================================== -->
+    <h2 class="repo-section-title">IV. RAW DATA MATRIX / DATOS CRUDOS E INTERACTIVOS</h2>
 
     <div class="repo-grid-2">
         
+        <!-- Dato 1: Excel -->
         <div class="repo-card">
             <h3 class="repo-card-title">Geometría Universal de los Elementos 3-6-9</h3>
             <p class="repo-desc-es"><strong>[ES]</strong> Fuente de datos (.xlsx) con cálculos de hidro-impedancia para los 118 elementos.</p>
-            <p class="repo-desc-en" style="margin-bottom: 1.5rem;"><strong>[EN]</strong> Data source (.xlsx) with hydro-impedance calculations for the 118 elements.</p>
-            <a href="Geometria Universal de los Elementos 3-6-9.xlsx" class="zenodo-btn" style="margin-top: auto;" download>Download Excel Data</a>
+            <p class="repo-desc-en"><strong>[EN]</strong> Data source (.xlsx) with hydro-impedance calculations for the 118 elements.</p>
+            <a href="Geometria Universal de los Elementos 3-6-9.xlsx" class="zenodo-btn" download>Download Excel Data</a>
         </div>
         
+        <!-- Dato 2: OpenSCAD -->
         <div class="repo-card">
             <h3 class="repo-card-title">Modelo Topológico 3D (13x21)</h3>
             <p class="repo-desc-es"><strong>[ES]</strong> Código fuente OpenSCAD (.scad) para el renderizado de la resonancia estructural.</p>
-            <p class="repo-desc-en" style="margin-bottom: 1.5rem;"><strong>[EN]</strong> OpenSCAD source code (.scad) for structural resonance rendering.</p>
-            <a href="Vortex_periodic_Table 4.scad" class="zenodo-btn" style="margin-top: auto;" download>Download OpenSCAD File</a>
+            <p class="repo-desc-en"><strong>[EN]</strong> OpenSCAD source code (.scad) for structural resonance rendering.</p>
+            <a href="Vortex_periodic_Table 4.scad" class="zenodo-btn" download>Download OpenSCAD File</a>
         </div>
 
+        <!-- Dato 3: Interactive Sunflower -->
         <div class="repo-card" style="border-top-color: var(--solar-yellow); background: rgba(255, 215, 0, 0.02);">
             <h3 class="repo-card-title" style="color: var(--solar-yellow);">Interactive Chemical Sunflower</h3>
             <p class="repo-desc-es"><strong>[ES]</strong> Renderizado web interactivo de la Matriz UGE. Visualice las Parastiquias 13x21 y los Nodos Intersticiales.</p>
-            <p class="repo-desc-en" style="margin-bottom: 1.5rem; color: var(--text-es);"><strong>[EN]</strong> Web-based interactive rendering of the UGE Matrix. Visualize the 13x21 Parastichies and Interstitial Nodes.</p>
-            <a href="Phyllotactic_Matrix_Chemical_Sunflower_Architecture.html" target="_blank" class="zenodo-btn" style="margin-top: auto; border-color: var(--solar-yellow); color: var(--solar-yellow);">OPEN INTERACTIVE MATRIX</a>
+            <p class="repo-desc-en" style="color: var(--text-es);"><strong>[EN]</strong> Web-based interactive rendering of the UGE Matrix. Visualize the 13x21 Parastichies and Interstitial Nodes.</p>
+            <a href="Phyllotactic_Matrix_Chemical_Sunflower_Architecture.html" target="_blank" class="zenodo-btn" style="border-color: var(--solar-yellow); color: var(--solar-yellow);">OPEN INTERACTIVE MATRIX</a>
         </div>
 
+        <!-- Dato 4: Presentación -->
         <div class="repo-card">
             <h3 class="repo-card-title">Official Presentation: La Lógica del Estado Sólido</h3>
             <p class="repo-desc-es"><strong>[ES]</strong> Diapositivas en PDF detallando la Cosmología del Estado Sólido, el Motor Toroidal y la Matriz 13x21.</p>
-            <p class="repo-desc-en" style="margin-bottom: 1.5rem;"><strong>[EN]</strong> PDF slides detailing the Solid State Cosmology, Toroidal Engine, and the 13x21 Matrix.</p>
-            <a href="Presentacion_Logica_Estado_Solido.pdf" class="zenodo-btn" style="margin-top: auto;" download>Download PDF</a>
+            <p class="repo-desc-en"><strong>[EN]</strong> PDF slides detailing the Solid State Cosmology, Toroidal Engine, and the 13x21 Matrix.</p>
+            <a href="Presentacion_Logica_Estado_Solido.pdf" class="zenodo-btn" download>Download PDF</a>
         </div>
                             
     </div>
 
-
+    <!-- ==========================================
+         SECCIÓN V: GALERÍA DE DIAGRAMAS
+         ========================================== -->
     <h2 class="repo-section-title">V. HIGH-RESOLUTION GRAPHICS / GALERÍA DE DIAGRAMAS</h2>
     
     <p class="repo-desc-es" style="text-align: center; max-width: 800px; margin: 0 auto 3rem auto;">
@@ -968,6 +953,7 @@
 
     <div class="repo-grid-2">
         
+        <!-- Gráfico 1 -->
         <div class="repo-card">
             <h3 class="repo-card-title">The Universal Toroidal Engine</h3>
             <a href="Primordial Toroidal Engine.png" target="_blank">
@@ -981,6 +967,7 @@
             </div>
         </div>
         
+        <!-- Gráfico 2 -->
         <div class="repo-card">
             <h3 class="repo-card-title">The Biological Torus</h3>
             <a href="TOROIDE BIOLOGICO.png" target="_blank">
@@ -994,6 +981,7 @@
             </div>
         </div>
 
+        <!-- Gráfico 3 -->
         <div class="repo-card">
             <h3 class="repo-card-title">The Brachistochrone Curve</h3>
             <a href="BRAQUISTOCRONA.png" target="_blank">
@@ -1007,6 +995,7 @@
             </div>
         </div>
 
+        <!-- Gráfico 4 -->
         <div class="repo-card">
             <h3 class="repo-card-title">The Universe Octaves (3-6-9)</h3>
             <a href="Universe Octaves.png" target="_blank">
@@ -1020,6 +1009,7 @@
             </div>
         </div>
 
+        <!-- Gráfico 5 -->
         <div class="repo-card">
             <h3 class="repo-card-title">Solid-State Cosmology</h3>
             <a href="Cosmology of the Solid State.png" target="_blank">
@@ -1033,6 +1023,7 @@
             </div>
         </div>
 
+        <!-- Gráfico 6 -->
         <div class="repo-card">
             <h3 class="repo-card-title">Geodesic Knot Rupture</h3>
             <a href="Geodesic knot rupture.png" target="_blank">
@@ -1046,6 +1037,7 @@
             </div>
         </div>
 
+        <!-- Gráfico 7 -->
         <div class="repo-card">
             <h3 class="repo-card-title">Cuboctahedron (Equilibrium Vector)</h3>
             <a href="CUBOCTAHEDRON.png" target="_blank">
@@ -1059,6 +1051,7 @@
             </div>
         </div>
 
+        <!-- Gráfico 8 -->
         <div class="repo-card" style="border-top-color: var(--solar-yellow);">
             <h3 class="repo-card-title" style="color: var(--solar-yellow);">Universal Geometry of the Elements</h3>
             <a href="Geomentría Universal de los Elemetos _upscayl_2x_high-fidelity-4x.png" target="_blank">
@@ -1072,10 +1065,11 @@
             </div>
         </div>
 
+        <!-- Gráfico 9 -->
         <div class="repo-card" style="border-top-color: var(--solar-yellow);">
             <h3 class="repo-card-title" style="color: var(--solar-yellow);">Table Universal Geometry of the Elements</h3>
             <a href="Tabla - Geometría Universal de los Elementos.png" target="_blank">
-                <img src="Tabla - Geometría Universal de los Elementos.png" alt="UGE Map" class="repo-preview-img" style="border-color: var(--solar-yellow);">
+                <img src="Tabla - Geometría Universal de los Elementos.png" alt="UGE Table" class="repo-preview-img" style="border-color: var(--solar-yellow);">
             </a>
             <p class="repo-desc-es"><strong>[ES]</strong> Tabla UGE: Propiedades tabuladas y organizadas del Vórtice Periódico.</p>
             <p class="repo-desc-en"><strong>[EN]</strong> UGE Table: Detailed tabulated properties of the Periodic Vortex.</p>
@@ -1085,10 +1079,11 @@
             </div>
         </div>
 
+        <!-- Gráfico 10 -->
         <div class="repo-card" style="border-top-color: var(--solar-yellow);">
             <h3 class="repo-card-title" style="color: var(--solar-yellow);">Solfeggio Sequence in UGE</h3>
             <a href="Solfeggio Secuence in UGE.png" target="_blank">
-                <img src="Solfeggio Secuence in UGE.png" alt="UGE Map" class="repo-preview-img" style="border-color: var(--solar-yellow);">
+                <img src="Solfeggio Secuence in UGE.png" alt="Solfeggio Sequence" class="repo-preview-img" style="border-color: var(--solar-yellow);">
             </a>
             <p class="repo-desc-es"><strong>[ES]</strong> Secuencia Solfeggio: Mapeo armónico sobre la Geometría Universal de los Elementos.</p>
             <p class="repo-desc-en"><strong>[EN]</strong> Solfeggio Sequence mapping across the Universal Geometry of Elements.</p>
@@ -1099,28 +1094,34 @@
         </div>
         
     </div>
-        
-    </div>
 
+    <!-- ==========================================
+         SECCIÓN VI: SOBRE EL AUTOR
+         ========================================== -->
     <h2 class="repo-section-title">VI. ABOUT THE ARCHITECT / SOBRE EL AUTOR</h2>
     
     <div class="repo-grid-2">
+        <!-- INGLÉS -->
         <div class="repo-card" style="border-top-color: var(--solar-yellow);">
             <div class="repo-card-meta" style="color: var(--solar-yellow); font-weight: bold;">EN | ABOUT THE AUTHOR</div>
-            <p class="repo-desc-es"><strong>William Herrera Amelines</strong> is an independent researcher, visionary thinker, and the architect of Solid-State Cosmology and the Códice ÆTHER. He is the author of <em>The Logic of the Solid State</em>, <em>The Códice ÆTHER - The Everyday Universe Manual</em>, and <em>Solid-State Engineering</em>, revolutionary works based on his 5 Scientific Postulates. These postulates are formally published, indexed, and safeguarded under the academic rigor of the OpenAIRE global network, the CERN repository (Zenodo), his ORCID registry (0009-0003-2206-6342), and his Science Researcher ID PWF-6028-2026.</p>
+            <p class="repo-desc-es" style="margin-bottom: 0;"><strong>William Herrera Amelines</strong> is an independent researcher, visionary thinker, and the architect of Solid-State Cosmology and the Códice ÆTHER. He is the author of <em>The Logic of the Solid State</em>, <em>The Códice ÆTHER - The Everyday Universe Manual</em>, and <em>Solid-State Engineering</em>, revolutionary works based on his 5 Scientific Postulates. These postulates are formally published, indexed, and safeguarded under the academic rigor of the OpenAIRE global network, the CERN repository (Zenodo), his ORCID registry (0009-0003-2206-6342), and his Science Researcher ID PWF-6028-2026.</p>
         </div>
         
+        <!-- ESPAÑOL -->
         <div class="repo-card" style="border-top-color: var(--plasma-blue);">
             <div class="repo-card-meta" style="color: var(--plasma-blue); font-weight: bold;">ES | SOBRE EL AUTOR</div>
-            <p class="repo-desc-es"><strong>William Herrera Amelines</strong> es un investigador independiente, pensador visionario y el arquitecto de la Cosmología del Estado Sólido y el Códice ÆTHER (Postulados). Es el autor de <em>La Lógica del Estado Sólido</em>, <em>El Códice ÆTHER - El Manual del Universo Cotidiano</em> y de <em>La Ingeniería del Estado Sólido</em>, obras revolucionarias fundamentadas en sus 5 Postulados Científicos, los cuales se encuentran formalmente publicados, indexados y salvaguardados bajo el rigor académico de la red global OpenAIRE, el repositorio del CERN (Zenodo), su registro ORCID (0009-0003-2206-6342) y su Science Researcher ID PWF-6028-2026.</p>
+            <p class="repo-desc-es" style="margin-bottom: 0;"><strong>William Herrera Amelines</strong> es un investigador independiente, pensador visionario y el arquitecto de la Cosmología del Estado Sólido y el Códice ÆTHER (Postulados). Es el autor de <em>La Lógica del Estado Sólido</em>, <em>El Códice ÆTHER - El Manual del Universo Cotidiano</em> y de <em>La Ingeniería del Estado Sólido</em>, obras revolucionarias fundamentadas en sus 5 Postulados Científicos, los cuales se encuentran formalmente publicados, indexados y salvaguardados bajo el rigor académico de la red global OpenAIRE, el repositorio del CERN (Zenodo), su registro ORCID (0009-0003-2206-6342) y su Science Researcher ID PWF-6028-2026.</p>
         </div>
     </div>
 
-
+    <!-- ==========================================
+         SECCIÓN VII: CONTACTO Y COMUNIDAD
+         ========================================== -->
     <h2 class="repo-section-title">VII. JOIN THE SYNTROPIC NETWORK / CONTACTO Y COMUNIDAD</h2>
     
     <div class="repo-grid-2" style="margin-bottom: 4rem;">
         
+        <!-- Contacto Directo -->
         <div class="repo-card" style="border-top-color: var(--solar-yellow); text-align: center; align-items: center;">
             <h3 class="repo-card-title" style="color: var(--solar-yellow); margin-bottom: 15px;">Official Comm-Link / Contacto Directo</h3>
             <p class="repo-desc-es">Do you have technical inquiries or investment proposals? Connect directly with the Architect's Office.</p>
@@ -1133,6 +1134,7 @@
             </p>
         </div>
 
+        <!-- Newsletter -->
         <div class="repo-card" style="border-top-color: var(--plasma-blue);">
             <h3 class="repo-card-title" style="color: var(--plasma-blue); margin-bottom: 15px;">Syntropic Newsletter</h3>
             <p class="repo-desc-es">Subscribe to receive updates on Solid-State Engineering, new patents, and public releases.</p>
@@ -1146,11 +1148,15 @@
 
     </div>
 
+    <!-- ==========================================
+         FOOTER: ANCLAJES DIGITALES
+         ========================================== -->
     <div style="text-align: center; margin-bottom: 4rem; background: var(--bg-card); padding: 2rem; border-radius: 8px; border: 1px dashed var(--border-card);">
         <p style="font-size: 0.85rem; color: var(--text-en); text-transform: uppercase; letter-spacing: 2px; margin-bottom: 15px;">Syntropic Resonance Confirmed By</p>
         <img src="https://visitor-badge.laobi.icu/badge?page_id=aetheruniversalsolutions.github.io&left_color=1A1A1A&right_color=00D4FF&left_text=GLOBAL%20VISITORS" alt="Visitor Counter" style="border-radius: 4px; box-shadow: 0 4px 15px rgba(0, 212, 255, 0.2);">
     </div>
 
+    <!-- ANCLAJE ORCID -->
     <div style="text-align: center; margin-bottom: 4rem;">
         <p style="color: var(--solar-yellow); font-size: 0.9rem; margin-bottom: 15px; letter-spacing: 1px; font-weight: bold;">SCAN FOR ORCID PROFILE</p>
         <img src="ORCID_QR_Amelines.png" alt="ORCID William Herrera Amelines" style="width: 130px; height: 130px; border: 2px solid var(--solar-yellow); border-radius: 8px; padding: 8px; background: #E0E0E0; box-shadow: 0 0 20px rgba(255, 215, 0, 0.15);">
@@ -1164,5 +1170,5 @@
         </p>
     </footer>
 
-  </div> </div> </body>
-</html>
+  </div> <!-- Fin de repo-container -->
+</div> <!-- Fin de aether-repository -->
