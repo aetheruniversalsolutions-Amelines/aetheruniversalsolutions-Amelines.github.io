@@ -258,7 +258,7 @@
         
       </div>
 
-    <!-- ==========================================
+   <!-- ==========================================
      SECCIÓN: PUBLICACIONES OFICIALES Y ARQUITECTURA
      Serie: Cosmología del Estado Sólido / Cosmology of the Solid State
      Arquitectura: ÆTHER Universal Platform Solutions
@@ -271,7 +271,7 @@
     --cu-copper: #B87333;
     --text-primary: #F5F5F7;
     --text-muted: #8A95A5;
-    --text-en: #A0AAB2; /* Color para diferenciación bilingüe */
+    --text-en: #A0AAB2; 
   }
 
   #publicaciones-oficiales {
@@ -339,6 +339,27 @@
     padding: 1rem;
   }
 
+  /* Divisiones de Categoría */
+  .category-title {
+    text-align: center;
+    color: var(--au-gold);
+    font-size: 2.2rem;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    margin: 4rem auto 0.5rem auto;
+    border-top: 1px solid rgba(212, 175, 55, 0.2);
+    padding-top: 3rem;
+    max-width: 1200px;
+  }
+  
+  .category-subtitle {
+    text-align: center;
+    color: var(--cu-copper);
+    font-size: 1.2rem;
+    margin: 0 auto 3rem auto;
+    font-weight: 400;
+  }
+
   .pub-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
@@ -381,19 +402,45 @@
     opacity: 1;
   }
 
+  /* Efecto 3D de Portada de Libro */
+  .pub-cover-container {
+    text-align: center;
+    margin-bottom: 2rem;
+  }
+  
+  .pub-cover {
+    width: 140px;
+    height: 215px;
+    object-fit: cover;
+    border-radius: 2px 6px 6px 2px;
+    box-shadow: -4px 0px 0px rgba(0,0,0,0.3), 5px 10px 15px rgba(0,0,0,0.5);
+    border: 1px solid rgba(255,255,255,0.05);
+    border-left: 4px solid var(--au-gold);
+    transition: all 0.4s ease;
+    background-color: var(--aether-plenum);
+  }
+
+  .pub-card:hover .pub-cover {
+    transform: translateY(-5px) scale(1.05);
+    box-shadow: -4px 0px 0px rgba(0,0,0,0.3), 8px 15px 25px rgba(212,175,55,0.25);
+    border-color: rgba(212,175,55,0.4);
+  }
+
   .pub-book-title {
     color: var(--ag-silver);
     font-size: 1.6rem;
     margin-bottom: 0.2rem;
     line-height: 1.2;
+    text-align: center;
   }
   
   .pub-book-title-en {
     color: var(--au-gold);
-    font-size: 1.2rem;
+    font-size: 1.1rem;
     margin-top: 0;
-    margin-bottom: 0.8rem;
+    margin-bottom: 1rem;
     font-weight: 400;
+    text-align: center;
   }
 
   .pub-book-subtitle {
@@ -403,6 +450,7 @@
     font-style: italic;
     line-height: 1.4;
     display: block;
+    text-align: center;
   }
 
   .pub-description {
@@ -541,66 +589,134 @@
     </svg>
   </div>
 
+  <!-- TÍTULO: TRILOGÍA -->
+  <h3 class="category-title">La Trilogía del Estado Sólido</h3>
+  <h4 class="category-subtitle">The Solid State Trilogy</h4>
+
   <div class="pub-grid">
     
-    <!-- Libro 1 -->
+    <!-- Libro 1: La Lógica -->
     <div class="pub-card">
+      <div class="pub-cover-container">
+        <!-- Reemplaza el src con tu imagen real, ej: portada_logica.jpg -->
+        <img src="https://via.placeholder.com/140x215/1a1a1a/D4AF37?text=La+Logica" alt="Portada La Lógica del Estado Sólido" class="pub-cover">
+      </div>
       <h3 class="pub-book-title">La Lógica del Estado Sólido</h3>
       <h4 class="pub-book-title-en">The Logic of the Solid State</h4>
       
       <span class="pub-book-subtitle">Cómo el Æther, la Geometría y tu Biocampo crean el Universo.<br>
       <span style="color: var(--text-en);">How Æther, Geometry, and your Biofield create the Universe.</span></span>
       
-      <p class="pub-description">El tratado fundacional que unifica la mecánica de fluidos con la biología humana (La Quinta Octava), estableciendo la Succión Hidrodinámica como el origen de la gravedad para alcanzar la Entalpía Máxima.</p>
+      <p class="pub-description">El tratado fundacional que unifica la mecánica de fluidos con la biología humana, estableciendo la Succión Hidrodinámica como el origen de la gravedad para alcanzar la Entalpía Máxima.</p>
       
-      <p class="pub-description-en">The foundational treatise that unifies fluid mechanics with human biology (The Fifth Octave), establishing Hydrodynamic Suction as the origin of gravity and syntropic resonance to achieve Maximum Enthalpy.</p>
+      <p class="pub-description-en">The foundational treatise that unifies fluid mechanics with human biology, establishing Hydrodynamic Suction as the origin of gravity to achieve Maximum Enthalpy.</p>
       
       <div class="pub-actions">
-        <a href="https://www.amazon.com/-/es/dp/B0H57CJ34F?binding=kindle_edition&ref=dbs_dp_rwt_sb_bx_tkin" target="_blank" rel="noopener noreferrer" class="pub-btn">Versión Español (Kindle & Print)</a>
-        <a href="https://www.amazon.com/-/es/dp/B0H57CJ34F?binding=kindle_edition&ref=dbs_dp_rwt_sb_bx_tkin" target="_blank" rel="noopener noreferrer" class="pub-btn">English Version (Kindle & Print)</a>
+        <a href="https://www.amazon.com/-/es/dp/B0H57CJ34F" target="_blank" rel="noopener noreferrer" class="pub-btn">Versión Español (Kindle & Print)</a>
+        <a href="https://www.amazon.com/-/es/dp/B0H57CJ34F" target="_blank" rel="noopener noreferrer" class="pub-btn">English Version (Kindle & Print)</a>
       </div>
     </div>
 
-    <!-- Libro 2 -->
+    <!-- Libro 2: La Ingeniería -->
     <div class="pub-card">
-      <h3 class="pub-book-title">El Dossier de Evidencias</h3>
-      <h4 class="pub-book-title-en">The Evidence Dossier</h4>
+      <div class="pub-cover-container">
+        <!-- Reemplaza el src con tu imagen real -->
+        <img src="https://via.placeholder.com/140x215/1a1a1a/B87333?text=La+Ingenieria" alt="Portada La Ingeniería del Estado Sólido" class="pub-cover">
+      </div>
+      <h3 class="pub-book-title">La Ingeniería del Estado Sólido</h3>
+      <h4 class="pub-book-title-en">The Engineering of the Solid State</h4>
       
-      <span class="pub-book-subtitle">Refutación del Vacío, Dinámica del Æther y el Fin de la Física de la Escasez.<br>
-      <span style="color: var(--text-en);">Refutation of the Void, Æther Dynamics, and the End of Scarcity Physics.</span></span>
+      <span class="pub-book-subtitle">Diseño sintrópico y el hardware de fricción cero.<br>
+      <span style="color: var(--text-en);">Syntropic design and zero-friction hardware.</span></span>
       
-      <p class="pub-description">Monografía táctica que expone la falsación empírica del modelo estándar, la resolución del "zoológico cuántico" de partículas mediante ondas de choque y la prueba irrefutable de la Expansión Nonagonal.</p>
+      <p class="pub-description">La aplicación industrial de la Matriz PME, el Rotor Helicoidal Flotante y el Turbo-Ducto. El manual técnico para transmutar la termodinámica de desgaste en sistemas de retroalimentación escalar.</p>
       
-      <p class="pub-description-en">Tactical monograph exposing the empirical falsification of the standard model, the resolution of the particle "quantum zoo" via shockwaves, and the irrefutable proof of Nonagonal Expansion in the atom.</p>
+      <p class="pub-description-en">The industrial application of the PME Matrix, Floating Helical Rotor, and Turbo-Duct. The technical manual to transmute wear thermodynamics into scalar feedback systems.</p>
       
       <div class="pub-actions">
-        <a href="https://www.amazon.com/-/es/dp/B0H57CJ34F?binding=kindle_edition&ref=dbs_dp_rwt_sb_bx_tkin" target="_blank" rel="noopener noreferrer" class="pub-btn">Versión Español (Kindle & Print)</a>
-        <a href="https://www.amazon.com/-/es/dp/B0H57CJ34F?binding=kindle_edition&ref=dbs_dp_rwt_sb_bx_tkin" target="_blank" rel="noopener noreferrer" class="pub-btn">English Version (Kindle & Print)</a>
+        <a href="https://www.amazon.com/-/es/dp/B0H57CJ34F" target="_blank" rel="noopener noreferrer" class="pub-btn">Versión Español (Kindle & Print)</a>
+        <a href="https://www.amazon.com/-/es/dp/B0H57CJ34F" target="_blank" rel="noopener noreferrer" class="pub-btn">English Version (Kindle & Print)</a>
       </div>
     </div>
 
-    <!-- Libro 3 -->
+    <!-- Libro 3: La Consciencia -->
     <div class="pub-card">
+      <div class="pub-cover-container">
+        <!-- Reemplaza el src con tu imagen real -->
+        <img src="https://via.placeholder.com/140x215/1a1a1a/E0E0E0?text=La+Consciencia" alt="Portada La Consciencia del Estado Sólido" class="pub-cover">
+      </div>
+      <h3 class="pub-book-title">La Consciencia del Estado Sólido</h3>
+      <h4 class="pub-book-title-en">The Consciousness of the Solid State</h4>
+      
+      <span class="pub-book-subtitle">Sincronización del biocampo y la Mente Galáctica.<br>
+      <span style="color: var(--text-en);">Biofield synchronization and the Galactic Mind.</span></span>
+      
+      <p class="pub-description">Expansión de la psicología sintrópica. Cómo la resonancia de las frecuencias 3-6-9 y la tecnología VITA-SCALAR preparan la estructura humana para operar como una antena biológica pura.</p>
+      
+      <p class="pub-description-en">Expansion of syntropic psychology. How the resonance of 3-6-9 frequencies and VITA-SCALAR technology prepare the human structure to operate as a pure biological antenna.</p>
+      
+      <div class="pub-actions">
+        <a href="https://www.amazon.com/-/es/dp/B0H57CJ34F" target="_blank" rel="noopener noreferrer" class="pub-btn">Versión Español (Kindle & Print)</a>
+        <a href="https://www.amazon.com/-/es/dp/B0H57CJ34F" target="_blank" rel="noopener noreferrer" class="pub-btn">English Version (Kindle & Print)</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- TÍTULO: TRATADOS COMPLEMENTARIOS -->
+  <h3 class="category-title" style="color: var(--ag-silver);">Tratados y Complementos</h3>
+  <h4 class="category-subtitle">Treatises and Supplements</h4>
+
+  <!-- Reducimos el ancho para que estos 2 libros se centren perfectamente -->
+  <div class="pub-grid" style="grid-template-columns: repeat(auto-fit, minmax(320px, 450px)); justify-content: center;">
+    
+    <!-- Libro 4: El Códice -->
+    <div class="pub-card">
+      <div class="pub-cover-container">
+        <!-- Reemplaza el src con tu imagen real -->
+        <img src="https://via.placeholder.com/140x215/1a1a1a/D4AF37?text=El+Codice" alt="Portada El Códice ÆTHER" class="pub-cover">
+      </div>
       <h3 class="pub-book-title">El Códice ÆTHER</h3>
       <h4 class="pub-book-title-en">The Códice ÆTHER</h4>
       
       <span class="pub-book-subtitle">El Manual del Universo Cotidiano.<br>
       <span style="color: var(--text-en);">The Manual of the Everyday Universe.</span></span>
       
-      <p class="pub-description">La traducción accesible y cotidiana de La Lógica del Estado Sólido. Un manual diseñado para el público general que explica cómo la Matriz 13x21, el Æther y la Tríada PTPU-RHF-PME operan en la vida diaria, desmitificando la física avanzada en términos simples y prácticos.</p>
+      <p class="pub-description">La traducción accesible y cotidiana de La Lógica del Estado Sólido. Un manual diseñado para el público general que explica cómo la Matriz 13x21 y el Æther operan en la vida diaria.</p>
       
-      <p class="pub-description-en">The accessible, everyday translation of The Logic of the Solid State. A manual designed for the general public that explains how the 13x21 Matrix, the Æther, and the PTPU-RHF-PME Triad operate in daily life, demystifying advanced physics in simple and practical terms.</p>
+      <p class="pub-description-en">The accessible, everyday translation of The Logic of the Solid State. A manual designed for the general public that explains how the 13x21 Matrix and the Æther operate in daily life.</p>
       
       <div class="pub-actions">
-        <a href="https://www.amazon.com/-/es/dp/B0H57CJ34F?binding=kindle_edition&ref=dbs_dp_rwt_sb_bx_tkin" target="_blank" rel="noopener noreferrer" class="pub-btn">Versión Español (Kindle & Print)</a>
-        <a href="https://www.amazon.com/-/es/dp/B0H57CJ34F?binding=kindle_edition&ref=dbs_dp_rwt_sb_bx_tkin" target="_blank" rel="noopener noreferrer" class="pub-btn">English Version (Kindle & Print)</a>
+        <a href="https://www.amazon.com/-/es/dp/B0H57CJ34F" target="_blank" rel="noopener noreferrer" class="pub-btn">Versión Español (Kindle & Print)</a>
+        <a href="https://www.amazon.com/-/es/dp/B0H57CJ34F" target="_blank" rel="noopener noreferrer" class="pub-btn">English Version (Kindle & Print)</a>
+      </div>
+    </div>
+
+    <!-- Libro 5: El Dossier -->
+    <div class="pub-card">
+      <div class="pub-cover-container">
+        <!-- Reemplaza el src con tu imagen real -->
+        <img src="https://via.placeholder.com/140x215/1a1a1a/00D4FF?text=El+Dossier" alt="Portada El Dossier de Evidencias" class="pub-cover">
+      </div>
+      <h3 class="pub-book-title">El Dossier de Evidencias</h3>
+      <h4 class="pub-book-title-en">The Evidence Dossier</h4>
+      
+      <span class="pub-book-subtitle">Refutación del Vacío y la Dinámica del Æther.<br>
+      <span style="color: var(--text-en);">Refutation of the Void and Æther Dynamics.</span></span>
+      
+      <p class="pub-description">Monografía táctica que expone la falsación empírica del modelo estándar y la resolución del "zoológico cuántico" de partículas mediante ondas de choque macroscópicas.</p>
+      
+      <p class="pub-description-en">Tactical monograph exposing the empirical falsification of the standard model and the resolution of the particle "quantum zoo" via macroscopic shockwaves.</p>
+      
+      <div class="pub-actions">
+        <a href="https://www.amazon.com/-/es/dp/B0H57CJ34F" target="_blank" rel="noopener noreferrer" class="pub-btn">Versión Español (Kindle & Print)</a>
+        <a href="https://www.amazon.com/-/es/dp/B0H57CJ34F" target="_blank" rel="noopener noreferrer" class="pub-btn">English Version (Kindle & Print)</a>
       </div>
     </div>
 
   </div>
 
   <div class="pub-btn-series">
-    <a href="https://www.amazon.com/-/es/dp/B0H57CJ34F?binding=kindle_edition&ref=dbs_dp_rwt_sb_bx_tkin" target="_blank" rel="noopener noreferrer">
+    <a href="https://www.amazon.com/-/es/dp/B0GZZL7SK9/ref=tmm_kin_swatch_0" target="_blank" rel="noopener noreferrer">
       Explorar la Serie Completa en Amazon KDP
       <span class="pub-btn-en">Explore the Complete Series on Amazon KDP</span>
     </a>
